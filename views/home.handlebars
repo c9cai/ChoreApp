@@ -37,14 +37,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="overlay"></div>
     <div class="mobile-side-menu">
         <ul>
-            <li class="active"><a href="main"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-            <li><a href="menu.html"><i class="fa fa-compass" aria-hidden="true"></i>Our Food</a></li>
-            <li><a href="blog.html"><i class="fa fa-picture-o" aria-hidden="true"></i>Blog</a></li>
-            <li><a href="team.html"><i class="fa fa-users" aria-hidden="true"></i>Our Chef</a></li>
-            <li><a href="short-codes.html"><i class="fa fa-dashcube" aria-hidden="true"></i>Short Codes</a></li>
-            <li><a href="icons.html"><i class="fa fa-random" aria-hidden="true"></i>Web Icons</a></li>
-            <li><a href="contact.html"><i class="fa fa-map-marker" aria-hidden="true"></i>Location</a></li>
-            <li><a href="sign-in.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+            <li class="active"><a href="main"><i class="fa fa-home" aria-hidden="true"></i>My Chores</a></li>
+            <li><a href="#"><i class="fa fa-compass" aria-hidden="true"></i>Roomate Chores</a></li>
+            <li><a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i>Scores</a></li>
+            <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i>Preferences</a></li>
+            <li><a href="#"><i class="fa fa-dashcube" aria-hidden="true"></i>Settings</a></li>
         </ul>
     </div>
     <div class="navbar">
@@ -90,6 +87,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="delicious_food">
     <div class="container">
         <h3 class="agileits_head w3_agileits_head">Overdue<i class="fa fa-exclamation-triangle" aria-hidden="true"></i></h3>
+        {{#each overdue}}
+            <h3>{{username}}</h3>
+        {{/each}}
     </div>
     <div class="container">
         <h3 class="agileits_head w3_agileits_head">Today<i class="fa fa-gratipay" aria-hidden="true"></i></h3>
@@ -103,6 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <script type="text/javascript" src="js/smoothbox.jquery2.js"></script>
 <!-- //Chores List -->
+
 
 <!-- footer -->
 <div class="footer">
@@ -183,5 +184,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     })();
 </script>
 <!-- //form-effect -->
+<script src="https://code.jquery.com/jquery.js"></script>
 </body>
 </html>
