@@ -21,41 +21,14 @@
                 <li><a href="/roommate_chores"><span class="glyphicon glyphicon-user"></span>&nbsp; Roommates' Chores</a></li>
                 <li><a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; Scores</a></li>
                 <li><a href="/preferences"><span class="glyphicon glyphicon-heart"></span>&nbsp; Preferences</a></li>
-                <li><a href="/settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp; Settings</a></li>
+                <li><a href="settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp; Settings</a></li>
             </ul>
         </div>
 </nav>
 
-<div class="container-fluid text-center">
-    <h1 class="text-center">Chores</h1>
+<h1 class="text-center">Preferences</h1>
 
-    <div class="container-fluid">
-        <h2>Today</h2>
-        <ul class="list-inline chores">
-            {{#each today}}
-                    <li>{{duedate}}<br/>{{chorename}}</li>
-            {{/each}}
-        </ul>
-        <h2>Overdue</h2>
-        <ul class="list-inline">
-            {{#each overdue}}
-                <li>{{duedate}}<br/>{{chorename}}</li>
-            {{/each}}
-        </ul>
-        <h2>Upcoming</h2>
-        <ul class="list-inline">
-            {{#each upcoming}}
-                <li>{{duedate}}<br/>{{chorename}}</li>
-            {{/each}}
-        </ul>
-        <h2>Completed</h2>
-        <ul class="list-inline">
-            {{#each completed}}
-                <li>{{duedate}}<br/>{{chorename}}</li>
-            {{/each}}
-        </ul>
-    </div>
-</div>
+
 
 <!--
 <footer class="container-fluid text-center">
