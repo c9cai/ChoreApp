@@ -1,17 +1,19 @@
-var data = require("../json/chore_schedule.json");
+var data = require("../json/users.json");
 
 exports.viewHome = function(req, res) {
-    for (var category in data) {
-        category_data = data[category];
+    rendData = {};
 
-        for (var chore in category_data) {
-            chore_data = category_data[chore];
-            if (chore_data['username'] != "Brian")
-                delete data[category][chore];
+    for (var users in data) {
+
+        for (var userdata in data[users]) {
+            if (data[users][userdata]['name'] == "Alia") {
+                rendData["overdue"] = data[users][userdata]['overdue'];
+                rendData["today"] = data[users][userdata]['today'];
+                rendData["upcoming"] = data[users][userdata]['upcoming'];
+                rendData["completed"] = data[users][userdata]['completed'];
+            }
         }
     }
 
-    console.log(data);
-
-    res.render('home', data);
+    res.render('home', rendData);
 };
