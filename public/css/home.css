@@ -1,6 +1,20 @@
-/*applies to each chore div */
-.chores {
+/*score label */
+#score-label {
+    height: 50px;
+    margin-top: 2.5px;
+    margin-bottom: 0px;
+    max-width: 60px;
+    font-size: 35px;
+    padding-left: 10px;
+    padding-top: 0px;
+}
 
+/* progress bar (score bar) */
+.progress {
+    height: 35px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    max-width: 300px;
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
