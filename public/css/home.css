@@ -9,12 +9,17 @@
     padding-top: 0px;
 }
 
-/* progress bar (score bar) */
+/* progress bar (white part of score bar) */
 .progress {
     height: 35px;
     margin-bottom: 5px;
     margin-top: 10px;
     max-width: 300px;
+}
+
+/* score bar (colored/filled in part of score bar) */
+#score-bar {
+    background-color: #5bc0de;
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
