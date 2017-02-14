@@ -1,180 +1,29 @@
 {
   "users": [
     {
-      "name": "Brian",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
-    },
-    {
-      "name": "Alia",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
-    },
-    {
-      "name": "Noah",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
-    },
-    {
-      "name": "Chris",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
+      "firstName": "brian",
+      "lastName": "chao",
+      "username": "brian",
+      "password": "chao",
+      "rating": 5
+    },{
+      "firstName": "noah",
+      "lastName": "lee",
+      "username": "noah",
+      "password": "lee",
+      "rating": 5
+    },{
+      "firstName": "alia",
+      "lastName": "awni",
+      "username": "alia",
+      "password": "awni",
+      "rating": 5
+    },{
+      "firstName": "chris",
+      "lastName": "cai",
+      "username": "chris",
+      "password": "cai",
+      "rating": 5
     }
   ]
 }

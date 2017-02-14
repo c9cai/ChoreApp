@@ -1,4 +1,4 @@
-var data = require("../json/users.json");
+var data = require("../json/chore_schedule.json");
 
 exports.viewChores = function(req, res) {
     //console.log(data);

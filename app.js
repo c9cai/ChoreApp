@@ -13,6 +13,8 @@ var roommate_chores = require('./routes/roommate_chores');
 var scores = require('./routes/scores');
 var preferences = require('./routes/preferences');
 var settings = require('./routes/settings');
+var login = require('./routes/login');
+var check_login = require('./routes/check_login');
 // Example route
 // var user = require('./routes/user');
 
@@ -45,8 +47,8 @@ app.get('/roommate_chores', roommate_chores.viewChores);
 app.get('/scores', scores.viewScores);
 app.get('/preferences', preferences.viewPreferences);
 app.get('/settings', settings.viewSettings);
-// Example route
-// app.get('/users', user.list);
+app.get('/login', login.viewLogin);
+app.post('/check_login/:username/:password', check_login.viewLogin);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
