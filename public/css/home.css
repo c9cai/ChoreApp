@@ -1,3 +1,32 @@
+hr {
+    height: 5px;
+    border-top: 1px solid #000;
+}
+
+.chore-buttons {
+    background-color: #00b3b3;
+    color: white;
+}
+
+.chore-buttons:hover {
+    background-color: #008080;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.chore-buttons:focus {
+    color: white;
+    background color: #008080;
+}
+
+.list-inline {
+    padding-bottom: 30px;
+}
+
+.time-titles {
+    font-size: 24px;
+}
+
 /*score label */
 #score-label {
     height: 50px;
@@ -19,13 +48,23 @@
 
 /* score bar (colored/filled in part of score bar) */
 #score-bar {
-    background-color: #5bc0de;
+    background-color: #00b3b3;
+}
+
+#app-name {
+    color: #00b3b3;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
+    height: 75px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -38,13 +77,6 @@
     height: 100%;
 }
 
-/* Set black background color, white text and some padding */
-footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-}
-
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
     .sidenav {
@@ -52,4 +84,8 @@ footer {
         padding: 15px;
     }
     .row.content {height:auto;}
+    
+    #app-name {
+        display: none;
+    }
 }
