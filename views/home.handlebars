@@ -4,9 +4,9 @@
     <title>Chore App</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/home.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -48,53 +48,75 @@
 <div class="container-fluid text-center">
     <h1 class="text-center">Your Chores</h1>
     <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2"><hr>
+        <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
         </div>
     </div>
     <div class="container-fluid">
-        <h4 class="time-titles">Today</h4>
-        <ul class="list-inline chores">
-            {{#each today}}
-                <li>
-                    <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                        {{duedate}}<br/>{{chorename}}
-                    </button>
-                </li>
-            {{/each}}
-        </ul>
         <h4 class="time-titles">Overdue</h4>
-        <ul class="list-inline">
-            {{#each overdue}}
-                <li>
-                    <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                        {{duedate}}<br/>{{chorename}}
-                    </button>
-                </li>
-            {{/each}}
-        </ul>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each overdue}}
+                        <div>
+                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}
+                            </button>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <h4 class="time-titles">Today</h4>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each today}}
+                        <div>
+                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}
+                            </button>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
         <h4 class="time-titles">Upcoming</h4>
-        <ul class="list-inline">
-            {{#each upcoming}}
-                <li>
-                    <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                        {{duedate}}<br/>{{chorename}}
-                    </button>
-                </li>
-            {{/each}}
-        </ul>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each upcoming}}
+                        <div>
+                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}
+                            </button>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
         <h4 class="time-titles">Completed</h4>
-        <ul class="list-inline">
-            {{#each completed}}
-                <li>
-                    <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                        {{duedate}}<br/>{{chorename}}
-                    </button>
-                </li>
-            {{/each}}
-        </ul>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each completed}}
+                        <div>
+                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}
+                            </button>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/home.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 </div>
 
 
@@ -107,22 +129,18 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Chore Complete?</h4>
+                <h4 class="modal-title">Take Out Trash</h4>
             </div>
             <div class="modal-body">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                <p><b>Due:</b>In 4 hours</p>
+                <p>Complete now to earn 3 points!</p>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="done-button">Done</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
             </div>
         </div>
 
     </div>
 </div>
-
-<!--
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer>
--->
 
 </body>
 </html>
