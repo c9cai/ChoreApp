@@ -41,14 +41,14 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', home.viewHome);
+app.get('/', login.viewLogin);
 app.get('/home', home.viewHome);
 app.get('/roommate_chores', roommate_chores.viewChores);
 app.get('/scores', scores.viewScores);
 app.get('/preferences', preferences.viewPreferences);
 app.get('/settings', settings.viewSettings);
 app.get('/login', login.viewLogin);
-app.post('/check_login/:username/:password', check_login.viewLogin);
+app.post('/check_login/:username/:password', check_login.checkLogin);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "name": "Brian",
+      "username": "brian",
       "rating": 5,
       "overdue": [
         {
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "name": "Alia",
+      "username": "alia",
       "rating": 5,
       "overdue": [
         {
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "name": "Noah",
+      "username": "noah",
       "rating": 5,
       "overdue": [
         {
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "name": "Chris",
+      "username": "chris",
       "rating": 5,
       "overdue": [
         {
