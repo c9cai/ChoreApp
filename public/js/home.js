@@ -68,7 +68,7 @@ function updateScoreBar(change) {
 
 function doneChore(e) {
     //console.log(e);
-    $.getJSON("../json/chore_schedule.json", function(result) {
+    $.get("/homeData", function(result) {
         console.log(result);
     });
 }

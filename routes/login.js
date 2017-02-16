@@ -1,10 +1,10 @@
-var current_user_data = require("../json/current_user.json");
+var chore_data = require("../json/chore_schedule.json");
 
 exports.viewLogin = function(req, res) {
 
     console.log("viewLogin");
 
-    if (!Object.keys(current_user_data).length)
+    if (chore_data['current_user'] == null)
         res.render('login');
     else {
         res.redirect("/home");

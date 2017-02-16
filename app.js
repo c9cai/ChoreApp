@@ -48,6 +48,7 @@ app.get('/scores', scores.viewScores);
 app.get('/preferences', preferences.viewPreferences);
 app.get('/settings', settings.viewSettings);
 app.get('/login', login.viewLogin);
+app.get('/homeData', home.jsonHome);
 app.post('/check_login/:username/:password', check_login.checkLogin);
 
 http.createServer(app).listen(app.get('port'), function(){
