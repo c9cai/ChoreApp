@@ -2,7 +2,6 @@
   "brian":
   {
     "username": "brian",
-    "rating": 5,
     "overdue": [
       {
         "chorename": "Wash the Dishes",
@@ -47,7 +46,6 @@
   "alia":
   {
     "username": "alia",
-    "rating": 5,
     "overdue": [
       {
         "chorename": "Wash the Dishes",
@@ -92,7 +90,6 @@
   "noah":
   {
     "username": "noah",
-    "rating": 5,
     "overdue": [
       {
         "chorename": "Wash the Dishes",
@@ -136,7 +133,6 @@
   },"chris":
   {
     "username": "chris",
-    "rating": 5,
     "overdue": [
       {
         "chorename": "Wash the Dishes",
