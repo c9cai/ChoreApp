@@ -33,7 +33,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		updateScoreBar(-3);
 	});
-    $("#done-button").click(doneChore);
 })
 
 /*
@@ -64,11 +63,4 @@ function updateScoreBar(change) {
             document.getElementById("score-label").innerHTML = width * 1;
         }
     }
-}
-
-function doneChore(e) {
-    //console.log(e);
-    $.get("/homeData", function(result) {
-        console.log(result);
-    });
 }

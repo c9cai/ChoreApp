@@ -7,7 +7,5 @@ exports.viewHome = function(req, res) {
 };
 
 exports.jsonHome = function(req, res) {
-    var username = chore_data['current_user']['username'];
-    var data = chore_data[username];
-    res.json(data);
+    res.json(chore_data);
 };
