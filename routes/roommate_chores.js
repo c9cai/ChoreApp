@@ -1,6 +1,14 @@
-var data = require("../json/users.json");
+var chore_data = require("../json/chore_schedule.json");
 
 exports.viewChores = function(req, res) {
-    //console.log(data);
-    res.render('roommate_chores', data);
+    data = [];
+    for (user in chore_data) {
+        if (user != "current_user")
+            data.push(chore_data[user]);
+    }
+
+    rendData = {};
+    rendData['users'] = data;
+
+    res.render('roommate_chores', rendData);
 };

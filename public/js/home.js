@@ -4,6 +4,31 @@
 $(document).ready(function() {
 	
 	initializePage();
+
+	//carousel css
+    $(".carousel").slick({
+        slidesToShow: 4,
+        centerMode: true,
+        responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                centerMode: true,
+                slidesToShow: 2,
+                arrows: false,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                centerMode: true,
+                slidesToShow: 2,
+                arrows: false,
+              }
+            }
+        ]
+    });
+
 	$("#score-bar").click(function(e) {
 		e.preventDefault();
 		updateScoreBar(-3);

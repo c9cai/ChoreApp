@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chore App</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/home.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <h1 id="app-name" class="text-center">Chore Hero</h1>
+</nav>
+
+<div class="container-fluid text-center">
+    <form id="login_form" method="post" action="/check_login">
+        <label>Username: </label><input type="text" name="username"/>
+        <br>
+        <label>Password: </label><input type="password" name="password" />
+        <br>
+        <button id="login_button" type="submit" class="btn btn-primary" form="login_form">Login</button>
+    </form>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade text-center" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Chore Complete?</h4>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
