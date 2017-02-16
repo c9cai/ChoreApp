@@ -1,180 +1,181 @@
 {
-  "users": [
-    {
-      "username": "brian",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
-    },
-    {
-      "username": "alia",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
-    },
-    {
-      "username": "noah",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
-    },
-    {
-      "username": "chris",
-      "rating": 5,
-      "overdue": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/4/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/5/2016"
-        }
-      ],
-      "today": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/9/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/9/2016"
-        }
-      ],
-      "upcoming": [
-        {
-          "chorename": "Wash the Dishes",
-          "duedate": "2/13/2016"
-        },
-        {
-          "chorename": "Sweep Patio",
-          "duedate": "2/14/2016"
-        }
-      ],
-      "completed": [
-        {
-          "chorename": "Take Out Trash",
-          "duedate": "2/1/2016"
-        },
-        {
-          "chorename": "Check Mail",
-          "duedate": "2/2/2016"
-        }
-      ]
-    }
-  ]
+  "brian":
+  {
+    "username": "brian",
+    "rating": 5,
+    "overdue": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/4/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/5/2016"
+      }
+    ],
+    "today": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/9/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/9/2016"
+      }
+    ],
+    "upcoming": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/13/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/14/2016"
+      }
+    ],
+    "completed": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/1/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/2/2016"
+      }
+    ]
+  },
+  "alia":
+  {
+    "username": "alia",
+    "rating": 5,
+    "overdue": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/4/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/5/2016"
+      }
+    ],
+    "today": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/9/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/9/2016"
+      }
+    ],
+    "upcoming": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/13/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/14/2016"
+      }
+    ],
+    "completed": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/1/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/2/2016"
+      }
+    ]
+  },
+  "noah":
+  {
+    "username": "noah",
+    "rating": 5,
+    "overdue": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/4/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/5/2016"
+      }
+    ],
+    "today": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/9/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/9/2016"
+      }
+    ],
+    "upcoming": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/13/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/14/2016"
+      }
+    ],
+    "completed": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/1/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/2/2016"
+      }
+    ]
+  },"chris":
+  {
+    "username": "chris",
+    "rating": 5,
+    "overdue": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/4/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/5/2016"
+      }
+    ],
+    "today": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/9/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/9/2016"
+      }
+    ],
+    "upcoming": [
+      {
+        "chorename": "Wash the Dishes",
+        "duedate": "2/13/2016"
+      },
+      {
+        "chorename": "Sweep Patio",
+        "duedate": "2/14/2016"
+      }
+    ],
+    "completed": [
+      {
+        "chorename": "Take Out Trash",
+        "duedate": "2/1/2016"
+      },
+      {
+        "chorename": "Check Mail",
+        "duedate": "2/2/2016"
+      }
+    ]
+  }
 }
