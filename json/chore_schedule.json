@@ -2,10 +2,10 @@
   "users": [
     {
       "username": "brian",
-      "rating": 5,
+      "rating": 61,
       "overdue": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/4/2016"
         },
         {
@@ -25,7 +25,7 @@
       ],
       "upcoming": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/13/2016"
         },
         {
@@ -46,10 +46,10 @@
     },
     {
       "username": "alia",
-      "rating": 5,
+      "rating": 61,
       "overdue": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/4/2016"
         },
         {
@@ -69,7 +69,7 @@
       ],
       "upcoming": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/13/2016"
         },
         {
@@ -90,10 +90,10 @@
     },
     {
       "username": "noah",
-      "rating": 5,
+      "rating": 61,
       "overdue": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/4/2016"
         },
         {
@@ -113,7 +113,7 @@
       ],
       "upcoming": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/13/2016"
         },
         {
@@ -134,10 +134,10 @@
     },
     {
       "username": "chris",
-      "rating": 5,
+      "rating": 61,
       "overdue": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/4/2016"
         },
         {
@@ -157,7 +157,7 @@
       ],
       "upcoming": [
         {
-          "chorename": "Wash the Dishes",
+          "chorename": "Wash Dishes",
           "duedate": "2/13/2016"
         },
         {

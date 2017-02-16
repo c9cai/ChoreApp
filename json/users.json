@@ -5,25 +5,25 @@
       "lastName": "chao",
       "username": "brian",
       "password": "chao",
-      "rating": 5
+      "rating": 61
     },{
       "firstName": "noah",
       "lastName": "lee",
       "username": "noah",
       "password": "lee",
-      "rating": 5
+      "rating": 61
     },{
       "firstName": "alia",
       "lastName": "awni",
       "username": "alia",
       "password": "awni",
-      "rating": 5
+      "rating": 61
     },{
       "firstName": "chris",
       "lastName": "cai",
       "username": "chris",
       "password": "cai",
-      "rating": 5
+      "rating": 61
     }
   ]
 }

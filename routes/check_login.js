@@ -14,7 +14,7 @@ exports.checkLogin = function(req, res) {
             //login successful
             if ((user_data['users'][users]['username'] == username) && (user_data['users'][users]['password'] == password)) {
                 check = true;
-                user_data['current_user'] = {"username":"brian"};
+                user_data['current_user'] = {"username":username};
                 res.redirect("/home");
 
                 break;
