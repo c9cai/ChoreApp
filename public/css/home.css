@@ -46,6 +46,14 @@ hr {
     background color: #008080;
 }
 
+.overdue-buttons {
+    background-color: #e60000 !important;
+}
+
+.overdue-buttons:hover {
+    background-color: #800000 !important;
+}
+
 .list-inline {
     padding-bottom: 30px;
 }
@@ -53,6 +61,10 @@ hr {
 .time-titles {
     font-size: 22px;
     margin-top: 8px;
+}
+
+.overdue-title {
+    color: #e60000;
 }
 
 /*score label */
@@ -113,7 +125,7 @@ hr {
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 480px) {
     .sidenav {
         height: auto;
         padding: 15px;
@@ -126,6 +138,11 @@ hr {
 
     .carousel-container {
         padding: 10px;
+    }
+
+    .chore-buttons {
+        font-size: 13px;
+        width: 100px;
     }
 }
 
