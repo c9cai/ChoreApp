@@ -4,6 +4,8 @@
 $(document).ready(function() {
 	
 	initializePage();
+
+	//carousel css
     $(".carousel").slick({
         slidesToShow: 4,
         centerMode: true,
@@ -26,13 +28,11 @@ $(document).ready(function() {
             }
         ]
     });
+
 	$("#score-bar").click(function(e) {
 		e.preventDefault();
 		updateScoreBar(-3);
 	});
-    $("#done-button").click(function(e) {
-        updateScoreBar(3);
-    });
 })
 
 /*

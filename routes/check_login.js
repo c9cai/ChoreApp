@@ -2,23 +2,17 @@ var user_data = require("../json/users.json");
 var chore_data = require("../json/chore_schedule.json");
 
 exports.checkLogin = function(req, res) {
-    var username = req.params.username;
-    var password = req.params.password;
+    var username = req.body.username;
+    var password = req.body.password;
     var check = false;
 
     //check valid username password
     if (username != null && password != null) {
 
-        for (var users in user_data['users']) {
-
-            //login successful
-            if ((user_data['users'][users]['username'] == username) && (user_data['users'][users]['password'] == password)) {
-                check = true;
-                user_data['current_user'] = {"username":username};
-                res.redirect("/home");
-
-                break;
-            }
+        if (user_data[username + "_" + password] != null) {
+            check = true;
+            chore_data['current_user'] = user_data[username + "_" + password];
+            res.redirect("/home");
         }
     } else {
         res.render('login');
