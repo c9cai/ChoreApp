@@ -16,6 +16,7 @@ var settings = require('./routes/settings');
 var login = require('./routes/login');
 var check_login = require('./routes/check_login');
 var done_chore = require('./routes/done_chore');
+var logout = require('./routes/logout');
 // Example route
 // var user = require('./routes/user');
 
@@ -53,6 +54,7 @@ app.get('/login', login.viewLogin);
 app.get('/homeData', home.jsonHome);
 app.post('/check_login', check_login.checkLogin);
 app.post('/done_chore', done_chore.doneChore);
+app.post('/logout', logout.logOut);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
