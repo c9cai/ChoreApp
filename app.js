@@ -46,6 +46,7 @@ app.get('/', login.viewLogin);
 app.get('/home', home.viewHome);
 app.get('/roommate_chores', roommate_chores.viewChores);
 app.get('/scores', scores.viewScores);
+app.get('/scoreData', scores.jsonScores);
 app.get('/preferences', preferences.viewPreferences);
 app.get('/settings', settings.viewSettings);
 app.get('/login', login.viewLogin);

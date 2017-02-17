@@ -35,85 +35,28 @@
       }
     </script>
 
+    {{#each users}}
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Score', "Points"],
-          ['You have', 60],
-          ['You need', 40]
-        ]);
+          ['Has', {{rating}}],
+          ['Needs', 100-{{rating}}]
+        ]);2
 
         var options = {
-          title: 'Your Current Score',
+          title: '{{firstName}}',
           pieHole: 0.4,
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var chart = new google.visualization.PieChart(document.getElementById('{{firstName}}'));
         chart.draw(data, options);
       }
     </script>
+    {{/each}}
 
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Score', "Points"],
-          ['You have', 80],
-          ['You need', 20]
-        ]);
-
-        var options = {
-          title: 'Brian\'s Current Score',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart1'));
-        chart.draw(data, options);
-      }
-    </script>
-
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Score', "Points"],
-          ['Has', 70],
-          ['Needs', 30]
-        ]);
-
-        var options = {
-          title: 'Alia\'s Current Score',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart2'));
-        chart.draw(data, options);
-      }
-    </script>
-
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Score', "Points"],
-          ['Has', 50],
-          ['Needs', 50]
-        ]);
-
-        var options = {
-          title: 'Noah\'s Current Score',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart3'));
-        chart.draw(data, options);
-      }
-    </script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -136,14 +79,18 @@
             <h1 id="app-name">Chore Hero</h1>
         </div>
         <div class="col-xs-3 col-md-1 pull-right">
+            {{#each users}}
+            {{#if @first}}
             <div class="well" id="score-label">
-                70
+                {{rating}}
             </div>
         </div>
         <div class="col-xs-4 col-md-4 pull-right">
-            <div class="progress">
-                <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="70"
+            <div class="progress">             
+                <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
               aria-valuemin="0" aria-valuemax="100" style="width:70%">
+              {{/if}}
+              {{/each}}
                 </div>
             </div>
         </div>
@@ -156,12 +103,15 @@
         </div>
     </div>
 
-<div id="donutchart" style="width: 900px; height: 500px; margin: 0 auto"></div>
+{{#each users}}
+{{#if @first}}
+<div id="{{firstName}}" style="width: 900px; height: 500px; margin: 0 auto"></div>
 <div>
-    <div id="donutchart1" class="pie_child" style="width: 450px; height: 250px"></div>
-    <div id="donutchart2" class="pie_child" style="width: 450px; height: 250px"></div>
-    <div id="donutchart3" class="pie_child" style="width: 450px; height: 250px"></div>
+{{else}}
+    <div id="{{firstName}}" class="pie_child" style="width: 450px; height: 250px"></div>
+{{/if}}
 </div>
+{{/each}}
 
 
 <div id="curve_chart" style="margin: 0 auto"></div>
