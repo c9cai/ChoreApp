@@ -4,6 +4,14 @@ var chore_data = require("../json/chore_schedule.json");
 exports.viewSettings = function(req, res) {
     var rendData = {};
     rendData["users"] = [];
+
+    //get the rating of current user for rating bar
+    var username = chore_data['current_user']['username'];
+    var password = chore_data['current_user']['password'];
+    rendData['rating'] = user_data[username + "_" + password]['rating'];
+
+
+
     currentUser = chore_data['current_user']['username'];
 
     for (var user in user_data) {
