@@ -1,6 +1,5 @@
 var chore_data = require("../json/chore_schedule.json");
 var user_data = require("../json/users.json");
-var user_data2 = require("../json/users2.json")
 
 exports.viewScores = function(req, res) {
 		var data = [];
