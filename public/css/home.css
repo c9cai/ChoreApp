@@ -22,6 +22,7 @@ hr {
     background-color: #e6e6e6;
     padding: 10px 28px 10px 28px;
     border-radius: 10px;
+    margin-bottom: 50px;
 }
 
 .chore-buttons {
@@ -45,6 +46,14 @@ hr {
     background color: #008080;
 }
 
+.overdue-buttons {
+    background-color: #e60000 !important;
+}
+
+.overdue-buttons:hover {
+    background-color: #800000 !important;
+}
+
 .list-inline {
     padding-bottom: 30px;
 }
@@ -52,6 +61,10 @@ hr {
 .time-titles {
     font-size: 22px;
     margin-top: 8px;
+}
+
+.overdue-title {
+    color: #e60000;
 }
 
 /*score label */
@@ -85,6 +98,13 @@ hr {
     font-weight: bold;
 }
 
+#app-name-login {
+    color: #00b3b3;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
@@ -105,7 +125,7 @@ hr {
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 480px) {
     .sidenav {
         height: auto;
         padding: 15px;
@@ -118,6 +138,11 @@ hr {
 
     .carousel-container {
         padding: 10px;
+    }
+
+    .chore-buttons {
+        font-size: 13px;
+        width: 100px;
     }
 }
 

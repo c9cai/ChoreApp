@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-xs-2 col-md-1">
             <div class="navbar-header">
-                <button style="font-size: 250%;" class="btn-transparent dropdown-toggle" type="button" data-toggle="dropdown">
+                <button style="font-size: 250%;" class="btn-transparent btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-menu-hamburger"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -53,75 +53,75 @@
         </div>
     </div>
     <br/>
-    {{#each users}}
+    <div class="container-fluid">
+        <h4 class="time-titles">Overdue</h4>
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#{{username}}"><h3 class="names">{{username}}</h3></button>
-            </div>
-        </div>
-        <div class="collapse container-fluid" id="{{username}}">
-            <h4 class="time-titles">Overdue</h4>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
-                    <div class="carousel">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each users}}
                         {{#each overdue}}
-                            <div>
-                                <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                    {{chorename}}</br>{{duedate}}
-                                </button>
-                            </div>
+                        <div>
+                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                            </button>
+                        </div>
                         {{/each}}
-                    </div>
-                </div>
-            </div>
-
-            <h4 class="time-titles">Today</h4>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
-                    <div class="carousel">
-                        {{#each today}}
-                            <div>
-                                <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                    {{chorename}}</br>{{duedate}}
-                                </button>
-                            </div>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-
-            <h4 class="time-titles">Upcoming</h4>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
-                    <div class="carousel">
-                        {{#each upcoming}}
-                            <div>
-                                <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                    {{chorename}}</br>{{duedate}}
-                                </button>
-                            </div>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-            
-            <h4 class="time-titles">Completed</h4>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
-                    <div class="carousel">
-                        {{#each completed}}
-                            <div>
-                                <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                    {{chorename}}</br>{{duedate}}
-                                </button>
-                            </div>
-                        {{/each}}
-                    </div>
+                    {{/each}}
                 </div>
             </div>
         </div>
-        <br>
-    {{/each}}
+
+        <h4 class="time-titles">Today</h4>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each users}}
+                        {{#each today}}
+                        <div>
+                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                            </button>
+                        </div>
+                        {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <h4 class="time-titles">Upcoming</h4>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each users}}
+                        {{#each upcoming}}
+                        <div>
+                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                            </button>
+                        </div>
+                        {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <h4 class="time-titles">Completed</h4>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
+                <div class="carousel">
+                    {{#each users}}
+                        {{#each completed}}
+                        <div>
+                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                            </button>
+                        </div>
+                        {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

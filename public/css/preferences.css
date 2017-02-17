@@ -1,0 +1,18 @@
+#draggablePanelList .panel {
+        cursor: move;
+    }
+
+.glyphicon-th {
+	margin-right: 5px;
+}
+
+.panel-body {
+	padding: 3px 15px 3px 15px;
+	border-color: #ccc;
+}
+
+.panel-body:hover {
+	border-color: #adadad;
+	background-color: #e6e6e6;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

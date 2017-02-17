@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-xs-2 col-md-1">
             <div class="navbar-header">
-                <button style="font-size: 250%;" class="btn-transparent dropdown-toggle" type="button" data-toggle="dropdown">
+                <button style="font-size: 250%;" class="btn-transparent btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-menu-hamburger"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -52,13 +52,13 @@
         </div>
     </div>
     <div class="container-fluid">
-        <h4 class="time-titles">Overdue</h4>
+        <h4 class="time-titles overdue-title">Overdue</h4>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
                 <div class="carousel">
                     {{#each overdue}}
                         <div>
-                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#overdue_{{@index}}">
+                            <button type="button" class="btn btn-lg chore-buttons overdue-buttons" data-toggle="modal" data-target="#overdue_{{@index}}">
                                 {{chorename}}</br>{{duedate}}
                             </button>
                         </div>
@@ -130,7 +130,7 @@
             </div>
             <div class="modal-body">
                 <p><b>Due Date:</b>{{duedate}}</p>
-                <p>Complete now to earn 3 points!</p>
+                <p>Complete now to only lose 5 points. More will be deducted if you wait!</p>
                 <form id="form_overdue_{{@index}}" method="post" action="/done_chore">
                     <input type="hidden" name="category" value="overdue" />
                     <input type="hidden" name="index" value="{{@index}}"/>

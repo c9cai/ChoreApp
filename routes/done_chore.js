@@ -20,8 +20,13 @@ exports.doneChore = function(req, res) {
         data[category].splice(index,index+1);
 
         //upgrade rating
-        user_data[username + "_" + password]['rating'] += 3;
-
+        if (category == "overdue") {
+            user_data[username + "_" + password]['rating'] -= 5;
+        }
+        else {
+            user_data[username + "_" + password]['rating'] += 3;
+        }
+        
         //reload home page
         res.redirect(redirect);
     }
