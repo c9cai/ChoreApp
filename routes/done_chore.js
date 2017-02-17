@@ -1,4 +1,5 @@
 var chore_data = require("../json/chore_schedule.json");
+var user_data = require("../json/users.json");
 
 exports.doneChore = function(req, res) {
     var category = req.body.category;
@@ -8,6 +9,7 @@ exports.doneChore = function(req, res) {
 
     if (user == "current_user") {
         var username = chore_data['current_user']['username'];
+        var password = chore_data['current_user']['password'];
         var data = chore_data[username];
 
         //add chore to completed
@@ -17,8 +19,10 @@ exports.doneChore = function(req, res) {
         //remove chore
         data[category].splice(index,index+1);
 
+        //upgrade rating
+        user_data[username + "_" + password]['rating'] += 3;
+
         //reload home page
-        var rendData = chore_data[username];
-        res.render('home', rendData);
+        res.redirect(redirect);
     }
 };

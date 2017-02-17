@@ -121,3 +121,8 @@ hr {
         padding: 10px;
     }
 }
+
+.pie_child{
+    display: inline-block;
+    vertical-align:top;
+}
