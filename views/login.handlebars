@@ -16,12 +16,21 @@
 </nav>
 
 <div class="container-fluid text-center">
+    <h2 class="">Login</h2>
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
+        </div>
+    </div>
+    <div class="row">
     <form id="login_form" method="post" action="/check_login">
         <label>Username: </label><input type="text" name="username"/>
         <br>
         <label>Password: </label><input type="password" name="password" />
         <br>
-        <button id="login_button" type="submit" class="btn btn-primary" form="login_form">Login</button>
+        <br>
+        <div class="col">
+            <button id="login_button" type="submit" class="btn btn-default" form="login_form">Login</button>
+        </div>
     </form>
 </div>
 
