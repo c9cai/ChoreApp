@@ -9,6 +9,8 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var home = require('./routes/home');
+var no_home = require('./routes/home');
+var choose_chores = require('./routes/choose_chores');
 var roommate_chores = require('./routes/roommate_chores');
 var scores = require('./routes/scores');
 var preferences = require('./routes/preferences');
@@ -45,6 +47,8 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', login.viewLogin);
 app.get('/home', home.viewHome);
+app.get('/no_home', home.viewNoHome);
+app.get('/choose_chores', choose_chores.viewChores);
 app.get('/roommate_chores', roommate_chores.viewChores);
 app.get('/scores', scores.viewScores);
 app.get('/scoreData', scores.jsonScores);

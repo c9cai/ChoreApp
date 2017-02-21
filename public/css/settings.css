@@ -2,7 +2,7 @@
 
 fieldset, label { margin: 0; padding: 0; }
 
-.btn-default:not(.dropdown-toggle) {
+.btn-default:not(.dropdown-toggle):not(#logout-button) {
   border-radius: 8px;
   border-color: #b3b3b3 #404040 #404040 #b3b3b3;
   background-color: #ffffff;
