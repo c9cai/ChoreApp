@@ -1,0 +1,250 @@
+{
+  "users" : {
+    "brian_chao": {
+      "firstName": "brian",
+      "lastName": "chao",
+      "username": "brian",
+      "password": "chao",
+      "rating": 61,
+      "email": "email@gmail.com",
+      "homeName": "testHome",
+      "overdue": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/4/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/5/2016"
+        }
+      ],
+      "today": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/9/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/9/2016"
+        }
+      ],
+      "upcoming": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/13/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/14/2016"
+        }
+      ],
+      "completed": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/1/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/2/2016"
+        }
+      ]
+    },
+    "noah_lee": {
+      "firstName": "noah",
+      "lastName": "lee",
+      "username": "noah",
+      "password": "lee",
+      "rating": 61,
+      "email": "email@gmail.com",
+      "homeName": "testHome",
+      "overdue": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/4/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/5/2016"
+        }
+      ],
+      "today": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/9/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/9/2016"
+        }
+      ],
+      "upcoming": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/13/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/14/2016"
+        }
+      ],
+      "completed": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/1/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/2/2016"
+        }
+      ]
+    },
+    "alia_awni": {
+      "firstName": "alia",
+      "lastName": "awni",
+      "username": "alia",
+      "password": "awni",
+      "rating": 61,
+      "email": "email@gmail.com",
+      "homeName": "testHome",
+      "overdue": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/4/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/5/2016"
+        }
+      ],
+      "today": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/9/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/9/2016"
+        }
+      ],
+      "upcoming": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/13/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/14/2016"
+        }
+      ],
+      "completed": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/1/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/2/2016"
+        }
+      ]
+    },
+    "chris_cai": {
+      "firstName": "chris",
+      "lastName": "cai",
+      "username": "chris",
+      "password": "cai",
+      "rating": 61,
+      "email": "email@gmail.com",
+      "homeName": "testHome",
+      "overdue": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/4/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/5/2016"
+        }
+      ],
+      "today": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/9/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/9/2016"
+        }
+      ],
+      "upcoming": [
+        {
+          "chorename": "Wash Dishes",
+          "duedate": "2/13/2016"
+        },
+        {
+          "chorename": "Sweep Patio",
+          "duedate": "2/14/2016"
+        }
+      ],
+      "completed": [
+        {
+          "chorename": "Take Out Trash",
+          "duedate": "2/1/2016"
+        },
+        {
+          "chorename": "Check Mail",
+          "duedate": "2/2/2016"
+        }
+      ]
+    }},
+  //contains chore information and helps create chore schedule in "users"
+  "chores":
+  {
+    "testHome": {
+      "Wash Dishes": {
+        "choreName": "Wash Dishes",
+        "description": "Wash all the dishes and utensils in sink.",
+        "last_date": "2/21/2016",
+        "frequency": "1",
+        "1": "brian_chao",
+        "2": "alia_awni",
+        "3": "noah_lee",
+        "4": "chris_cai"
+      },
+      "Sweep Patio": {
+        "choreName": "Sweep Patio",
+        "description": "Sweep off all leaves and throw away trash on patio",
+        "last_date": "2/21/2016",
+        "frequency": "7",
+        "1": "brian_chao",
+        "2": "alia_awni",
+        "3": "noah_lee",
+        "4": "chris_cai"
+      },
+      "Take Out Trash": {
+        "choreName": "Take Out Trash",
+        "description": "Take out trash from kitchen garbage can",
+        "last_date": "2/21/2016",
+        "frequency": "2",
+        "1": "brian_chao",
+        "2": "alia_awni",
+        "3": "noah_lee",
+        "4": "chris_cai"
+      },
+      "Check Mail": {
+        "choreName": "Check Mail",
+        "description": "Get mail from leasing office/mailbox",
+        "last_date": "2/21/2016",
+        "frequency": "3",
+        "1": "brian_chao",
+        "2": "alia_awni",
+        "3": "noah_lee",
+        "4": "chris_cai"
+      }
+    }
+  },
+  "homes":
+  {
+    "testHome": ["brian_chao","alia_awni","noah_lee","chris_cai"]
+  }
+
+}
