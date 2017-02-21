@@ -1,0 +1,38 @@
+{
+  //contains user info and what home they are associated with
+  "users" : [{
+    //"username_password is the key to grab user data"
+    "username_password": {
+      "firstName": "",
+      "lastName": "",
+      "username": "",
+      "password": "",
+      "rating": "",
+      "email": "",
+      //this will link each user to "homes" data
+      "homeName": "",
+      //below contains each user's chore schedule
+      "overdue": {},
+      "today": {},
+      "upcoming": {},
+      "completed": {}
+    }}
+  ],
+  //contains chore information and helps create chore schedule in "users"
+  "chores": [
+    {
+      "homeName": {
+        "chore1": {
+          "choreName": "",
+          "description": "",
+          //last date and frequency will help create chore schedule
+          "last_date": "",
+          "frequency": "",
+          //indexes below are used to determine who does the chore next
+          "1": "user",
+          "2": "user",
+          "3": "user"
+        }
+      }
+    }]
+}
