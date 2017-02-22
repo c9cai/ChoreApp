@@ -256,6 +256,25 @@ ref.set(
                 "noahlee@gmail.com",
                 "chriscai@gmail.com"
             ]
+        },
+        "defaultChores": {
+            "Kitchen": [
+                "Wash Dishes",
+                "Swiffer Kitchen Floor",
+                "Wipe Kitchen Counter",
+                "Clean Fridge",
+                "Throw Out Trash"
+            ],
+            "Living Room": [
+                "Vacuum",
+                "Wipe Dining Table",
+                "Organize Shoerack"
+            ],
+            "Bathroom": [
+                "Clean Toilet",
+                "Wipe Bathroom Sink",
+                "Replace Toilet Paper"
+            ],
         }
     }
 );
@@ -265,22 +284,28 @@ var userRef = firebase.database().ref("users");
 //local files
 var current_user = require("../json/current_user.json");
 
-exports.checkLogin = function(req, res) {
-    var username = req.body.username.replace(".","");
+exports.checkLogin = function (req, res) {
+    var username = req.body.username.replace(".", "");
     var password = req.body.password;
     var check = false;
 
-    userRef.once("value", function(snapshot) {
+    userRef.once("value", function (snapshot) {
         var user_data = snapshot.val();
 
         if (user_data[username] != null) {
             if (user_data[username]['password'] == password) {
                 check = true;
                 current_user['current_user'] = user_data[username];
-                res.redirect("/home");
+
+                if (user_data[username]['homeName'] == null)
+                    res.redirect('no_home');
+                else
+                    res.redirect("/home");
             } else
                 res.render('login');
-        } else
-            res.render('login');
+        } else {
+            var rendData = {"error1": "<p class=\"alert alert-warning\">Invalid Login</p>"};
+            res.render('login', rendData);
+        }
     });
 };

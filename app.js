@@ -64,6 +64,7 @@ app.post('/done_chore', done_chore.doneChore);
 app.post('/logout', logout.logOut);
 app.post('/save_preferences', save_preferences.savePreferences);
 app.post('/sign_up', signup.createUser);
+app.post('/create_home', home.createHome);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
