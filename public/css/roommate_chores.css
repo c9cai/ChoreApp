@@ -1,4 +1,4 @@
-.btn-default:not(.dropdown-toggle):not(#logout-button) {
+.btn-default:not(#hamburger):not(#logout-button) {
 	border-radius: 8px;
 	border-color: #b3b3b3 #404040 #404040 #b3b3b3;
 	background-color: #ffffff;

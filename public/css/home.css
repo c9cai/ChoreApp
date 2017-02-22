@@ -3,6 +3,55 @@ hr {
     border-top: 1px solid #000;
 }
 
+#side-nav {
+    width: 0px; 
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top, but after the top nav bar */
+    top: 0;
+    left: 0;
+    background-color: #222; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 75px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #00b3b3;
+}
+
+.sidenav h4 {
+    color: #00b3b3;
+    padding: 8px 8px 8px 32px;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
 .glyphicon-remove {
     color: red;
     margin-left:15px;
@@ -107,6 +156,7 @@ hr {
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
+    z-index: 2;
     margin-bottom: 0;
     border-radius: 0;
     height: 75px;
@@ -122,19 +172,8 @@ hr {
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {height: 450px}
 
-/* Set gray background color and 100% height */
-.sidenav {
-    padding-top: 20px;
-    background-color: #f1f1f1;
-    height: 100%;
-}
-
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 480px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
-    }
     .row.content {height:auto;}
     
     #app-name {

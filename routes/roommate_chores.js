@@ -7,19 +7,20 @@ var homeRef = firebase.database().ref("homes");
 //local files
 var current_user = require("../json/current_user.json");
 
-exports.viewChores = function(req, res) {
+exports.viewChores = function (req, res) {
+
     if (current_user['current_user'] != null) {
         var rendData = {};
         rendData['users'] = {};
 
         var email = current_user['current_user']['email'];
-        email = email.replace(".","");
+        email = email.replace(".", "");
 
         var homeName = current_user['current_user']['homeName'];
         var users = [];
 
         //get users in home
-        homeRef.once("value", function(snapshot) {
+        homeRef.once("value", function (snapshot) {
             var home_data = snapshot.val();
 
             for (var user in home_data[homeName]) {
@@ -28,19 +29,19 @@ exports.viewChores = function(req, res) {
         });
 
         //get rating and chores of each user
-        userRef.once("value", function(snapshot) {
+        userRef.once("value", function (snapshot) {
             var user_data = snapshot.val();
             rendData['rating'] = user_data[email]['rating'];
 
             for (var user in users) {
-                email = users[user].replace(".","");
-                console.log(user_data[email]);
+                email = users[user].replace(".", "");
                 rendData['users'][email] = user_data[email];
             }
 
-            console.log(rendData);
-            res.render('roommate_chores', rendData);
+            res.render('roommate_chores',rendData);
         });
-    } else
+    }
+    else {
         res.render('login');
+    }
 };

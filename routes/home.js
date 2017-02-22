@@ -19,10 +19,14 @@ exports.viewHome = function(req, res) {
             else
                 res.render("login");
 
+            //if (make check to see if user is not in a house) {
+            //    res.render('no_home');
+            //}
         });
     } else {
         res.render('login');
     }
+
 };
 
 exports.jsonHome = function(req, res) {
