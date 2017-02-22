@@ -30,7 +30,8 @@ exports.createUser = function (req, res) {
                     "firstName": firstName,
                     "lastName": lastName,
                     "email": email,
-                    "password": password
+                    "password": password,
+                    "rating": 61
                 };
 
                 current_user['current_user'] = userUpdate[authEmail];

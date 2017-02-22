@@ -57,8 +57,14 @@ exports.createHome = function(req, res) {
            else {
                var updateHome = {};
                var email = current_user['current_user']['email'];
+               var authEmail = email.replace(".","");
                updateHome[homeName] = [email];
                homeRef.update(updateHome);
+
+               current_user['current_user']['homeName'] = homeName;
+
+               var cuRef = userRef.child(authEmail);
+               cuRef.set(current_user['current_user']);
 
                res.redirect('choose_chores_initial');
            }
