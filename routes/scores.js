@@ -16,20 +16,27 @@ firebase.database().ref('users').once('value').then(function(snapshot) {
 
 exports.viewScores = function(req, res) {
     //console.log(current_user['current_user']['email'].replace(".",""));
-    var data = [];
-    for (user in user_data) {
-      //console.log(user);
-      if (user == current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
-    }
+    
+    if (current_user['current_user'] != null) {
 
-    for (user in user_data) {
-      if (user != current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
-    }
+      var data = [];
+      for (user in user_data) {
+        //console.log(user);
+        if (user == current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
+      }
 
-  	rendData = {};
-  	rendData['users'] = data;
-    console.log(rendData);
-  	res.render('scores', rendData);
+      for (user in user_data) {
+        if (user != current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
+      }
+
+      rendData = {};
+      rendData['users'] = data;
+      console.log(rendData);
+      res.render('scores', rendData);
+    }
+    else {
+      res.render('login');
+    }
   	
 };
 

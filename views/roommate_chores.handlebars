@@ -16,21 +16,9 @@
     <div class="row">
         <div class="col-xs-2 col-md-1">
             <div class="navbar-header">
-                <button style="font-size: 250%;" class="btn-transparent btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                <button id="hamburger" style="font-size: 250%;" class="btn-transparent btn-default" type="button" onclick="toggleNav()">
                     <span class="glyphicon glyphicon-menu-hamburger"></span>
                 </button>
-                <ul class="dropdown-menu">
-                    <li><a href="/home"><span class="glyphicon glyphicon-home"></span>&nbsp; My Chores</a></li>
-                    <li><a href="/roommate_chores"><span class="glyphicon glyphicon-user"></span>&nbsp; Roommates' Chores</a></li>
-                    <li><a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; Scores</a></li>
-                    <li><a href="/preferences"><span class="glyphicon glyphicon-heart"></span>&nbsp; Preferences</a></li>
-                    <li><a href="/settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp; Settings</a></li>
-                    <li>
-                        <form id="logout" method="post" action="/logout">
-                            <button type="submit" class="btn btn-default" id="logout-button" form="logout">Log Out</button>
-                        </form>
-                    </li>
-                </ul>
             </div>
         </div>
         <div class="col-xs-3 col-md-6">
@@ -51,6 +39,25 @@
     </div>
 </nav>
 
+<div id="side-nav" class="sidenav">
+    <div class="row">
+        <h4>Hi, {{firstName}}</h4>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+    </div>
+    <a href="/home"><span class="glyphicon glyphicon-home"></span>&nbsp; My Chores</a>
+    <a href="/roommate_chores"><span class="glyphicon glyphicon-user"></span>&nbsp; Roommates' Chores</a>
+    <a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; Scores</a>
+    <a href="/preferences"><span class="glyphicon glyphicon-heart"></span>&nbsp; Preferences</a>
+    <a href="/settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp; Settings</a>
+    <div class="divider"></div>
+    <form id="logout" method="post" action="/logout">
+        <button type="submit" class="btn btn-default" id="logout-button" form="logout">Log Out</button>
+    </form>
+</div>
+
+
+
+
 <div class="container-fluid text-center">
     <h1 class="text-center">Roommates' Chores</h1>
     <div class="row">
@@ -59,15 +66,15 @@
     </div>
     <br/>
     <div class="container-fluid">
-        <h4 class="time-titles">Overdue</h4>
+        <h4 class="time-titles overdue-title">Overdue</h4>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
                 <div class="carousel">
                     {{#each users}}
                         {{#each overdue}}
                         <div>
-                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                            <button disabled type="button" class="btn btn-lg chore-buttons overdue-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}
@@ -84,7 +91,7 @@
                         {{#each today}}
                         <div>
                             <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}
@@ -101,7 +108,7 @@
                         {{#each upcoming}}
                         <div>
                             <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}
@@ -118,7 +125,7 @@
                         {{#each completed}}
                         <div>
                             <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}
