@@ -1,8 +1,6 @@
 //firebase
 var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
-var userRef = firebase.database().ref("users");
-var homeRef = firebase.database().ref("homes");
 var ref = firebase.database().ref();
 
 //local files
