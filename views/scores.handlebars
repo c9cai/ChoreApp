@@ -42,13 +42,18 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Score', "Points"],
-          ['Has', {{rating}}],
-          ['Needs', 100-{{rating}}]
-        ]);2
+          ['Score', {{rating}}],
+          ['Missing', 100-{{rating}}]
+        ]);
 
         var options = {
           title: '{{firstName}}',
           pieHole: 0.4,
+          legend: 'none',
+          slices: {
+            0: { color: '#00b3b3' },
+            1: { color: 'grey' }
+          }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('{{firstName}}'));
@@ -110,7 +115,7 @@
 
 {{#each users}}
 {{#if @first}}
-<div id="{{firstName}}" style="width: 900px; height: 500px; margin: 0 auto"></div>
+<div id="{{firstName}}" style="width: 900px; height: 500px; margin: auto"></div>
 <div>
 {{else}}
     <div id="{{firstName}}" class="pie_child" style="width: 450px; height: 250px"></div>
@@ -119,7 +124,7 @@
 {{/each}}
 
 
-<div id="curve_chart" style="margin: 0 auto"></div>
+<div id="curve_chart" style="margin: auto"></div>
 
 
 
