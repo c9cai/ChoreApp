@@ -59,15 +59,15 @@
     </div>
     <br/>
     <div class="container-fluid">
-        <h4 class="time-titles">Overdue</h4>
+        <h4 class="time-titles overdue-title">Overdue</h4>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-xs-12 carousel-container">
                 <div class="carousel">
                     {{#each users}}
                         {{#each overdue}}
                         <div>
-                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                            <button disabled type="button" class="btn btn-lg chore-buttons overdue-buttons" data-toggle="modal" data-target="#myModal">
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}
@@ -84,7 +84,7 @@
                         {{#each today}}
                         <div>
                             <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}
@@ -101,7 +101,7 @@
                         {{#each upcoming}}
                         <div>
                             <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}
@@ -118,7 +118,7 @@
                         {{#each completed}}
                         <div>
                             <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
-                                {{chorename}}</br>{{duedate}}</br>({{../username}})
+                                {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
                         {{/each}}

@@ -14,7 +14,7 @@ exports.doneChore = function(req, res) {
 
     if (user == "current_user") {
         var email = current_user['current_user']['email'];
-        var email = email.replace(".","");
+        email = email.replace(".","");
 
         //move chore to complete section
         var cuRef = userRef.child(email);
@@ -23,6 +23,7 @@ exports.doneChore = function(req, res) {
             var chore = cu_data[category][index];
             cu_data["completed"].push(chore);
             cu_data[category].splice(index,index+1);
+            cu_data["rating"] += 3;
             cuRef.set(cu_data);
         });
 

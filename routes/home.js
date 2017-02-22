@@ -9,9 +9,9 @@ var current_user = require("../json/current_user.json");
 exports.viewHome = function(req, res) {
     if (current_user['current_user'] != null) {
         var email = current_user['current_user']['email'];
-        var email = email.replace(".","");
+        email = email.replace(".","");
 
-        userRef.on("value", function(snapshot) {
+        userRef.once("value", function(snapshot) {
             var user_data = snapshot.val();
 
             if (user_data[email] != null)
