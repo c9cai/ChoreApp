@@ -1,8 +1,6 @@
 //firebase
-var firebase = require('firebase').initializeApp({
-    serviceAccount: "./ChoreApp-d6f6f8302527.json",
-    databaseURL: "https://choreapp-ed3c0.firebaseio.com"
-});
+var firebaseModule = require('../routes/firebase');
+var firebase = firebaseModule.firebase;
 
 var userRef = firebase.database().ref("users");
 
@@ -14,8 +12,6 @@ exports.checkLogin = function(req, res) {
     var password = req.body.password;
     var check = false;
 
-    console.log("check login");
-
     userRef.on("value", function(snapshot) {
         var user_data = snapshot.val();
 
@@ -23,8 +19,6 @@ exports.checkLogin = function(req, res) {
             if (user_data[username]['password'] == password) {
                 check = true;
                 current_user['current_user'] = user_data[username];
-
-                console.log("login success");
                 res.redirect("/home");
             } else
                 res.render('login');

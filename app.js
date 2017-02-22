@@ -19,6 +19,7 @@ var login = require('./routes/login');
 var check_login = require('./routes/check_login');
 var done_chore = require('./routes/done_chore');
 var logout = require('./routes/logout');
+var firebase = require('./routes/firebase');
 // Example route
 // var user = require('./routes/user');
 
