@@ -1,18 +1,34 @@
-var chore_data = require("../json/chore_schedule.json");
-var user_data = require("../json/users.json");
+var current_user = require("../json/current_user.json");
+
+var firebaseModule = require('../routes/firebase');
+var firebase = firebaseModule.firebase;
+
+var userdata = []
+
+firebase.database().ref('users').once('value').then(function(snapshot) {
+  
+
+  user_data = snapshot.val();
+  //console.log(user_data);
+
+
+});
 
 exports.viewScores = function(req, res) {
-		var data = [];
-		for (user in user_data) {
-			if (user_data[user]['firstName'] == chore_data['current_user']['firstName']) data.push(user_data[user]);
-  	}
+    //console.log(current_user['current_user']['email'].replace(".",""));
+    var data = [];
+    for (user in user_data) {
+      //console.log(user);
+      if (user == current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
+    }
 
-		for (user in user_data) {
-			if (user_data[user]['firstName'] != chore_data['current_user']['firstName']) data.push(user_data[user]);
-  	}
+    for (user in user_data) {
+      if (user != current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
+    }
 
   	rendData = {};
   	rendData['users'] = data;
+    console.log(rendData);
   	res.render('scores', rendData);
   	
 };

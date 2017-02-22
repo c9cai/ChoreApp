@@ -12,7 +12,7 @@ exports.checkLogin = function(req, res) {
     var password = req.body.password;
     var check = false;
 
-    userRef.on("value", function(snapshot) {
+    userRef.once("value", function(snapshot) {
         var user_data = snapshot.val();
 
         if (user_data[username] != null) {
