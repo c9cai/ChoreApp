@@ -4,6 +4,8 @@
 $(document).ready(function() {
 	
 	initializePage();
+    document.getElementById("side-nav").style.width = "0px";
+
 
 	//carousel css
     $(".carousel").slick({
@@ -40,6 +42,15 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+}
+
+function toggleNav() {
+    if (document.getElementById("side-nav").style.width == "0px") {
+        document.getElementById("side-nav").style.width = "250px";
+    }
+    else {
+        document.getElementById("side-nav").style.width = "0px";
+    }
 }
 
 function updateScoreBar(change) {

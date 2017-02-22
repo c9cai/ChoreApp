@@ -2,18 +2,26 @@ var chore_data = require("../json/chore_schedule.json");
 var user_data = require("../json/users.json");
 
 exports.viewScores = function(req, res) {
-		var data = [];
-		for (user in user_data) {
-			if (user_data[user]['firstName'] == chore_data['current_user']['firstName']) data.push(user_data[user]);
-  	}
+    if (chore_data['current_user'] != null) {
 
-		for (user in user_data) {
-			if (user_data[user]['firstName'] != chore_data['current_user']['firstName']) data.push(user_data[user]);
-  	}
+        var data = [];
 
-  	rendData = {};
-  	rendData['users'] = data;
-  	res.render('scores', rendData);
+        for (user in user_data) {
+        	if (user_data[user]['firstName'] == chore_data['current_user']['firstName']) data.push(user_data[user]);
+        }
+
+        for (user in user_data) {
+        	if (user_data[user]['firstName'] != chore_data['current_user']['firstName']) data.push(user_data[user]);
+        }
+
+        rendData = {};
+        rendData['users'] = data;
+        rendData['username'] = chore_data['current_user']['username'];
+        res.render('scores', rendData);
+    }
+    else {
+      res.render('login');
+    }
   	
 };
 

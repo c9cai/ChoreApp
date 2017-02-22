@@ -3,6 +3,8 @@ var chore_data = require("../json/chore_schedule.json");
 
 exports.viewChores = function(req, res) {
     if (chore_data['current_user'] != null) {
+
+
         rendData = {};
         rendData["users"] = {};
 
@@ -10,6 +12,7 @@ exports.viewChores = function(req, res) {
         var username = chore_data['current_user']['username'];
         var password = chore_data['current_user']['password'];
         rendData['rating'] = user_data[username + "_" + password]['rating'];
+        rendData['username'] = username;
 
         currentUser = chore_data['current_user']['username'];
         for (var user in chore_data) {
@@ -19,6 +22,8 @@ exports.viewChores = function(req, res) {
         }
 
         res.render('roommate_chores', rendData);
-    } else
+    }
+    else {
         res.render('login');
+    }
 };
