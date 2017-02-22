@@ -1,36 +1,31 @@
-var chore_data = require("../json/chore_schedule.json");
-var user_data = require("../json/users.json");
+//local files
+var current_user = require("../json/current_user.json");
 
 exports.viewHome = function(req, res) {
-    if (chore_data['current_user'] != null) {
-
-        var username = chore_data['current_user']['username'];
-        var password = chore_data['current_user']['password'];
-        var rendData = chore_data[username];
+    if (current_user['current_user'] != null) {
+        var email = current_user['current_user']['email'];
+        console.log('email');
 
         //if (make check to see if user is not in a house) {
         //    res.render('no_home');
         //}
 
-        rendData['rating'] = user_data[username + "_" + password]['rating'];
-        rendData['username'] = username;
-        res.render('home', rendData);
-    }
-    else {
+        res.render('login');
+    } else {
         res.render('login');
     }
 
 };
 
 exports.jsonHome = function(req, res) {
-    res.json(chore_data);
+    res.json(current_user);
 };
 
 
 //Can be deleted when the viewHome function is updated to reroute to no_home when appropriate
 exports.viewNoHome = function(req, res) {
-    var username = chore_data['current_user']['username'];
-    var password = chore_data['current_user']['password'];
+    var username = current_user['current_user']['username'];
+    var password = current_user['current_user']['password'];
     var rendData = {};
     rendData['username'] = username;
 

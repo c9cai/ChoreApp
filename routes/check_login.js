@@ -1,23 +1,28 @@
-var user_data = require("../json/users.json");
-var chore_data = require("../json/chore_schedule.json");
+//firebase
+var firebaseModule = require('../routes/firebase');
+var firebase = firebaseModule.firebase;
+
+var userRef = firebase.database().ref("users");
+
+//local files
+var current_user = require("../json/current_user.json");
 
 exports.checkLogin = function(req, res) {
-    var username = req.body.username;
+    var username = req.body.username.replace(".","");
     var password = req.body.password;
     var check = false;
 
-    //check valid username password
-    if (username != null && password != null) {
+    userRef.on("value", function(snapshot) {
+        var user_data = snapshot.val();
 
-        if (user_data[username + "_" + password] != null) {
-            check = true;
-            chore_data['current_user'] = user_data[username + "_" + password];
-            res.redirect("/home");
-        }
-    } else {
-        res.render('login');
-    }
-
-    if (!check)
-        res.render('login');
+        if (user_data[username] != null) {
+            if (user_data[username]['password'] == password) {
+                check = true;
+                current_user['current_user'] = user_data[username];
+                res.redirect("/home");
+            } else
+                res.render('login');
+        } else
+            res.render('login');
+    });
 };
