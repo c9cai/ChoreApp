@@ -7,6 +7,7 @@
       "rating": 61,
       "email": "brianchao@gmail.com",
       "homeName": "testHome",
+      "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
       "overdue": [
         {
           "chorename": "Wash Dishes",
@@ -55,6 +56,7 @@
       "rating": 61,
       "email": "noahlee@gmail.com",
       "homeName": "testHome",
+      "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
       "overdue": [
         {
           "chorename": "Wash Dishes",
@@ -103,6 +105,7 @@
       "rating": 61,
       "email": "aliaawni@gmail.com",
       "homeName": "testHome",
+      "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
       "overdue": [
         {
           "chorename": "Wash Dishes",
@@ -151,6 +154,7 @@
       "rating": 61,
       "email": "chriscai@gmail.com",
       "homeName": "testHome",
+      "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
       "overdue": [
         {
           "chorename": "Wash Dishes",

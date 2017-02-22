@@ -14,6 +14,7 @@ ref.set(
                 "rating": 61,
                 "email": "brianchao@gmail.com",
                 "homeName": "testHome",
+                "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
                 "overdue": [
                     {
                         "chorename": "Wash Dishes",
@@ -53,12 +54,6 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
-                ],
-                "preferences": [                  
-                        "Check Mail",
-                        "Sweep Patio",
-                        "Take Out Trash",
-                        "Wash Dishes"
                 ]
             },
             "noahlee@gmailcom": {
@@ -68,6 +63,7 @@ ref.set(
                 "rating": 61,
                 "email": "noahlee@gmail.com",
                 "homeName": "testHome",
+                "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
                 "overdue": [
                     {
                         "chorename": "Wash Dishes",
@@ -107,12 +103,6 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
-                ],
-                "preferences": [
-                        "Check Mail",
-                        "Sweep Patio",
-                        "Take Out Trash",
-                        "Wash Dishes",
                 ]
             },
             "aliaawni@gmailcom": {
@@ -122,6 +112,7 @@ ref.set(
                 "rating": 61,
                 "email": "aliaawni@gmail.com",
                 "homeName": "testHome",
+                "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
                 "overdue": [
                     {
                         "chorename": "Wash Dishes",
@@ -161,12 +152,6 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
-                ],
-                "preferences": [
-                        "Check Mail",
-                        "Sweep Patio",
-                        "Take Out Trash",
-                        "Wash Dishes",
                 ]
             },
             "chriscai@gmailcom": {
@@ -176,6 +161,7 @@ ref.set(
                 "rating": 61,
                 "email": "chriscai@gmail.com",
                 "homeName": "testHome",
+                "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
                 "overdue": [
                     {
                         "chorename": "Wash Dishes",
@@ -215,12 +201,6 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
-                ],
-                "preferences": [
-                        "Sweep Patio",
-                        "Check Mail",
-                        "Take Out Trash",
-                        "Wash Dishes",
                 ]
             }
         },
