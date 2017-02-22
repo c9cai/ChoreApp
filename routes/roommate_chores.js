@@ -15,8 +15,8 @@ exports.viewChores = function (req, res) {
 
         var email = current_user['current_user']['email'];
         email = email.replace(".", "");
-
         var homeName = current_user['current_user']['homeName'];
+        rendData['firstName'] = current_user['current_user']['firstName'];
         var users = [];
 
         //get users in home
