@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ef589492-a25b-49a7-8615-3271baa6d11e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/check_login.js" afterPath="$PROJECT_DIR$/routes/check_login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/firebase.js" afterPath="$PROJECT_DIR$/routes/firebase.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/done_chore.js" afterPath="$PROJECT_DIR$/routes/done_chore.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/home.js" afterPath="$PROJECT_DIR$/routes/home.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roommate_chores.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/roommate_chores.js">
+      <file leaf-file-name="done_chore.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/done_chore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,8 +46,18 @@
       <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+            <state relative-caret-position="240">
+              <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="no_home.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/no_home.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,8 +86,8 @@
       <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/json/data.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="207" column="8" lean-forward="true" selection-start-line="207" selection-start-column="8" selection-end-line="207" selection-end-column="8" />
+            <state relative-caret-position="330">
+              <caret line="195" column="25" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="248" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -94,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="check_login.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="check_login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/check_login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+            <state relative-caret-position="279">
+              <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -181,16 +190,16 @@
         <option value="$PROJECT_DIR$/views/scores.handlebars" />
         <option value="$PROJECT_DIR$/routes/settings.js" />
         <option value="$PROJECT_DIR$/views/home.handlebars" />
-        <option value="$PROJECT_DIR$/routes/done_chore.js" />
         <option value="$PROJECT_DIR$/views/roommate_chores.handlebars" />
         <option value="$PROJECT_DIR$/routes/roommate_chores.js" />
         <option value="$PROJECT_DIR$/json/current_user.json" />
         <option value="$PROJECT_DIR$/json/data.json" />
         <option value="$PROJECT_DIR$/routes/login.js" />
-        <option value="$PROJECT_DIR$/routes/home.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/firebase.js" />
+        <option value="$PROJECT_DIR$/routes/home.js" />
         <option value="$PROJECT_DIR$/routes/check_login.js" />
+        <option value="$PROJECT_DIR$/routes/done_chore.js" />
       </list>
     </option>
   </component>
@@ -422,12 +431,12 @@
       <workItem from="1487030825719" duration="278000" />
       <workItem from="1487095231796" duration="27711000" />
       <workItem from="1487355346819" duration="1224000" />
-      <workItem from="1487713794423" duration="9347000" />
+      <workItem from="1487713794423" duration="12363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61681000" />
+    <option name="totallyTimeSpent" value="64697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -459,18 +468,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/json/chore_schedule.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/home.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -584,14 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/done_chore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/settings.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -648,6 +643,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/json/users.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -656,34 +659,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/home.js">
+    <entry file="file://$PROJECT_DIR$/views/no_home.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/json/data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="207" column="8" lean-forward="true" selection-start-line="207" selection-start-column="8" selection-end-line="207" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        <state relative-caret-position="330">
+          <caret line="195" column="25" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="248" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -696,10 +683,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/check_login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+        <state relative-caret-position="279">
+          <caret line="266" column="22" lean-forward="true" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/done_chore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

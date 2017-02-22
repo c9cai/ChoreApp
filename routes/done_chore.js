@@ -1,5 +1,10 @@
-var chore_data = require("../json/chore_schedule.json");
-var user_data = require("../json/users.json");
+//firebase
+var firebaseModule = require('../routes/firebase');
+var firebase = firebaseModule.firebase;
+var userRef = firebase.database().ref("users");
+
+//local files
+var current_user = require("../json/current_user.json");
 
 exports.doneChore = function(req, res) {
     var category = req.body.category;
@@ -8,25 +13,19 @@ exports.doneChore = function(req, res) {
     var user = req.body.user;
 
     if (user == "current_user") {
-        var username = chore_data['current_user']['username'];
-        var password = chore_data['current_user']['password'];
-        var data = chore_data[username];
+        var email = current_user['current_user']['email'];
+        var email = email.replace(".","");
 
-        //add chore to completed
-        var chore = data[category][index];
-        data["completed"].push(chore);
+        //move chore to complete section
+        var cuRef = userRef.child(email);
+        cuRef.once("value", function(snapshot) {
+            var cu_data = snapshot.val();
+            var chore = cu_data[category][index];
+            cu_data["completed"].push(chore);
+            cu_data[category].splice(index,index+1);
+            cuRef.set(cu_data);
+        });
 
-        //remove chore
-        data[category].splice(index,index+1);
-
-        //upgrade rating
-        if (category == "overdue") {
-            user_data[username + "_" + password]['rating'] -= 5;
-        }
-        else {
-            user_data[username + "_" + password]['rating'] += 3;
-        }
-        
         //reload home page
         res.redirect(redirect);
     }

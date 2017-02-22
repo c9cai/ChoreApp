@@ -1,12 +1,25 @@
+//firebase
+var firebaseModule = require('../routes/firebase');
+var firebase = firebaseModule.firebase;
+var userRef = firebase.database().ref("users");
+
 //local files
 var current_user = require("../json/current_user.json");
 
 exports.viewHome = function(req, res) {
     if (current_user['current_user'] != null) {
         var email = current_user['current_user']['email'];
-        console.log('email');
+        var email = email.replace(".","");
 
-        res.render('login');
+        userRef.on("value", function(snapshot) {
+            var user_data = snapshot.val();
+
+            if (user_data[email] != null)
+                res.render('home', user_data[email]);
+            else
+                res.render("login");
+
+        });
     } else {
         res.render('login');
     }
@@ -25,6 +38,4 @@ exports.viewNoHome = function(req, res) {
     rendData['username'] = username;
 
     res.render('no_home', rendData);
-
-
 };
