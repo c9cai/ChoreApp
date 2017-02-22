@@ -194,3 +194,7 @@ hr {
     display: inline-block;
     vertical-align:top;
 }
+
+.hide {
+    {display:none;}
+}

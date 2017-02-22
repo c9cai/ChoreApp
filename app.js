@@ -20,6 +20,7 @@ var check_login = require('./routes/check_login');
 var done_chore = require('./routes/done_chore');
 var logout = require('./routes/logout');
 var firebase = require('./routes/firebase');
+var save_preferences = require('./routes/save_preferences');
 // Example route
 // var user = require('./routes/user');
 
@@ -60,6 +61,7 @@ app.get('/homeData', home.jsonHome);
 app.post('/check_login', check_login.checkLogin);
 app.post('/done_chore', done_chore.doneChore);
 app.post('/logout', logout.logOut);
+app.post('/save_preferences', save_preferences.savePreferences);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

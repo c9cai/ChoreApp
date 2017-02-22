@@ -53,6 +53,12 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
+                ],
+                "preferences": [                  
+                        "Check Mail",
+                        "Sweep Patio",
+                        "Take Out Trash",
+                        "Wash Dishes"
                 ]
             },
             "noahlee@gmailcom": {
@@ -101,6 +107,12 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
+                ],
+                "preferences": [
+                        "Check Mail",
+                        "Sweep Patio",
+                        "Take Out Trash",
+                        "Wash Dishes",
                 ]
             },
             "aliaawni@gmailcom": {
@@ -149,6 +161,12 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
+                ],
+                "preferences": [
+                        "Check Mail",
+                        "Sweep Patio",
+                        "Take Out Trash",
+                        "Wash Dishes",
                 ]
             },
             "chriscai@gmailcom": {
@@ -197,6 +215,12 @@ ref.set(
                         "chorename": "Check Mail",
                         "duedate": "2/2/2016"
                     }
+                ],
+                "preferences": [
+                        "Sweep Patio",
+                        "Check Mail",
+                        "Take Out Trash",
+                        "Wash Dishes",
                 ]
             }
         },
