@@ -27,6 +27,7 @@ var logout = require('./routes/logout');
 var firebase = require('./routes/firebase');
 var save_preferences = require('./routes/save_preferences');
 var signup = require('./routes/signup');
+var send_invites = require('./routes/send_invites');
 // Example route
 // var user = require('./routes/user');
 
@@ -75,6 +76,7 @@ app.post('/choose_chores_save', choose_chores_save.saveChores);
 app.post('/custom_chores_save', custom_chores_save.saveCustomChores);
 app.post('/sign_up', signup.createUser);
 app.post('/create_home', home.createHome);
+app.post('/send_invites', send_invites.sendInvites);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

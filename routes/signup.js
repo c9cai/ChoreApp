@@ -19,7 +19,7 @@ exports.createUser = function (req, res) {
     } else {
         user_ref.once("value", function (snapshot) {
             var user_data = snapshot.val();
-            var authEmail = email.replace(".", "");
+            var authEmail = email.split('.').join('');
 
             if (user_data[authEmail] != null) {
                 rendData = {"error2": "<p class=\"alert alert-warning\">Email already being used</p>"};

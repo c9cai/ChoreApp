@@ -15,7 +15,8 @@
     <div class="row">
         <div class="col-xs-2 col-md-1">
             <div class="navbar-header">
-                <button id="hamburger" style="font-size: 250%;" class="btn-transparent btn-default" type="button" onclick="toggleNav()">
+                <button id="hamburger" style="font-size: 250%;" class="btn-transparent btn-default" type="button"
+                        onclick="toggleNav()">
                     <span class="glyphicon glyphicon-menu-hamburger"></span>
                 </button>
             </div>
@@ -37,11 +38,11 @@
 </div>
 
 
-
 <div class="container-fluid text-center">
     <h1 class="text-center">Creating house {{homeName}}...</h1>
     <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+            <hr>
         </div>
     </div>
     <div class="container-fluid">
@@ -50,28 +51,24 @@
             <h3>Have them create ChoreHero accounts, and list their emails here.</h3>
         </div>
         <br>
-        <form id="add_housemate_form" method="get" action="/choose_chores_initial" class="form-inline">
+        <form id="send_invites_form" method="post" action="/send_invites" class="form-inline">
             <div class="form-group">
                 <label>Enter an email:</label><input type="email" name="housemate_email" id="housemate_email"/>
             </div>
             <div class="form-group">
-                <button id="add_housemate_button" type="submit" class="btn btn-default" form="add_housemate_form">Add</button>
+                <button id="add_housemate_button" type="submit" class="btn btn-default" form="add_housemate_form">Add
+                </button>
             </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default" form="send_invites_form">Send Invites and Continue
+                </button>
+            </div>
+            <br>
+            <br>
+            <div id="invitees"></div>
         </form>
-        <br>
-        <div id="invitees">
-        </div>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-md-7 col-md-offset-5">
-                <form action="/choose_chores_initial">
-                    <button type="submit" class="btn btn-default">Send Invites and Continue</button>
-                </form>
-            </div>
-        </div>
     </div>
-    </div>
+    <br>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

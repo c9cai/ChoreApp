@@ -75,15 +75,15 @@ exports.createHome = function(req, res) {
     rendData['firstName'] = current_user['current_user']['firstName'];
 
     var homeName = req.body.homeName;
-    if (homeName == '')
+    if (homeName == '')//null home name
         res.render('no_home', rendData);
     else {
         homeRef.once("value", function(snapshot) {
            var home_data = snapshot.val();
 
-           if (home_data[homeName] != null)
+           if (home_data[homeName] != null) //home name taken
                res.render('no_home', rendData);
-           else {
+           else {//create home
                var updateHome = {};
                var email = current_user['current_user']['email'];
                var authEmail = email.replace(".","");
