@@ -37,7 +37,7 @@ exports.createUser = function (req, res) {
                 current_user['current_user'] = userUpdate[authEmail];
                 user_ref.update(userUpdate);
 
-                res.redirect('no_home');
+                res.redirect('home');
             }
         });
     }

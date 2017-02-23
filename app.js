@@ -10,6 +10,7 @@ var handlebars = require('express3-handlebars')
 
 var home = require('./routes/home');
 var no_home = require('./routes/home');
+var add_members = require('./routes/add_members');
 var choose_chores = require('./routes/choose_chores');
 var choose_chores_save = require('./routes/choose_chores_save');
 var choose_chores_initial = require('./routes/choose_chores_initial');
@@ -55,6 +56,7 @@ if ('development' == app.get('env')) {
 app.get('/', login.viewLogin);
 app.get('/home', home.viewHome);
 app.get('/no_home', home.viewNoHome);
+app.get('/add_members', add_members.viewAddMembers);
 app.get('/choose_chores', choose_chores.viewChores);
 app.get('/choose_chores_initial', choose_chores_initial.viewChores);
 app.get('/custom_chores', custom_chores.viewChores);
