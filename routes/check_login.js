@@ -258,23 +258,30 @@ ref.set(
             ]
         },
         "defaultChores": {
-            "Kitchen": [
-                "Wash Dishes",
-                "Swiffer Kitchen Floor",
-                "Wipe Kitchen Counter",
-                "Clean Fridge",
-                "Throw Out Trash"
-            ],
-            "Living Room": [
-                "Vacuum",
-                "Wipe Dining Table",
-                "Organize Shoerack"
-            ],
-            "Bathroom": [
-                "Clean Toilet",
-                "Wipe Bathroom Sink",
-                "Replace Toilet Paper"
-            ],
+            "Wash Dishes": {
+                "choreName": "Wash Dishes",
+                "description": "Wash all the dishes and utensils in sink.",
+                "last_date": "2/21/2016",
+                "frequency": "1",
+            },
+            "Sweep Patio": {
+                "choreName": "Sweep Patio",
+                "description": "Sweep off all leaves and throw away trash on patio",
+                "last_date": "2/21/2016",
+                "frequency": "7",
+            },
+            "Take Out Trash": {
+                "choreName": "Take Out Trash",
+                "description": "Take out trash from kitchen garbage can",
+                "last_date": "2/21/2016",
+                "frequency": "2",
+            },
+            "Check Mail": {
+                "choreName": "Check Mail",
+                "description": "Get mail from leasing office/mailbox",
+                "last_date": "2/21/2016",
+                "frequency": "3",
+            }
         }
     }
 );
