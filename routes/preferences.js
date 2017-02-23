@@ -7,19 +7,21 @@ firebase.database().ref('users').once('value').then(function(snapshot) {
   user_data = snapshot.val();
   console.log(user_data);
 });*/
+
+var user_data = [];
+var chore_data = [];
+
 var ref = firebase.database().ref('users');
 ref.on("value",function(snapshot) {
 	user_data = snapshot.val();
 });
 
-
-firebase.database().ref('chores').once('value').then(function(snapshot) {
+var ref2 = firebase.database().ref('chores');
+ref2.on('value',function(snapshot) {
   chore_data = snapshot.val();
-  //console.log(chore_data);
 });
 
-var user_dat = [];
-var chore_data = [];
+
 
 
 

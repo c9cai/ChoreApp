@@ -4,11 +4,28 @@
     <title>Chore Hero</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="css/home.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">    
     <link href="css/settings.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        function count() {
+            var selected = [];      
+            $('#kitchen-chores input:checked').each(function() {
+                selected.push($(this).attr('id'));
+            });
+            $('#livingroom-chores input:checked').each(function() {
+                selected.push($(this).attr('id'));
+            });
+            $('#bathroom-chores input:checked').each(function() {
+                selected.push($(this).attr('id'));
+            });
+            alert(selected.join('\n'));
+            $("#saveinput").val(selected);
+        }
+    </script>
 </head>
 <body>
 
@@ -38,44 +55,80 @@
 </div>
 
 <div class="container-fluid">
-    <h1 class="text-center">Creating House {{house_name}}...</h1>
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
         </div>
     </div>
 
+
     <div class="row text-center">
-        <h3>Choose which chores you would like to track</h3>
+        <h3>Here are some suggested chores:</h3>
     </div>
     <br>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2 col-xs-12"> 
-            <form class="form-horizontal" id="chores">
-                {{#each default_chores}}
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="checkbox">
-                        <label><input type="checkbox" class="active"  checked="checked">{{name}}</label>
-                        </div>
+            <!--<form class="form-horizontal" id="chores"> -->
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#kitchen-chores"><h4>Kitchen<span class="glyphicon glyphicon-menu-down" id="kitchen"></span></h4></button>
                     </div>
                 </div>
-                {{/each}}
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 checkbox collapse" id="kitchen-chores"> 
+                        {{#each Kitchen}}
+                            <label><input type="checkbox" class="active" checked="checked" id="{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#livingroom-chores"><h4>Living Room<span class="glyphicon glyphicon-menu-down" id="livingroom"></span></h4></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 checkbox collapse" id="livingroom-chores"> 
+                        {{#each LivingRoom}}
+                            <label><input type="checkbox" class="active" checked="checked" id="{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#bathroom-chores"><h4>Living Room<span class="glyphicon glyphicon-menu-down" id="bathroom"></span></h4></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 checkbox collapse" id="bathroom-chores"> 
+                        {{#each Bathroom}}
+                            <label><input type="checkbox" class="active" checked="checked" id="{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                </div>
+                <br>
+                            
                 <div class="form-group text-center"> 
                     <div class="col-md-6 col-md-offset-3">
-                        <button type="submit" class="btn btn-default">Next</button>
+                        <form class="form-horizontal" id="custom_chores" method="post" action="/choose_chores_save">
+                            <input type="text" class="hide" name="saveinput" id="saveinput"/>
+                            <button type="submit" class="btn btn-default" onclick="count()" form="custom_chores">Now Add Your Own Chores!</button>
+                        </form>
                     </div>
                 </div>
-            </form>
+            <!--</form>-->
         </div>
     </div>
     <br>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/home.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+    
 </div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/home.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
 
 </body>
 </html>

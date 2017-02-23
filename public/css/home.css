@@ -198,3 +198,12 @@ hr {
 .hide {
     {display:none;}
 }
+
+.center {
+    text-align: center;
+}
+
+.center-list {
+    display:table;
+    margin: 0 auto;
+}

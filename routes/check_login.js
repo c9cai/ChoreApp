@@ -276,6 +276,25 @@ ref.set(
                 "noahlee@gmail.com",
                 "chriscai@gmail.com"
             ]
+        },
+        "defaultChores": {
+            "Kitchen": [
+                "Wash Dishes",
+                "Swiffer Kitchen Floor",
+                "Wipe Kitchen Counter",
+                "Clean Fridge",
+                "Throw Out Trash"
+            ],
+            "Living Room": [
+                "Vacuum",
+                "Wipe Dining Table",
+                "Organize Shoerack"
+            ],
+            "Bathroom": [
+                "Clean Toilet",
+                "Wipe Bathroom Sink",
+                "Replace Toilet Paper"
+            ],
         }
     }
 );

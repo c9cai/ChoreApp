@@ -11,6 +11,10 @@ var handlebars = require('express3-handlebars')
 var home = require('./routes/home');
 var no_home = require('./routes/home');
 var choose_chores = require('./routes/choose_chores');
+var choose_chores_save = require('./routes/choose_chores_save');
+var choose_chores_initial = require('./routes/choose_chores_initial');
+var custom_chores = require('./routes/custom_chores');
+var custom_chores_save = require('./routes/custom_chores_save');
 var roommate_chores = require('./routes/roommate_chores');
 var scores = require('./routes/scores');
 var preferences = require('./routes/preferences');
@@ -51,6 +55,8 @@ app.get('/', login.viewLogin);
 app.get('/home', home.viewHome);
 app.get('/no_home', home.viewNoHome);
 app.get('/choose_chores', choose_chores.viewChores);
+app.get('/choose_chores_initial', choose_chores_initial.viewChores);
+app.get('/custom_chores', custom_chores.viewChores);
 app.get('/roommate_chores', roommate_chores.viewChores);
 app.get('/scores', scores.viewScores);
 app.get('/scoreData', scores.jsonScores);
@@ -62,6 +68,8 @@ app.post('/check_login', check_login.checkLogin);
 app.post('/done_chore', done_chore.doneChore);
 app.post('/logout', logout.logOut);
 app.post('/save_preferences', save_preferences.savePreferences);
+app.post('/choose_chores_save', choose_chores_save.saveChores);
+app.post('/custom_chores_save', custom_chores_save.saveCustomChores);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
