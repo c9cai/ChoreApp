@@ -26,7 +26,7 @@ exports.saveChores = function(req, res) {
 		var uname = current_user['current_user']['email'].replace(".","");
 
 		var home = user_data[uname]['homeName'];
-		var storeRef = firebase.database().ref('homes/' + home).set(fin);
+		var storeRef = firebase.database().ref('chores/' + home).set(fin);
 
     if (current_user['current_user'] != null) {
 

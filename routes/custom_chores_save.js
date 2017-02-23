@@ -45,7 +45,7 @@ exports.saveCustomChores = function(req, res) {
     var home = user_data[uname]['homeName'];
     console.log(prevData);
     console.log(fin);
-    var storeRef = firebase.database().ref('homes/' + home).set(prevData.concat(fin));
+    var storeRef = firebase.database().ref('chores/' + home).set(prevData.concat(fin));
 
     if (current_user['current_user'] != null) {
         var email = current_user['current_user']['email'];
