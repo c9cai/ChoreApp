@@ -17,7 +17,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.remove-invitee').on('click', function(e) {
+    $('#invitees').on('click', ".remove-invitee", function(e) {
         e.preventDefault();
         console.log("made it to remove clicked");
         $(this).parent().remove();
