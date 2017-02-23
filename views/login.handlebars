@@ -7,62 +7,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/home.css" rel="stylesheet">
+
+    <link href="css/login.css" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-    <h1 id="app-name-login" class="text-center">Chore Hero</h1>
-</nav>
-
 <div class="container-fluid text-center">
-    <h2 class="">Welcome to Chore Hero</h2>
+
     <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
-        </div>
-    </div>
-    <div class="row">
-        <h3>Login</h3>
+        <h1 id="app-name">ChoreHero</h1>
     </div>
     <div class="row">
         <form id="login_form" method="post" action="/check_login">
-            <label>Email: </label><input type="text" name="username"/>
+            <input type="text" name="username"/ placeholder="Email">
             <br>
-            <label>Password: </label><input type="password" name="password" />
+            </label><input type="password" name="password" placeholder="Password"/>
             <br>
             <br>
             <div class="col">
                 <button id="login_button" type="submit" class="btn btn-default" form="login_form">Login</button>
+                <button id="signup_button" type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">Sign Up</button>
             </div>
         </form>
+        <div id="demo" class="collapse">
+           <div class="row">
+                <div class="col-xs-10 col-md-8 col-md-offset-2"><hr>
+            </div>
+            </div>
+
+            <div class="row">
+                <h3>Sign Up</h3>
+            </div>
+            <div class="row">
+                <form id="sign_up_form" method="post" action="/sign_up">
+                    </label><input name="firstName" type="text" placeholder="First Name"/>
+                    <br>
+                    </label><input name="lastName" type="text" placeholder="Last Name"/>
+                    <br>
+                    </label><input type="text" name="email" placeholder="Your Email"/>
+                    <br>
+                    </label><input type="password" name="password" placeholder="Password"/>
+                    <br>
+                    <br>
+                    <div class="col">
+                        <button id="sign_up_button" type="submit" class="btn btn-default" form="sign_up_form">Sign Up</button>
+                    </div>
+                </form>
+        </div>
+
     </div>
     {{{error1}}}
     <br>
 
-    <div class="row">
-        <div class="col-xs-10 col-md-8 col-md-offset-2"><hr>
-        </div>
-    </div>
-
-    <div class="row">
-        <h3>Sign Up</h3>
-    </div>
-    <div class="row">
-        <form id="sign_up_form" method="post" action="/sign_up">
-            <label>First Name: </label><input name="firstName" type="text"/>
-            <br>
-            <label>Last Name: </label><input name="lastName" type="text"/>
-            <br>
-            <label>Email: </label><input type="text" name="email"/>
-            <br>
-            <label>Password: </label><input type="password" name="password" />
-            <br>
-            <br>
-            <div class="col">
-                <button id="sign_up_button" type="submit" class="btn btn-default" form="sign_up_form">Sign Up</button>
-            </div>
-        </form>
-    </div>
+    
 
     {{{error2}}}
 </div>
