@@ -15,14 +15,20 @@ exports.viewHome = function(req, res) {
         userRef.once("value", function(snapshot) {
             var user_data = snapshot.val();
 
-            if (user_data[email] != null)
-                res.render('home', user_data[email]);
-            else
-                res.render("login");
+            if (user_data[email] != null) { //there is a user logged in
+                if (user_data[email]['homeName'] != null) { 
+                    //the user belongs to a house
+                    res.render('home', user_data[email]);
+                }
+                else {
+                    //the user does not belong to a house yet
+                    res.redirect('no_home');
+                }
+            }
 
-            //if (make check to see if user is not in a house) {
-            //    res.render('no_home');
-            //}
+            else { //there is no user logged in
+                res.render("login");
+            }
         });
     } else {
         res.render('login');
@@ -35,11 +41,34 @@ exports.jsonHome = function(req, res) {
 };
 
 exports.viewNoHome = function(req, res) {
-    var rendData = {};
-    rendData['firstName'] = current_user['current_user']['firstName'];
+    if (current_user['current_user'] != null) {
+        var email = current_user['current_user']['email'];
+        email = email.replace(".","");
 
-    res.render('no_home', rendData);
+        userRef.once("value", function(snapshot) {
+            var user_data = snapshot.val();
+
+            if (user_data[email] != null) { //there is a user logged in
+                if (user_data[email]['homeName'] == null) { 
+                    //the user does not belong to a house yet
+                    res.render('no_home', user_data[email]);
+                }
+                else {
+                    //the user belongs to a house
+                    res.redirect('home');
+                }
+            }
+
+            else { //there is no user logged in
+                res.render("login");
+            }
+        });
+    } else {
+        res.render('login');
+    }
 };
+
+
 
 exports.createHome = function(req, res) {
     var rendData = {};
@@ -66,7 +95,7 @@ exports.createHome = function(req, res) {
                var cuRef = userRef.child(authEmail);
                cuRef.set(current_user['current_user']);
 
-               res.redirect('choose_chores_initial');
+               res.redirect('add_members');
            }
         });
     }

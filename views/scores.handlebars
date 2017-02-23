@@ -80,13 +80,13 @@
         </div>
         <div class="col-xs-3 col-md-1 pull-right">
             <div class="well" id="score-label">
-                {{rating}}
+                {{users.1.rating}}
             </div>
         </div>
         <div class="col-xs-4 col-md-4 pull-right">
             <div class="progress">
-                <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
-              aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+                <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{users.1.rating}}"
+              aria-valuemin="0" aria-valuemax="100" style="width:{{users.1.rating}}%">
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
 
 <div id="side-nav" class="sidenav">
     <div class="row">
-        <h4>Hi, {{username}}</h4>
+        <h4>Hi, {{firstName}}</h4>
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
     </div>
     <a href="/home"><span class="glyphicon glyphicon-home"></span>&nbsp; My Chores</a>
