@@ -1,6 +1,7 @@
 //firebase
 var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
+var ref = firebase.database().ref();
 var userRef = firebase.database().ref("users");
 var homeRef = firebase.database().ref("homes");
 
@@ -43,14 +44,21 @@ exports.jsonHome = function(req, res) {
 exports.viewNoHome = function(req, res) {
     if (current_user['current_user'] != null) {
         var email = current_user['current_user']['email'];
-        email = email.replace(".","");
+        email = email.split('.').join('');
 
-        userRef.once("value", function(snapshot) {
-            var user_data = snapshot.val();
+        ref.once("value", function(snapshot) {
+            var data = snapshot.val();
+            var user_data = data['users'];
+            var invites_data = data['invites'];
 
             if (user_data[email] != null) { //there is a user logged in
-                if (user_data[email]['homeName'] == null) { 
-                    //the user does not belong to a house yet
+                if (user_data[email]['homeName'] == null) { //the user does not belong to a house yet
+                    //user's invites
+                    if (invites_data != null)
+                        if (invites_data[email] != null)
+                            user_data[email]['invites'] = invites_data[email];
+
+                    console.log(user_data[email]);
                     res.render('no_home', user_data[email]);
                 }
                 else {

@@ -10,7 +10,7 @@ $(document).ready(function () {
         console.log(housemate_email);
 
         if (housemate_email != null && housemate_email != undefined) {
-            $('#invitees').append('<p><input type="hidden" name="emails" value="' + housemate_email + '">' +
+            $('#invitees').append('<p><input type="hidden" name="emails[]" value="' + housemate_email + '">' +
                 '<span class="glyphicon glyphicon-remove remove-invitee"></span>' +
                 housemate_email + '</input></p>');
             $('#housemate_email').val('');

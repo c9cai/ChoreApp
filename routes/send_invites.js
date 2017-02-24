@@ -22,17 +22,21 @@ exports.sendInvites = function(req, res) {
             var updateInvite;
             for (email in emails) {
                 var authEmail = emails[email].split('.').join('');
+                console.log(authEmail);
 
                 if(data == null) {//null invites key
+                    console.log("null invite key");
                     updateInvite = {};
                     updateInvite[authEmail] = [homeName];
                     invites_ref.update(updateInvite);
                 } else {
+                    console.log("user has no invites");
                     if (data[authEmail] == null) {//user has no invites
                         updateInvite = {};
                         updateInvite[authEmail] = [homeName];
                         invites_ref.update(updateInvite);
                     } else {//user already has invites
+                        console.log("user already has invites");
                         updateInvite = data[authEmail];
                         updateInvite.push(homeName);
 
