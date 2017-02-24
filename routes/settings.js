@@ -37,6 +37,9 @@ exports.viewSettings = function (req, res) {
         for (user in home_data) {
             var authEmail = home_data[user].split('.').join('');
 
+            if (user_data[authEmail]['firstName'] == null)
+                continue;
+
             //get first and last name of user
             var first = user_data[authEmail]['firstName'];
             var last = user_data[authEmail]['lastName'];
