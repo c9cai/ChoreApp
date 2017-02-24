@@ -24,16 +24,28 @@ $(document).ready(function() {
 })
 
 function count() {
-    var selected = [];      
-    $('#chores').each(function() {
-        var newChore = {};
-        newChore['choreName'] = $(this).find("#chore_name").val();
-        newChore['description'] = $(this).find("#chore_description").val();
-        newChore['frequency'] = $(this).find("#chore_frequency").val();
-        selected.push(newChore);
+    var choreName = [];
+    var choreDescription = [];
+    var frequency = [];
+    var selected = [];
+    
+    $("input.chore_name").each(function() {
+        choreName.push($(this).val());
+    });
+    $("input.chore_description").each(function() {
+        choreDescription.push($(this).val());
+    });
+    $("input.chore_frequency").each(function() {
+        frequency.push($(this).val());
     });
 
+    //alert(choreName.join('\n'));
+    //alert(choreDescription.join('\n'));
+    //alert(frequency.join('\n'));
+    selected.push(choreName);
+    selected.push(choreDescription);
+    selected.push(frequency);
     alert(selected.join('\n'));
+
     $("#saveinput").val(selected);
 }
-

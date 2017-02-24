@@ -50,18 +50,30 @@ exports.viewChores = function(req, res) {
 
 //SOMEBODY HELP ME WRITE THIS PLEASE
 exports.saveChores = function(req, res) {
+
+      var dbData;
+      var toStore = [];
       var data = req.body.saveinput;
       console.log(data);
-      // var newString = data.split('-').join(' ');
-      // var fin = newString.split(',');
-      //   var uname = current_user['current_user']['email'].replace(".","");
+      var dataArray = data.split(",");
+      var dataLen = dataArray.length / 3;
+      console.log(dataLen);
 
-      //   var home = user_data[uname]['homeName'];
-      //   var storeRef = firebase.database().ref('chores/' + home).set(fin);
+      var uname = current_user['current_user']['email'].replace(".","");
+
+      var home = user_data[uname]['homeName'];
+
+      for (i=0;i<dataLen;i++) {
+        dbData = {};
+        dbData["choreName"] = dataArray[i];
+        dbData["description"] = dataArray[i+dataLen];
+        dbData["frequency"] = dataArray[i + dataLen*2];
+        var storeRef = firebase.database().ref('chores/' + home + "/" + dataArray[i]).set(dbData);
+      }
 
     if (current_user['current_user'] != null) {
 
-        res.render('home');
+        res.redirect('home');
     }
     else {
         res.render('login');

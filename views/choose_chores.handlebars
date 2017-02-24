@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -67,9 +69,9 @@
             {{#each defaultChores}}
                 <div class="row">
                     <span class="glyphicon glyphicon-remove remove-chore"></span>
-                    <input type="text" value="{{choreName}}" class="chore-name"/>
-                    <input type="text" value="{{description}}" class="chore-description"/>
-                    <label>Every</label><input type="text" value="{{frequency}}" class="chore-frequency"/><label>Days</label>
+                    <input type="text" value="{{choreName}}" class="chore_name"/>
+                    <input type="text" value="{{description}}" class="chore_description"/>
+                    <label>Every</label><input type="text" value="{{frequency}}" class="chore_frequency"/><label>Days</label>
                 </div>
                 <br>
             {{/each}}
@@ -89,7 +91,7 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/home.js"></script>
     <script src="js/choose_chores.js"></script>
