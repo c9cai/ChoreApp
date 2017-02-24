@@ -74,7 +74,7 @@
             <ul id="draggablePanelList" class="list-unstyled">
                 {{#each chores}}
                 <li class="panel panel-info" id='{{this}}'>
-                    <div class="panel-body"><h4><span class="glyphicon glyphicon-th"></span>{{this}}</h4></div>
+                    <div class="panel-body chorename"><h4><span class="glyphicon glyphicon-th"></span>{{this}}</h4></div>
                 </li>
                 {{/each}}
             </ul>
@@ -87,7 +87,7 @@
         <div class="col-md-4 col-md-offset-6 col-xs-12">
             <form id="save_form" method="post" action="/save_preferences">            
                 <input type="text" id='savetext' class='hide' name='save' />
-                <button type="submit" class="btn btn-default" href="#">Save Changes</button>
+                <button type="submit" class="btn btn-default" href="#" onclick="onClick()" id="finish">Save Changes</button>
             </form>
             
         </div>
@@ -103,6 +103,7 @@
     <script src="js/home.js"></script>
     <script src="js/preferences.js"></script>
     <script>
+        
         $(document).ready(function () {
             $('ul').sortable({
                 axis: 'y',
@@ -116,7 +117,26 @@
                     });*/
             }
             });
-        });  
+        });
+
+        function onLoad() {
+            var text = "";
+             $("div.chorename").each(function() {
+                text = text + $(this).text() + "&";
+             });
+             
+             text = text.split("-").join("[]=");
+             text = text.slice(0, -1);
+             //alert(text);
+
+             $('#savetext').val(text);
+
+        } 
+
+        window.onload = function() {
+            onLoad();
+        }
+
     </script>
 
 

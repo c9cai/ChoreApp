@@ -7,7 +7,7 @@ var firebase = firebaseModule.firebase;
 
 exports.savePreferences = function(req, res) {
 	console.log("save preferences");
-	console.log(req.body);
+	console.log(req.body.save);
 	var uname = current_user['current_user']['email'].split('.').join('');
 	var saveString = req.body.save;
 	console.log(saveString);
