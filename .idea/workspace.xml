@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef589492-a25b-49a7-8615-3271baa6d11e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/save_preferences.js" afterPath="$PROJECT_DIR$/routes/save_preferences.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/settings.js" afterPath="$PROJECT_DIR$/routes/settings.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -60,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preferences.handlebars" pinned="false" current-in-tab="true">
+      <file leaf-file-name="preferences.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/preferences.handlebars">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -110,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/settings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="22" column="2" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+            <state relative-caret-position="345">
+              <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -132,7 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fa-</find>
       <find>jquery</find>
       <find>jquery-</find>
       <find>jquery.min.</find>
@@ -162,6 +161,7 @@
       <find>email</find>
       <find>todayRef</find>
       <find>todayUpdate</find>
+      <find>user_dat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,7 +184,6 @@
         <option value="$PROJECT_DIR$/public/js/home.js" />
         <option value="$PROJECT_DIR$/json/chore_schedule.json" />
         <option value="$PROJECT_DIR$/views/scores.handlebars" />
-        <option value="$PROJECT_DIR$/routes/settings.js" />
         <option value="$PROJECT_DIR$/json/current_user.json" />
         <option value="$PROJECT_DIR$/routes/firebase.js" />
         <option value="$PROJECT_DIR$/views/home.handlebars" />
@@ -209,6 +208,7 @@
         <option value="$PROJECT_DIR$/routes/home.js" />
         <option value="$PROJECT_DIR$/routes/invites.js" />
         <option value="$PROJECT_DIR$/routes/save_preferences.js" />
+        <option value="$PROJECT_DIR$/routes/settings.js" />
       </list>
     </option>
   </component>
@@ -440,12 +440,12 @@
       <workItem from="1487030825719" duration="278000" />
       <workItem from="1487095231796" duration="27711000" />
       <workItem from="1487355346819" duration="1224000" />
-      <workItem from="1487713794423" duration="46252000" />
+      <workItem from="1487713794423" duration="46914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98586000" />
+    <option name="totallyTimeSpent" value="99248000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -724,14 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="22" column="2" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -792,6 +784,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding />
         </state>
       </provider>
