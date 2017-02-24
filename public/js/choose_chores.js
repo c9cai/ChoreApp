@@ -9,9 +9,9 @@ $(document).ready(function() {
 
         $('#chores').append('<div class="row">' +
                     '<span class="glyphicon glyphicon-remove remove-chore"></span>' +
-                    '<input type="text" class="chore-name"/>' +
-                    '<input type="text" class="chore-description"/>' +
-                    '<label class="not-heavy">Every</label><input type="text" class="chore-frequency"/><label class="not-heavy">Days</label>' +
+                    '<input type="text" class="chore_name"/>' +
+                    '<input type="text" class="chore_description"/>' +
+                    '<label class="not-heavy">Every</label><input type="text" class="chore_frequency"/><label class="not-heavy">Days</label>' +
                     '</div><br>');
     });
 
