@@ -23,6 +23,8 @@ var logout = require('./routes/logout');
 var firebase = require('./routes/firebase');
 var save_preferences = require('./routes/save_preferences');
 var signup = require('./routes/signup');
+var invites = require('./routes/invites');
+var reset_firebase = require('./routes/reset_firebase');
 // Example route
 // var user = require('./routes/user');
 
@@ -61,6 +63,7 @@ app.get('/preferences', preferences.viewPreferences);
 app.get('/settings', settings.viewSettings);
 app.get('/login', login.viewLogin);
 app.get('/homeData', home.jsonHome);
+app.get('/reset', reset_firebase.resetFirebase);
 app.post('/check_login', check_login.checkLogin);
 app.post('/done_chore', done_chore.doneChore);
 app.post('/logout', logout.logOut);
@@ -68,6 +71,8 @@ app.post('/save_preferences', save_preferences.savePreferences);
 app.post('/choose_chores_save', choose_chores.saveChores);
 app.post('/sign_up', signup.createUser);
 app.post('/create_home', home.createHome);
+app.post('/send_invites', invites.sendInvites);
+app.post('/accept_invite', invites.acceptInvite);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

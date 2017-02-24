@@ -10,7 +10,7 @@ var current_user = require("../json/current_user.json");
 exports.viewAddMembers = function(req, res) {
     if (current_user['current_user'] != null) {
         var email = current_user['current_user']['email'];
-        email = email.replace(".","");
+        email = email.split('.').join('');
         rendData = {};
 
 
