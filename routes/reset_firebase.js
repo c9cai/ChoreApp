@@ -15,7 +15,7 @@ exports.resetFirebase = function(req, res) {
                     "rating": 61,
                     "email": "brianchao@gmail.com",
                     "homeName": "testHome",
-                    "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
+                    "preferences": [],
                     "overdue": [
                         {
                             "chorename": "Wash Dishes",
@@ -64,7 +64,7 @@ exports.resetFirebase = function(req, res) {
                     "rating": 61,
                     "email": "noahlee@gmail.com",
                     "homeName": "testHome",
-                    "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
+                    "preferences": [],
                     "overdue": [
                         {
                             "chorename": "Wash Dishes",
@@ -113,7 +113,7 @@ exports.resetFirebase = function(req, res) {
                     "rating": 61,
                     "email": "aliaawni@gmail.com",
                     "homeName": "testHome",
-                    "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
+                    "preferences": [],
                     "overdue": [
                         {
                             "chorename": "Wash Dishes",
@@ -162,7 +162,7 @@ exports.resetFirebase = function(req, res) {
                     "rating": 61,
                     "email": "chriscai@gmail.com",
                     "homeName": "testHome",
-                    "preferences": ["Check Mail", "Sweep Patio", "Take Out Trash", "Wash Dishes"],
+                    "preferences": [],
                     "overdue": [
                         {
                             "chorename": "Wash Dishes",

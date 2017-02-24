@@ -84,11 +84,13 @@ exports.saveChores = function(req, res) {
         dbData["description"] = dataArray[i+dataLen];
         dbData["frequency"] = dataArray[i + dataLen*2];
         var storeRef = firebase.database().ref('chores/' + home + "/" + dataArray[i]).set(dbData);
+        var storeRef2 = firebase.database().ref('users/' + uname + "/preferences/" + dataArray[i]).set(dataArray[i]);
+
       }
 
     if (current_user['current_user'] != null) {
 
-        res.redirect('home');
+        res.redirect('preferences');
     }
     else {
         res.render('login');
