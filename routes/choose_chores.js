@@ -4,10 +4,12 @@ var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
 var userRef = firebase.database().ref("users");
 var choreRef = firebase.database().ref('defaultChores');
+var homeRef = firebase.database().ref('homes');
 
 
 var user_data;
 var chore_data;
+var home_data;
 
  userRef.on("value", function(snapshot) {
     user_data = snapshot.val();
@@ -15,6 +17,10 @@ var chore_data;
 
 choreRef.on('value',function(snapshot) {
     chore_data = snapshot.val();
+});
+
+homeRef.on('value',function(snapshot) {
+    home_data = snapshot.val();
 });
 
 exports.viewChores = function(req, res) {
@@ -64,7 +70,16 @@ exports.saveChores = function(req, res) {
       var home = user_data[uname]['homeName'];
 
       for (i=0;i<dataLen;i++) {
+
+
         dbData = {};
+
+        var count = 1;
+        for (person in home_data[home]) {
+            dbData[count] = home_data[home][person];
+            count++;
+        }
+
         dbData["choreName"] = dataArray[i];
         dbData["description"] = dataArray[i+dataLen];
         dbData["frequency"] = dataArray[i + dataLen*2];
