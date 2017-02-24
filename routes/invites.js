@@ -58,3 +58,9 @@ exports.sendInvites = function(req, res) {
 
     res.redirect('choose_chores');
 }
+
+exports.acceptInvite  = function (req, res) {
+    console.log('accepting invite');
+    console.log(req.body);
+    res.redirect('');
+}

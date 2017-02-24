@@ -23,7 +23,7 @@ var logout = require('./routes/logout');
 var firebase = require('./routes/firebase');
 var save_preferences = require('./routes/save_preferences');
 var signup = require('./routes/signup');
-var send_invites = require('./routes/send_invites');
+var invites = require('./routes/invites');
 var reset_firebase = require('./routes/reset_firebase');
 // Example route
 // var user = require('./routes/user');
@@ -71,7 +71,8 @@ app.post('/save_preferences', save_preferences.savePreferences);
 app.post('/choose_chores_save', choose_chores.saveChores);
 app.post('/sign_up', signup.createUser);
 app.post('/create_home', home.createHome);
-app.post('/send_invites', send_invites.sendInvites);
+app.post('/send_invites', invites.sendInvites);
+app.post('/accept_invite', invites.acceptInvite);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

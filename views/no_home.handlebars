@@ -101,8 +101,13 @@
             <div class="col-md-8 col-md-offset-2 collapse container-fluid" id="see-invites">
                 <br>
                 <p>Click below invites to join a house</p>
-                <form id="accept_invite_form" method="post" action="/accept_invite">
-                    <button type="submit" class="btn btn-default" form="accept_invite_form">testHome</button>
+                <form class="form-inline" id="accept_invite_form" method="post" action="/accept_invite">
+                    {{#each invites}}
+                        <button name="b_{{this}}" value="{{this}}" type="submit" class="btn btn-default" form="accept_invite_form">
+                            {{this}}
+                        </button>
+                    {{/each}}
+
                 </form>
             </div>
         </div>
