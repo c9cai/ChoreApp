@@ -51,5 +51,6 @@ exports.sendInvites = function(req, res) {
             current_home_ref.set(homeUpdate);
         });
     }
-    res.redirect('choose_chores_initial');
+
+    res.redirect('choose_chores');
 }
