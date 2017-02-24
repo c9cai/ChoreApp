@@ -6,8 +6,11 @@ var firebase = firebaseModule.firebase;
 
 
 exports.savePreferences = function(req, res) {
-	var uname = current_user['current_user']['email'].replace(".","");
+	console.log("save preferences");
+	console.log(req.body);
+	var uname = current_user['current_user']['email'].split('.').join('');
 	var saveString = req.body.save;
+	console.log(saveString);
 	var newString = saveString.split('[]=').join(' ');
 	saveString = newString.split('-').join(' ');
 	var data = saveString.split('&');
