@@ -10,6 +10,7 @@ exports.createSchedule = function (req, res) {
     var todayDate = new Date();
     var choreDate = new Date();
     var homeName = current_user['current_user']['homeName'];
+    var currUser = current_user['current_user']['email'].split('.').join('');
 
     if (homeName == null) // user does not have home
         res.redirect('no_home');
@@ -25,15 +26,6 @@ exports.createSchedule = function (req, res) {
 
             //get every user in home
             var users = home_data[homeName];
-            // for (user in users) {
-            //     var authEmail = users[user].split('.').join('');
-            //     chore_schedule[authEmail] = {
-            //         "overdue": {},
-            //         "today": {},
-            //         "upcoming:": {},
-            //         "completed": {}
-            //     };
-            // }
 
             //assign chores to each user
             var num_ppl = users.length;
@@ -63,6 +55,9 @@ exports.createSchedule = function (req, res) {
                     //add on to chores list
                     categoryRef.once("value", function (snapshot) {
                         var currChores = snapshot.val();
+                        if (currChores == null)
+                            currChores = [];
+
                         var toAdd = {};
                         toAdd['chorename'] = choreName;
                         toAdd['duedate'] = (choreDate.getMonth() + 1)
@@ -88,4 +83,6 @@ exports.createSchedule = function (req, res) {
             }
         });
     }
+
+    res.redirect('preferences');
 }

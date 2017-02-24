@@ -4,6 +4,7 @@ var firebase = firebaseModule.firebase;
 var ref = firebase.database().ref();
 var invites_ref = ref.child('invites');
 var home_ref = ref.child('homes');
+var user_ref = ref.child('users');
 
 //local files
 var current_user = require("../json/current_user.json");
@@ -22,7 +23,7 @@ exports.sendInvites = function(req, res) {
             var updateInvite;
             for (email in emails) {
                 var authEmail = emails[email].split('.').join('');
-                console.log(authEmail);
+
 
                 if(data == null) {//null invites key
                     console.log("null invite key");
@@ -51,16 +52,44 @@ exports.sendInvites = function(req, res) {
         var current_home_ref = home_ref.child(homeName);
         current_home_ref.once("value", function(snapshot) {
             var data = snapshot.val();
-            var homeUpdate = emails.concat(data);
+            var homeUpdate = data.concat(emails);
             current_home_ref.set(homeUpdate);
         });
+
+        //initialize people invited
+        user_ref.once("value", function(snapshot) {
+           var user_data = snapshot.val();
+           for (var email in emails) {
+               var authEmail = emails[email].split('.').join('');
+
+               if (user_data[authEmail] == null) {//nonexistent user
+                   var userUpdate = {};
+                   userUpdate[authEmail] = {
+                       "email": email,
+                       "rating": 61,
+                   };
+
+                   user_ref.update(userUpdate);
+               }
+           }
+        });
+
     }
 
     res.redirect('choose_chores');
 }
 
 exports.acceptInvite  = function (req, res) {
-    console.log('accepting invite');
-    console.log(req.body);
-    res.redirect('');
+    for (var home in req.body) {
+        var homeName = req.body[home];
+    }
+
+    var updateHome = {};
+    updateHome['homeName'] = homeName;
+
+    var authEmail = current_user['current_user']['email'].split('.').join('');
+    var cuUserRef = user_ref.child(authEmail);
+    cuUserRef.update(updateHome);
+
+    res.redirect('preferences');
 }

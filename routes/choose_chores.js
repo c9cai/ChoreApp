@@ -90,7 +90,7 @@ exports.saveChores = function(req, res) {
 
     if (current_user['current_user'] != null) {
 
-        res.redirect('preferences');
+        res.redirect('create_schedule');
     }
     else {
         res.render('login');

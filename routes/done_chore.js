@@ -20,6 +20,8 @@ exports.doneChore = function(req, res) {
         var cuRef = userRef.child(email);
         cuRef.once("value", function(snapshot) {
             var cu_data = snapshot.val();
+            if (cu_data['completed'] == null)
+                cu_data['completed'] = [];
             var chore = cu_data[category][index];
             cu_data["completed"].push(chore);
             cu_data[category].splice(index,index+1);

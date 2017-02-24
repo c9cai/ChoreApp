@@ -58,7 +58,6 @@ exports.viewNoHome = function(req, res) {
                         if (invites_data[email] != null)
                             user_data[email]['invites'] = invites_data[email];
 
-                    console.log(user_data[email]);
                     res.render('no_home', user_data[email]);
                 }
                 else {
