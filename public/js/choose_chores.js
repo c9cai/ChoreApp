@@ -11,7 +11,7 @@ $(document).ready(function() {
                     '<span class="glyphicon glyphicon-remove remove-chore"></span>' +
                     '<input type="text" class="chore_name"/>' +
                     '<input type="text" class="chore_description"/>' +
-                    '<label>Every</label><input type="text" class="chore_frequency"/><label>Days</label>' +
+                    '<label class="not-heavy">Every</label><input type="text" class="chore_frequency"/><label class="not-heavy">Days</label>' +
                     '</div><br>');
     });
 
@@ -24,16 +24,28 @@ $(document).ready(function() {
 })
 
 function count() {
-    var selected = [];      
-    $('#chores').each(function() {
-        var newChore = {};
-        newChore['choreName'] = $(this).find("#chore_name").val();
-        newChore['description'] = $(this).find("#chore_description").val();
-        newChore['frequency'] = $(this).find("#chore_frequency").val();
-        selected.push(newChore);
+    var choreName = [];
+    var choreDescription = [];
+    var frequency = [];
+    var selected = [];
+    
+    $("input.chore_name").each(function() {
+        choreName.push($(this).val());
+    });
+    $("input.chore_description").each(function() {
+        choreDescription.push($(this).val());
+    });
+    $("input.chore_frequency").each(function() {
+        frequency.push($(this).val());
     });
 
+    //alert(choreName.join('\n'));
+    //alert(choreDescription.join('\n'));
+    //alert(frequency.join('\n'));
+    selected.push(choreName);
+    selected.push(choreDescription);
+    selected.push(frequency);
     alert(selected.join('\n'));
+
     $("#saveinput").val(selected);
 }
-
