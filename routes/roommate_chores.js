@@ -13,8 +13,8 @@ exports.viewChores = function (req, res) {
         var rendData = {};
         rendData['users'] = {};
 
-        var email = current_user['email'];
-        email = email.split('.').join('');
+        var current_email = current_user['email'];
+        current_email = current_email.split('.').join('');
         var homeName = current_user['homeName'];
         rendData['firstName'] = current_user['firstName'];
         var users = [];
@@ -24,16 +24,19 @@ exports.viewChores = function (req, res) {
             var home_data = data['homes'];
             var user_data = data['users'];
 
-            rendData['rating'] = user_data[email]['rating'];
+            rendData['rating'] = user_data[current_email]['rating'];
 
             for (var user in home_data[homeName]) {
                 users.push(home_data[homeName][user]);
             }
 
+            console.log(current_email);
             for (var user in users) {
-                email = users[user].replace(".", "");
+                var email = users[user].replace(".", "");
                 console.log(email);
-                rendData['users'][email] = user_data[email];
+                if (current_email != email) {
+                    rendData['users'][email] = user_data[email];
+                }
             }
 
             res.render('roommate_chores',rendData);
