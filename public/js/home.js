@@ -9,23 +9,26 @@ $(document).ready(function() {
 
 	//carousel css
     $(".carousel").slick({
-        slidesToShow: 4,
-        centerMode: true,
+        slidesToShow: 5,
+        centerMode: false,
+        infinite: false,
         responsive: [
             {
               breakpoint: 600,
               settings: {
-                centerMode: true,
+                centerMode: false,
                 slidesToShow: 2,
                 arrows: false,
+                infinite: false,
               }
             },
             {
               breakpoint: 480,
               settings: {
-                centerMode: true,
+                centerMode: false,
                 slidesToShow: 2,
                 arrows: false,
+                infinite: false,
               }
             }
         ]
