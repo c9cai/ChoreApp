@@ -5,12 +5,11 @@ var ref = firebase.database().ref();
 var userRef = firebase.database().ref("users");
 var homeRef = firebase.database().ref("homes");
 
-//local files
-var current_user = require("../json/current_user.json");
-
 exports.viewHome = function(req, res) {
-    if (current_user['current_user'] != null) {
-        var email = current_user['current_user']['email'];
+    var current_user = req.session.current_user;
+
+    if (current_user != null) {
+        var email = current_user['email'];
         email = email.replace(".","");
 
         userRef.once("value", function(snapshot) {
@@ -42,8 +41,10 @@ exports.jsonHome = function(req, res) {
 };
 
 exports.viewNoHome = function(req, res) {
-    if (current_user['current_user'] != null) {
-        var email = current_user['current_user']['email'];
+    var current_user = req.session.current_user;
+
+    if (current_user != null) {
+        var email = current_user['email'];
         email = email.split('.').join('');
 
         ref.once("value", function(snapshot) {
@@ -78,8 +79,10 @@ exports.viewNoHome = function(req, res) {
 
 
 exports.createHome = function(req, res) {
+    var current_user = req.session.current_user;
+
     var rendData = {};
-    rendData['firstName'] = current_user['current_user']['firstName'];
+    rendData['firstName'] = current_user['firstName'];
 
     var homeName = req.body.homeName;
     if (homeName == '')//null home name
@@ -92,15 +95,15 @@ exports.createHome = function(req, res) {
                res.render('no_home', rendData);
            else {//create home
                var updateHome = {};
-               var email = current_user['current_user']['email'];
+               var email = current_user['email'];
                var authEmail = email.replace(".","");
                updateHome[homeName] = [email];
                homeRef.update(updateHome);
 
-               current_user['current_user']['homeName'] = homeName;
+               current_user['homeName'] = homeName;
 
                var cuRef = userRef.child(authEmail);
-               cuRef.set(current_user['current_user']);
+               cuRef.set(current_user);
 
                res.redirect('add_members');
            }

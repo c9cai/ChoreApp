@@ -18,7 +18,8 @@ exports.checkLogin = function (req, res) {
         if (user_data[username] != null) {
             if (user_data[username]['password'] == password) {
                 check = true;
-                current_user['current_user'] = user_data[username];
+
+                req.session.current_user = user_data[username];
 
                 if (user_data[username]['homeName'] == null)
                     res.redirect('no_home');
