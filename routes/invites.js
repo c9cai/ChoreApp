@@ -12,6 +12,9 @@ exports.sendInvites = function(req, res) {
     if (current_user == null)
         res.render('login');
     else {
+        if (req.session.current_user['setup'] != null)
+            res.redirect(req.session.current_user['setup']);
+
         var emails = req.body.emails;
         var homeName = current_user['homeName'];
 
@@ -73,6 +76,15 @@ exports.sendInvites = function(req, res) {
            }
         });
 
+        //update current user's set up
+        var authEmail = current_user['email'].split('.').join('');
+        var cu_ref = user_ref.child(authEmail);
+        cu_ref.once("value", function(snapshot) {
+            var data = snapshot.val();
+            data['setup'] = "choose_chores";
+            cu_ref.set(data);
+        });
+        req.session.current_user['setup'] = "choose_chores";
     }
 
     res.redirect('choose_chores');

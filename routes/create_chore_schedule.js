@@ -12,6 +12,9 @@ exports.createSchedule = function (req, res) {
     var homeName = current_user['homeName'];
     var currUser = current_user['email'].split('.').join('');
 
+    if (req.session.current_user['setup'] != null)
+        res.redirect(req.session.current_user['setup']);
+
     if (homeName == null) // user does not have home
         res.redirect('no_home');
     else { //create schedule for user's home

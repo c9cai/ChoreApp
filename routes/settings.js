@@ -30,6 +30,9 @@ exports.viewSettings = function (req, res) {
     var name;
 
     if (current_user != null) {
+        if (req.session.current_user['setup'] != null)
+            res.redirect(req.session.current_user['setup']);
+
         var homeName = current_user['homeName'];
         var home_data = homes_data[homeName];
         console.log(home_data);

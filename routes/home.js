@@ -9,6 +9,9 @@ exports.viewHome = function(req, res) {
     var current_user = req.session.current_user;
 
     if (current_user != null) {
+        if (req.session.current_user['setup'] != null)
+            res.redirect(req.session.current_user['setup']);
+
         var email = current_user['email'];
         email = email.replace(".","");
 
@@ -102,11 +105,14 @@ exports.createHome = function(req, res) {
 
                current_user['homeName'] = homeName;
 
+               current_user['setup'] = "add_members";
                var cuRef = userRef.child(authEmail);
                cuRef.set(current_user);
 
-               res.redirect('add_members');
+               req.session.current_user = current_user;
            }
         });
+
+        res.redirect('add_members');
     }
 };
