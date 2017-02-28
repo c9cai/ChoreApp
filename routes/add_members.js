@@ -4,17 +4,16 @@ var firebase = firebaseModule.firebase;
 var userRef = firebase.database().ref("users");
 var homeRef = firebase.database().ref("homes");
 
-//local files
-var current_user = require("../json/current_user.json");
+exports.viewAddMembers = function (req, res) {
+    var current_user = req.session.current_user;
 
-exports.viewAddMembers = function(req, res) {
-    if (current_user['current_user'] != null) {
-        var email = current_user['current_user']['email'];
+    if (current_user != null) {
+        var email = current_user['email'];
         email = email.split('.').join('');
         rendData = {};
 
 
-        userRef.once("value", function(snapshot) {
+        userRef.once("value", function (snapshot) {
             var user_data = snapshot.val();
 
             if (user_data[email] != null) { //there is a user logged in

@@ -3,19 +3,17 @@ var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
 var ref = firebase.database().ref();
 
-//local files
-var current_user = require("../json/current_user.json");
-
 exports.viewChores = function (req, res) {
+    var current_user = req.session.current_user;
 
-    if (current_user['current_user'] != null) {
+    if (current_user != null) {
         var rendData = {};
         rendData['users'] = {};
 
-        var email = current_user['current_user']['email'];
-        email = email.replace(".", "");
-        var homeName = current_user['current_user']['homeName'];
-        rendData['firstName'] = current_user['current_user']['firstName'];
+        var email = current_user['email'];
+        email = email.split('.').join('');
+        var homeName = current_user['homeName'];
+        rendData['firstName'] = current_user['firstName'];
         var users = [];
 
         ref.once("value", function(snapshot) {

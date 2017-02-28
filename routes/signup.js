@@ -3,11 +3,9 @@ var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
 var user_ref = firebase.database().ref("users");
 
-//local files
-var current_user = require("../json/current_user.json");
-
 exports.createUser = function (req, res) {
-    console.log("signup");
+    var current_user = req.session.current_user;
+
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var email = req.body.email;
@@ -38,7 +36,7 @@ exports.createUser = function (req, res) {
                     invitedUser['rating'] = 61;
                     console.log(invitedUser);
 
-                    current_user['current_user'] = invitedUser;
+                    current_user = invitedUser;
                     invitedUserRef.set(invitedUser);
 
                     res.redirect('home');
@@ -54,7 +52,7 @@ exports.createUser = function (req, res) {
                     "rating": 61,
                 };
 
-                current_user['current_user'] = userUpdate[authEmail];
+                current_user = userUpdate[authEmail];
                 user_ref.update(userUpdate);
 
                 res.redirect('home');

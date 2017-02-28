@@ -1,5 +1,3 @@
-var current_user = require("../json/current_user.json");
-
 var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
 
@@ -15,18 +13,20 @@ firebase.database().ref('users').once('value').then(function(snapshot) {
 });
 
 exports.viewScores = function(req, res) {
-    //console.log(current_user['current_user']['email'].replace(".",""));
+    var current_user = req.session.current_user;
+
+    //console.log(current_user['email'].replace(".",""));
     
-    if (current_user['current_user'] != null) {
+    if (current_user != null) {
 
       var data = [];
       for (user in user_data) {
         //console.log(user);
-        if (user == current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
+        if (user == current_user['email'].split('.').join('')) data.push(user_data[user]);
       }
 
       for (user in user_data) {
-        if (user != current_user['current_user']['email'].replace(".","")) data.push(user_data[user]);
+        if (user != current_user['email'].split('.').join('')) data.push(user_data[user]);
       }
 
       rendData = {};
@@ -41,6 +41,8 @@ exports.viewScores = function(req, res) {
 };
 
 exports.jsonScores = function(req, res) {
+    var current_user = req.session.current_user;
+
     //res.json(user_data);
 };
  

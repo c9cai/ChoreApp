@@ -1,5 +1,3 @@
-var current_user = require("../json/current_user.json");
-
 var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
 
@@ -25,12 +23,14 @@ home_ref.on('value', function (snapshot) {
 
 
 exports.viewSettings = function (req, res) {
+    var current_user = req.session.current_user;
+
     var data = [];
     var rating;
     var name;
 
-    if (current_user['current_user'] != null) {
-        var homeName = current_user['current_user']['homeName'];
+    if (current_user != null) {
+        var homeName = current_user['homeName'];
         var home_data = homes_data[homeName];
         console.log(home_data);
         //loop through each user in home
@@ -46,7 +46,7 @@ exports.viewSettings = function (req, res) {
             data.push(first + ' ' + last);
 
             //set rating and firstname of current user
-            if (authEmail == current_user['current_user']['email'].split('.').join('')) {
+            if (authEmail == current_user['email'].split('.').join('')) {
                 rating = user_data[authEmail]['rating'];
                 name = user_data[authEmail]['firstName'];
             }
