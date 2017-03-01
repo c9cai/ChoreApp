@@ -5,7 +5,7 @@ $(document).ready(function() {
 	
 	initializePage();
     document.getElementById("side-nav").style.width = "0px";
-
+    $('[data-toggle="popover"]').popover();
 
 	//carousel css
     $(".carousel").slick({
@@ -34,10 +34,10 @@ $(document).ready(function() {
         ]
     });
 
-	$("#score-bar").click(function(e) {
-		e.preventDefault();
-		updateScoreBar(-3);
-	});
+	// $("#score-bar").click(function(e) {
+	// 	e.preventDefault();
+	// 	updateScoreBar(-3);
+	// });
 })
 
 /*

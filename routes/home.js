@@ -18,7 +18,26 @@ exports.viewHome = function(req, res) {
             if (user_data[email] != null) { //there is a user logged in
                 if (user_data[email]['homeName'] != null) { 
                     //the user belongs to a house
-                    res.render('home', user_data[email]);
+
+                    var rendData = user_data[email];
+
+                    if (user_data[email]['rating'] > 80) {
+                        rendData['hero_category'] = "hero";
+                    }
+                    else if (user_data[email]['rating'] > 60) {
+                        rendData['hero_category'] = "sidekick";
+                    }
+                    else if (user_data[email]['rating'] > 40) {
+                        rendData['hero_category'] = "civilian";
+                    }
+                    else if (user_data[email]['rating'] > 20) {
+                        rendData['hero_category'] = "minion";
+                    }
+                    else {
+                        rendData['hero_category'] = "villian";
+                    }
+                    console.log(rendData);
+                    res.render('home', rendData);
                 }
                 else {
                     //the user does not belong to a house yet

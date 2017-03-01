@@ -22,6 +22,22 @@ exports.viewChores = function (req, res) {
             var user_data = data['users'];
 
             rendData['rating'] = user_data[current_email]['rating'];
+            if (rendData['rating'] > 80) {
+                rendData['hero_category'] = "hero";
+            }
+            else if (rendData['rating'] > 60) {
+                rendData['hero_category'] = "sidekick";
+            }
+            else if (rendData['rating'] > 40) {
+                rendData['hero_category'] = "civilian";
+            }
+            else if (rendData['rating'] > 20) {
+                rendData['hero_category'] = "minion";
+            }
+            else {
+                rendData['hero_category'] = "villian";
+            }
+
 
             for (var user in home_data[homeName]) {
                 users.push(home_data[homeName][user]);

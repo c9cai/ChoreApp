@@ -58,6 +58,22 @@ exports.viewSettings = function (req, res) {
         rendData['rating'] = rating;
         rendData['name'] = name;
 
+        if (rating > 80) {
+            rendData['hero_category'] = "hero";
+        }
+        else if (rating > 60) {
+            rendData['hero_category'] = "sidekick";
+        }
+        else if (rating > 40) {
+            rendData['hero_category'] = "civilian";
+        }
+        else if (rating > 20) {
+            rendData['hero_category'] = "minion";
+        }
+        else {
+            rendData['hero_category'] = "villian";
+        }
+
         res.render('settings', rendData);
     }
     else {
