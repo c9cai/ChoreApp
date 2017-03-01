@@ -14,10 +14,12 @@ home_ref.on('value', function (snapshot) {
     homes_data = snapshot.val();
 });
 
-exports.viewScores = function(req, res) {
+exports.viewScores = function (req, res) {
     var current_user = req.session.current_user;
     
     if (current_user != null) {
+        if (req.session.current_user['setup'] != null)
+            res.redirect(req.session.current_user['setup']);
 
         var home_data = [];
         var email_data = [];  //this will be filled with a list of all the emails in the current user's home
@@ -69,10 +71,10 @@ exports.viewScores = function(req, res) {
     else {
         res.render('login');
     }
-  	
+
 };
 
-exports.jsonScores = function(req, res) {
+exports.jsonScores = function (req, res) {
     var current_user = req.session.current_user;
 
     //res.json(user_data);

@@ -25,6 +25,7 @@ exports.viewChores = function (req, res) {
     var current_user = req.session.current_user;
 
     if (current_user != null) {
+
         var email = current_user['email'];
         email = email.replace(".", "");
         var rendData = {};
@@ -41,9 +42,6 @@ exports.viewChores = function (req, res) {
 
 
         rendData["defaultChores"] = chore_data;
-
-
-        console.log(rendData);
 
         res.render('choose_chores', rendData);
 
@@ -89,6 +87,15 @@ exports.saveChores = function (req, res) {
     }
 
     if (current_user != null) {
+        //update current user's set up
+        var authEmail = current_user['email'].split('.').join('');
+        var cu_ref = userRef.child(authEmail);
+        cu_ref.once("value", function(snapshot) {
+            var data = snapshot.val();
+            data['setup'] = "preferences";
+            cu_ref.set(data);
+        });
+        req.session.current_user['setup'] = "preferences";
 
         res.redirect('create_schedule');
     }
