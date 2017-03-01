@@ -13,6 +13,11 @@ fieldset, label { margin: 0; padding: 0; }
   font-size: 28px;
 }
 
+.indented {
+  margin-left: 25px;
+}
+
+
 /****** Style Star Rating Widget *****/
 
 .rating { 
@@ -40,7 +45,6 @@ fieldset, label { margin: 0; padding: 0; }
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
-
 .rating > input:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
 .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */

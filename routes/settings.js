@@ -36,6 +36,7 @@ exports.viewSettings = function (req, res) {
         var homeName = current_user['homeName'];
         var home_data = homes_data[homeName];
         console.log(home_data);
+
         //loop through each user in home
         for (user in home_data) {
             var authEmail = home_data[user].split('.').join('');
@@ -55,9 +56,9 @@ exports.viewSettings = function (req, res) {
             }
         }
 
-
         var rendData = {};
         rendData["users"] = data;
+        rendData['chores'] = chore_data[homeName];
         rendData['rating'] = rating;
         rendData['name'] = name;
 
