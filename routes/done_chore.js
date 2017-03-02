@@ -22,7 +22,7 @@ exports.doneChore = function (req, res) {
             cu_data['completed'] = [];
         var chore = cu_data[category][index];
         cu_data["completed"].push(chore);
-        cu_data[category].splice(index, index + 1);
+        cu_data[category].splice(index, 1);
         cu_data["rating"] += 3;
         cuRef.set(cu_data);
     });
