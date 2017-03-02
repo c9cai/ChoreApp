@@ -9,6 +9,7 @@
     <script src="js/home.js"></script>
     <script src="js/scores.js"></script>
     <link href="css/home.css" rel="stylesheet">
+    <link href="css/scores.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
@@ -28,7 +29,7 @@
         </div>
         <div class="col-xs-3 col-md-1 pull-right">
             <div class="well" id="score-label">
-                {{users.1.rating}}
+                {{users.0.rating}}
             </div>
         </div>
         <div class="col-xs-4 col-md-4 pull-right">
@@ -36,7 +37,7 @@
                 <div class="progress">
                     <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{users.1.rating}}"
                   aria-valuemin="0" aria-valuemax="100" style="width:{{users.1.rating}}%">
-                    <p id="score-bar-label">{{users.1.rating}}/100 ({{hero_category}})</p>
+                    <p id="score-bar-label">{{users.0.rating}}/100 ({{hero_category}})</p>
                     </div>
                 </div>
             </a>
@@ -46,12 +47,12 @@
 
 <div id="side-nav" class="sidenav">
     <div class="row">
-        <h4>Hi, {{users.1.firstName}}</h4>
+        <h4>Hi, {{users.0.firstName}}</h4>
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
     </div>
     <a href="/home"><span class="glyphicon glyphicon-home"></span>&nbsp; My Chores</a>
     <a href="/roommate_chores"><span class="glyphicon glyphicon-user"></span>&nbsp; Roommates' Chores</a>
-    <a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; Scores</a>
+    <a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; House Scores</a>
     <a href="/preferences"><span class="glyphicon glyphicon-heart"></span>&nbsp; Preferences</a>
     <a href="/settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp; Settings</a>
     <div class="divider"></div>
@@ -60,15 +61,22 @@
     </form>
 </div>
 
-
+<!--necessary for sending json data to the js file -->
+<div id="json" style="display:none;">{{json}}</div>
 
 <div class="container-fluid text-center">
-    <h1>Scores</h1>
+    <h1>House Scores</h1>
         <div class="row">
             <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
             </div>
         </div>
-      
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1" id="your-rank-container">
+            <h3> You're ranked #{{house_ranking}} in your house! </h3>
+        </div>
+    </div>
+
+
     <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
         <div id="columnchart_values"></div>   
     </div>
