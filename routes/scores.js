@@ -39,21 +39,9 @@ exports.viewScores = function (req, res) {
         //add the current user to data first so that it will be the first user in the list
         var current_email = current_user['email'].split('.').join('');
         data.push(user_data[current_email]);
-        if (user_data[current_email]['rating'] > 80) {
-            rendData['hero_category'] = "hero";
-        }
-        else if (user_data[current_email]['rating'] > 60) {
-            rendData['hero_category'] = "sidekick";
-        }
-        else if (user_data[current_email]['rating'] > 40) {
-            rendData['hero_category'] = "civilian";
-        }
-        else if (user_data[current_email]['rating'] > 20) {
-            rendData['hero_category'] = "minion";
-        }
-        else {
-            rendData['hero_category'] = "villian";
-        }
+
+        rendData['hero_category'] = calcCategory(user_data[current_email]['rating']);
+        rendData['house_ranking'] = calcHouseRanking(user_data, email_data, current_email);
 
         //add the other users of the house to data
         for (var i = 0; i < email_data.length; i++) {
@@ -65,6 +53,7 @@ exports.viewScores = function (req, res) {
         
         rendData['users'] = data;
         console.log(rendData);
+        rendData['json'] = JSON.stringify(rendData);
 
         res.render('scores', rendData);
     }
@@ -80,3 +69,34 @@ exports.jsonScores = function (req, res) {
     //res.json(user_data);
 };
  
+function calcCategory(rating) {
+  if (rating > 80) {
+      return "hero";
+  }
+  else if (rating > 60) {
+      return"sidekick";
+  }
+  else if (rating > 40) {
+      return "civilian";
+  }
+  else if (rating > 20) {
+      return "minion";
+  }
+  else {
+      return "villian";
+  }
+}
+
+function calcHouseRanking(user_data, email_data, current_user) {
+    var house_ranking = 1;
+    var rating = user_data[current_user]['rating'];
+    for (var i = 0; i < email_data.length; i++) {
+        if (email_data[i] != current_user) {
+            if (user_data[email_data[i]]['rating'] > rating) {
+                house_ranking += 1;
+            }
+        }
+    } 
+    return house_ranking;
+
+}
