@@ -5,12 +5,14 @@ var ref = firebase.database().ref();
 var userRef = firebase.database().ref("users");
 var homeRef = firebase.database().ref("homes");
 
-//local files
-var current_user = require("../json/current_user.json");
-
 exports.viewHome = function(req, res) {
-    if (current_user['current_user'] != null) {
-        var email = current_user['current_user']['email'];
+    var current_user = req.session.current_user;
+
+    if (current_user != null) {
+        if (req.session.current_user['setup'] != null)
+            res.redirect(req.session.current_user['setup']);
+
+        var email = current_user['email'];
         email = email.replace(".","");
 
         userRef.once("value", function(snapshot) {
@@ -19,7 +21,26 @@ exports.viewHome = function(req, res) {
             if (user_data[email] != null) { //there is a user logged in
                 if (user_data[email]['homeName'] != null) { 
                     //the user belongs to a house
-                    res.render('home', user_data[email]);
+
+                    var rendData = user_data[email];
+
+                    if (user_data[email]['rating'] > 80) {
+                        rendData['hero_category'] = "hero";
+                    }
+                    else if (user_data[email]['rating'] > 60) {
+                        rendData['hero_category'] = "sidekick";
+                    }
+                    else if (user_data[email]['rating'] > 40) {
+                        rendData['hero_category'] = "civilian";
+                    }
+                    else if (user_data[email]['rating'] > 20) {
+                        rendData['hero_category'] = "minion";
+                    }
+                    else {
+                        rendData['hero_category'] = "villian";
+                    }
+                    console.log(rendData);
+                    res.render('home', rendData);
                 }
                 else {
                     //the user does not belong to a house yet
@@ -42,8 +63,10 @@ exports.jsonHome = function(req, res) {
 };
 
 exports.viewNoHome = function(req, res) {
-    if (current_user['current_user'] != null) {
-        var email = current_user['current_user']['email'];
+    var current_user = req.session.current_user;
+
+    if (current_user != null) {
+        var email = current_user['email'];
         email = email.split('.').join('');
 
         ref.once("value", function(snapshot) {
@@ -78,8 +101,10 @@ exports.viewNoHome = function(req, res) {
 
 
 exports.createHome = function(req, res) {
+    var current_user = req.session.current_user;
+
     var rendData = {};
-    rendData['firstName'] = current_user['current_user']['firstName'];
+    rendData['firstName'] = current_user['firstName'];
 
     var homeName = req.body.homeName;
     if (homeName == '')//null home name
@@ -92,18 +117,21 @@ exports.createHome = function(req, res) {
                res.render('no_home', rendData);
            else {//create home
                var updateHome = {};
-               var email = current_user['current_user']['email'];
+               var email = current_user['email'];
                var authEmail = email.replace(".","");
                updateHome[homeName] = [email];
                homeRef.update(updateHome);
 
-               current_user['current_user']['homeName'] = homeName;
+               current_user['homeName'] = homeName;
 
+               current_user['setup'] = "add_members";
                var cuRef = userRef.child(authEmail);
-               cuRef.set(current_user['current_user']);
+               cuRef.set(current_user);
 
-               res.redirect('add_members');
+               req.session.current_user = current_user;
            }
         });
+
+        res.redirect('add_members');
     }
 };

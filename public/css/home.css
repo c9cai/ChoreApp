@@ -140,14 +140,23 @@ hr {
     background-color: #00b3b3;
 }
 
-#app-name {
+#score-bar-label {
+    color: #000000;
+    font-size: 20px;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 10px;
+
+}
+
+.app-name {
     color: #00b3b3;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-#app-name-login {
+.app-name-login {
     color: #00b3b3;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -176,7 +185,7 @@ hr {
 @media screen and (max-width: 480px) {
     .row.content {height:auto;}
     
-    #app-name {
+    .app-name.no-show {
         display: none;
     }
 
@@ -187,6 +196,10 @@ hr {
     .chore-buttons {
         font-size: 13px;
         width: 100px;
+    }
+
+    #score-bar-label {
+        font-size: 13px;
     }
 }
 

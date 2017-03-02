@@ -3,14 +3,17 @@ var firebase = firebaseModule.firebase;
 var ref = firebase.database().ref();
 var userRef = firebase.database().ref("users");
 
-var current_user = require("../json/current_user.json");
-
 //Assuming that "chores" and "homes" is populated
 exports.createSchedule = function (req, res) {
+    var current_user = req.session.current_user;
+
     var todayDate = new Date();
     var choreDate = new Date();
-    var homeName = current_user['current_user']['homeName'];
-    var currUser = current_user['current_user']['email'].split('.').join('');
+    var homeName = current_user['homeName'];
+    var currUser = current_user['email'].split('.').join('');
+
+    if (req.session.current_user['setup'] != null)
+        res.redirect(req.session.current_user['setup']);
 
     if (homeName == null) // user does not have home
         res.redirect('no_home');
@@ -48,7 +51,7 @@ exports.createSchedule = function (req, res) {
                     //today's chores
                     if (diffDays == 0)
                         var categoryRef = userRef.child(next + "/today");
-                     else //upcoming chores
+                    else //upcoming chores
                         var categoryRef = userRef.child(next + "/upcoming");
 
 

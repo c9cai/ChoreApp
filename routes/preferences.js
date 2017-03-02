@@ -1,5 +1,3 @@
-var current_user = require("../json/current_user.json");
-
 var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
 /*
@@ -26,6 +24,7 @@ ref2.on('value',function(snapshot) {
 
 
 exports.viewPreferences = function(req, res) {
+    var current_user = req.session.current_user;
 
 	var data = [];
 	var choreCount = 0;
@@ -33,27 +32,41 @@ exports.viewPreferences = function(req, res) {
 	var name;
 	var rating;
 
-	if (current_user['current_user'] != null) {
+	if (current_user != null) {
 
 		for (user in user_data) {
         //console.log(user);
-      if (user == current_user['current_user']['email'].replace(".",""))  {
+      if (user == current_user['email'].split('.').join(''))  {
       	//var homeName = user_data[user]['homeName'];
       	//console.log(homeName);
       	rating = user_data[user]['rating'];
       	name = user_data[user]['firstName'];
       	for (chore in user_data[user]['preferences']) {
       		console.log(user_data[user]['preferences'][chore]);
-      		data.push(user_data[user]['preferences'][chore].split(" ").join("-"));
+      		data.push(user_data[user]['preferences'][chore]);
       	}
       }
     }
 
-    console.log(data);
     var rendData = {};
     rendData['chores'] = data;
     rendData['name'] = name;
     rendData['rating'] = rating;   
+    if (rating > 80) {
+        rendData['hero_category'] = "hero";
+    }
+    else if (rating > 60) {
+        rendData['hero_category'] = "sidekick";
+    }
+    else if (rating > 40) {
+        rendData['hero_category'] = "civilian";
+    }
+    else if (rating > 20) {
+        rendData['hero_category'] = "minion";
+    }
+    else {
+        rendData['hero_category'] = "villian";
+    }
     res.render('preferences', rendData);
 	}
 	else {

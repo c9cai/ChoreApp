@@ -5,36 +5,39 @@ $(document).ready(function() {
 	
 	initializePage();
     document.getElementById("side-nav").style.width = "0px";
-
+    $('[data-toggle="popover"]').popover();
 
 	//carousel css
     $(".carousel").slick({
-        slidesToShow: 4,
-        centerMode: true,
+        slidesToShow: 5,
+        centerMode: false,
+        infinite: false,
         responsive: [
             {
               breakpoint: 600,
               settings: {
-                centerMode: true,
+                centerMode: false,
                 slidesToShow: 2,
                 arrows: false,
+                infinite: false,
               }
             },
             {
               breakpoint: 480,
               settings: {
-                centerMode: true,
+                centerMode: false,
                 slidesToShow: 2,
                 arrows: false,
+                infinite: false,
               }
             }
         ]
     });
 
-	$("#score-bar").click(function(e) {
-		e.preventDefault();
-		updateScoreBar(-3);
-	});
+	// $("#score-bar").click(function(e) {
+	// 	e.preventDefault();
+	// 	updateScoreBar(-3);
+	// });
 })
 
 /*

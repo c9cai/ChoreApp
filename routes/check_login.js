@@ -18,12 +18,12 @@ exports.checkLogin = function (req, res) {
         if (user_data[username] != null) {
             if (user_data[username]['password'] == password) {
                 check = true;
-                current_user['current_user'] = user_data[username];
 
-                if (user_data[username]['homeName'] == null)
-                    res.redirect('no_home');
-                else
-                    res.redirect("/home");
+                req.session.current_user = user_data[username];
+                if (req.session.current_user['setup'] != null)
+                    res.redirect(req.session.current_user['setup']);
+
+                res.redirect("/home");
             } else
                 res.render('login');
         } else {

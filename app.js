@@ -6,8 +6,12 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
 
+//Session Cookie
+var session = require('client-sessions');
+
+//routes
 var home = require('./routes/home');
 var no_home = require('./routes/home');
 var add_members = require('./routes/add_members');
@@ -26,8 +30,6 @@ var signup = require('./routes/signup');
 var invites = require('./routes/invites');
 var reset_firebase = require('./routes/reset_firebase');
 var create_chore_schedule = require('./routes/create_chore_schedule');
-// Example route
-// var user = require('./routes/user');
 
 var app = express();
 
@@ -45,6 +47,17 @@ app.use(express.cookieParser('Intro HCI secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Session Configuration
+app.use(session({
+    cookieName: 'session',
+    secret: '[abcn][chore_hero][secret]',
+    duration: 30 * 60 * 1000,
+    activeDuration: 5 * 60 * 1000,
+    httpOnly: true,
+    secure: true,
+    ephemeral: true
+}));
 
 // development only
 if ('development' == app.get('env')) {

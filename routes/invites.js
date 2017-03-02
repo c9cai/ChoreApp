@@ -6,15 +6,17 @@ var invites_ref = ref.child('invites');
 var home_ref = ref.child('homes');
 var user_ref = ref.child('users');
 
-//local files
-var current_user = require("../json/current_user.json");
-
 exports.sendInvites = function(req, res) {
-    if (current_user['current_user'] == null)
+    var current_user = req.session.current_user;
+
+    if (current_user == null)
         res.render('login');
     else {
+        if (req.session.current_user['setup'] != null)
+            res.redirect(req.session.current_user['setup']);
+
         var emails = req.body.emails;
-        var homeName = current_user['current_user']['homeName'];
+        var homeName = current_user['homeName'];
 
         //update invites
         invites_ref.once("value", function (snapshot) {
@@ -74,12 +76,23 @@ exports.sendInvites = function(req, res) {
            }
         });
 
+        //update current user's set up
+        var authEmail = current_user['email'].split('.').join('');
+        var cu_ref = user_ref.child(authEmail);
+        cu_ref.once("value", function(snapshot) {
+            var data = snapshot.val();
+            data['setup'] = "choose_chores";
+            cu_ref.set(data);
+        });
+        req.session.current_user['setup'] = "choose_chores";
     }
 
     res.redirect('choose_chores');
 }
 
 exports.acceptInvite  = function (req, res) {
+    var current_user = req.session.current_user;
+
     for (var home in req.body) {
         var homeName = req.body[home];
     }
@@ -87,7 +100,7 @@ exports.acceptInvite  = function (req, res) {
     var updateHome = {};
     updateHome['homeName'] = homeName;
 
-    var authEmail = current_user['current_user']['email'].split('.').join('');
+    var authEmail = current_user['email'].split('.').join('');
     var cuUserRef = user_ref.child(authEmail);
     cuUserRef.update(updateHome);
 

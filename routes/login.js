@@ -1,10 +1,10 @@
-//local files
-var current_user = require("../json/current_user.json");
-
 exports.viewLogin = function(req, res) {
-    if (current_user['current_user'] == null)
+    if (req.session.current_user == null)
         res.render('login');
     else {
+        if (req.session.current_user['setup'] != null)
+            res.redirect(req.session.current_user['setup']);
+
         res.redirect("/home");
     }
 };

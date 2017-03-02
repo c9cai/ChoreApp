@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Chore Hero</title>
+    <title>ChoreHero</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="css/home.css" rel="stylesheet">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-xs-3 col-md-6">
-            <h1 id="app-name">Chore Hero</h1>
+            <h1 class="app-name no-show">ChoreHero</h1>
         </div>
         <div class="col-xs-3 col-md-1 pull-right">
             <div class="well" id="score-label">
@@ -30,11 +30,14 @@
             </div>
         </div>
         <div class="col-xs-4 col-md-4 pull-right">
-            <div class="progress">
-                <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
-              aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+            <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Look at your rating to see how you are doing compared to your roommates! Looks like you are a {{hero_category}} now!">
+                <div class="progress">
+                    <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
+                  aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+                    <p id="score-bar-label">{{rating}}/100 ({{hero_category}})</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </nav>
@@ -73,7 +76,7 @@
                     {{#each users}}
                         {{#each overdue}}
                         <div>
-                            <button disabled type="button" class="btn btn-lg chore-buttons overdue-buttons" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-lg chore-buttons overdue-buttons" data-toggle="modal" data-target="#overdue_{{../firstName}}{{../lastName}}_{{@index}}">
                                 {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
@@ -90,7 +93,7 @@
                     {{#each users}}
                         {{#each today}}
                         <div>
-                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#today_{{../firstName}}{{../lastName}}_{{@index}}">
                                 {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
@@ -107,7 +110,7 @@
                     {{#each users}}
                         {{#each upcoming}}
                         <div>
-                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#upcoming_{{../firstName}}{{../lastName}}_{{@index}}">
                                 {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
@@ -124,7 +127,7 @@
                     {{#each users}}
                         {{#each completed}}
                         <div>
-                            <button disabled type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-lg chore-buttons" data-toggle="modal" data-target="#completed_{{../firstName}}{{../lastName}}_{{@index}}">
                                 {{chorename}}</br>{{duedate}}</br>({{../firstName}})
                             </button>
                         </div>
@@ -141,23 +144,115 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
 </div>
 
-<!-- Modal -->
-<div class="modal fade text-center" id="myModal" role="dialog">
-    <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Your Roommate's Chore</h4>
-            </div>
-            <div class="modal-body">
-                <button type="button" class="btn btn-default" data-dismiss="modal">I did it for them!</button>
+
+
+<!-- Modals -->
+{{#each users}}
+    {{#each overdue}}
+    <div class="modal fade text-center" id="overdue_{{../firstName}}{{../lastName}}_{{@index}}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{chorename}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p><b>Owner:</b> {{../firstName}}</p>
+                    <p><b>Due Date:</b> {{duedate}}</p>
+                    <p><b>Status:</b> overdue</p>
+                    <p>{{description}}</p>
+<!--                     <form id="form_overdue_{{@index}}" method="post" action="/done_chore">
+                        <input type="hidden" name="category" value="overdue" />
+                        <input type="hidden" name="index" value="{{@index}}"/>
+                        <input type="hidden" name="redirect" value="home"/>
+                        <input type="hidden" name="user" value="current_user"/>
+                        <button type="submit" class="btn btn-default" id="done-button" form="form_overdue_{{@index}}">Completed</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+                    </form> -->
+                </div>
             </div>
         </div>
-
     </div>
-</div>
+    {{/each}}
+    {{#each today}}
+    <div class="modal fade text-center" id="today_{{../firstName}}{{../lastName}}_{{@index}}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{chorename}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p><b>Owner:</b> {{../firstName}}</p>
+                    <p><b>Due Date:</b> {{duedate}}</p>
+                    <p><b>Status:</b> due today</p>
+                    <p>{{description}}</p>
+                    <!-- <form id="form_today_{{@index}}" method="post" action="/done_chore">
+                        <input type="hidden" name="category" value="today" />
+                        <input type="hidden" name="index" value="{{@index}}"/>
+                        <input type="hidden" name="redirect" value="home"/>
+                        <input type="hidden" name="user" value="current_user"/>
+                        <button type="submit" class="btn btn-default" id="done-button" form="form_today_{{@index}}">Completed</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+                    </form> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{/each}}
+    {{#each upcoming}}
+    <div class="modal fade text-center" id="upcoming_{{../firstName}}{{../lastName}}_{{@index}}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{chorename}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p><b>Owner:</b> {{../firstName}}</p>
+                    <p><b>Due Date:</b> {{duedate}}</p>
+                    <p><b>Status:</b> due soon</p>
+                    <p>{{description}}</p>
+                    <!-- <form id="form_upcoming_{{@index}}" method="post" action="/done_chore">
+                        <input type="hidden" name="category" value="upcoming" />
+                        <input type="hidden" name="index" value="{{@index}}"/>
+                        <input type="hidden" name="redirect" value="home"/>
+                        <input type="hidden" name="user" value="current_user"/>
+                        <button type="submit" class="btn btn-default" id="done-button" form="form_upcoming_{{@index}}">Completed</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+                    </form> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{/each}}
+    {{#each completed}}
+    <div class="modal fade text-center" id="completed_{{../firstName}}{{../lastName}}_{{@index}}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{chorename}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p><b>Owner:</b> {{../firstName}}</p>
+                    <p><b>Due Date:</b> {{duedate}}</p>
+                    <p><b>Status:</b> completed</p>
+                    <p>{{description}}</p>
+                    <!-- <p>Complete now to earn 3 points!</p> -->
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal" id="done-button">Done</button> -->
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{/each}}
+{{/each}}
+<!-- /Modals -->
 
 </body>
 </html>

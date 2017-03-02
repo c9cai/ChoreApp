@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Chore Hero</title>
+    <title>ChoreHero</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="css/home.css" rel="stylesheet">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-xs-3 col-md-6">
-            <h1 id="app-name">Chore Hero</h1>
+            <h1 class="app-name no-show">ChoreHero</h1>
         </div>
         <div class="col-xs-3 col-md-1 pull-right">
             <div class="well" id="score-label">
@@ -30,11 +30,14 @@
             </div>
         </div>
         <div class="col-xs-4 col-md-4 pull-right">
-            <div class="progress">
-                <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
-              aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+            <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Look at your rating to see how you are doing compared to your roommates! Looks like you are a {{hero_category}} now!">
+                <div class="progress">
+                    <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
+                  aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+                    <p id="score-bar-label">{{rating}}/100 ({{hero_category}})</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </nav>
@@ -67,9 +70,17 @@
 
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <form id="choose_chores" method="get" action="/choose_chores">
-                <button type="submit" class="btn btn-default btn-block" form="choose_chores" href="#"><h4>Update Chore List</h4></button>
-            </form>
+            <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#chore-list"><h4>House Chore List<span class="glyphicon glyphicon-menu-down" id="chore-chevron"></span></h4></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-xs-12 collapse container-fluid" id="chore-list"> 
+            {{#each chores}}
+                <!--<h4><a data-toggle="modal" data-target="#delete-{{this}}"><span class="glyphicon glyphicon-remove"></span></a>{{this}}</h4> -->
+                <h4>{{choreName}}</h4>
+                <h5 class="indented">frequency: every {{frequency}} days</h5>
+                <h5 class="indented">description: {{description}}</h5>
+            {{/each}}
         </div>
     </div>
     <br>

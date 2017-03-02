@@ -3,11 +3,7 @@ var firebaseModule = require('../routes/firebase');
 var firebase = firebaseModule.firebase;
 var user_ref = firebase.database().ref("users");
 
-//local files
-var current_user = require("../json/current_user.json");
-
 exports.createUser = function (req, res) {
-    console.log("signup");
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var email = req.body.email;
@@ -27,7 +23,6 @@ exports.createUser = function (req, res) {
                     rendData = {"error2": "<p class=\"alert alert-warning\">Email already being used</p>"};
                     res.render('login', rendData);
                 } else {
-                    console.log("creating invited user");
                     var invitedUser = user_data[authEmail];
                     var invitedUserRef = user_ref.child(authEmail);
 
@@ -36,15 +31,14 @@ exports.createUser = function (req, res) {
                     invitedUser['email'] = email;
                     invitedUser['password'] = password;
                     invitedUser['rating'] = 61;
-                    console.log(invitedUser);
+                    invitedUser['setup'] = "no_home";
 
-                    current_user['current_user'] = invitedUser;
+                    req.session.current_user = invitedUser;
                     invitedUserRef.set(invitedUser);
 
-                    res.redirect('home');
+                    res.redirect('no_home');
                 }
             } else {
-                console.log("creating new user");
                 var userUpdate = {};
                 userUpdate[authEmail] = {
                     "firstName": firstName,
@@ -52,12 +46,13 @@ exports.createUser = function (req, res) {
                     "email": email,
                     "password": password,
                     "rating": 61,
+                    "setup" : "no_home"
                 };
 
-                current_user['current_user'] = userUpdate[authEmail];
+                req.session.current_user = userUpdate[authEmail];
                 user_ref.update(userUpdate);
 
-                res.redirect('home');
+                res.redirect('no_home');
             }
         });
     }

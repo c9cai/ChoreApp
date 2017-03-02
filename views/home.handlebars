@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Chore App</title>
+    <title>ChoreHero</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="css/home.css" rel="stylesheet">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-xs-3 col-md-6">
-            <h1 id="app-name">Chore Hero</h1>
+            <h1 class="app-name no-show">ChoreHero</h1>
         </div>
         <div class="col-xs-3 col-md-1 pull-right">
             <div class="well" id="score-label">
@@ -30,11 +30,14 @@
             </div>
         </div>
         <div class="col-xs-4 col-md-4 pull-right">
-            <div class="progress">
-                <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
-              aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+            <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Look at your rating to see how you are doing compared to your roommates! Looks like you are a {{hero_category}} now!">
+                <div class="progress">
+                    <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
+                  aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+                    <p id="score-bar-label">{{rating}}/100 ({{hero_category}})</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </nav>
@@ -58,7 +61,7 @@
 
 
 <div class="container-fluid text-center">
-    <h1 class="text-center">Your Chores</h1>
+    <h1 class="text-center">My Chores</h1>
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
         </div>
@@ -143,13 +146,14 @@
             <div class="modal-body">
                 <p><b>Due Date:</b>{{duedate}}</p>
                 <p>Complete now to only lose 5 points. More will be deducted if you wait!</p>
+                <p>{{description}}</p>
                 <form id="form_overdue_{{@index}}" method="post" action="/done_chore">
                     <input type="hidden" name="category" value="overdue" />
                     <input type="hidden" name="index" value="{{@index}}"/>
                     <input type="hidden" name="redirect" value="home"/>
                     <input type="hidden" name="user" value="current_user"/>
-                    <button type="submit" class="btn btn-default" id="done-button" form="form_overdue_{{@index}}">Done</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+                    <button type="submit" class="btn btn-default" id="done-button" form="form_overdue_{{@index}}">Completed</button>
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button> -->
                 </form>
             </div>
         </div>
@@ -167,13 +171,14 @@
                 <div class="modal-body">
                     <p><b>Due Date:</b>{{duedate}}</p>
                     <p>Complete now to earn 3 points!</p>
+                    <p>{{description}}</p>
                     <form id="form_today_{{@index}}" method="post" action="/done_chore">
                         <input type="hidden" name="category" value="today" />
                         <input type="hidden" name="index" value="{{@index}}"/>
                         <input type="hidden" name="redirect" value="home"/>
                         <input type="hidden" name="user" value="current_user"/>
-                        <button type="submit" class="btn btn-default" id="done-button" form="form_today_{{@index}}">Done</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+                        <button type="submit" class="btn btn-default" id="done-button" form="form_today_{{@index}}">Completed</button>
+                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button> -->
                     </form>
                 </div>
             </div>
@@ -191,14 +196,14 @@
                 </div>
                 <div class="modal-body">
                     <p><b>Due Date:</b>{{duedate}}</p>
-                    <p>Complete now to earn 3 points!</p>
+                    <p>{{description}}</p>
                     <form id="form_upcoming_{{@index}}" method="post" action="/done_chore">
                         <input type="hidden" name="category" value="upcoming" />
                         <input type="hidden" name="index" value="{{@index}}"/>
                         <input type="hidden" name="redirect" value="home"/>
                         <input type="hidden" name="user" value="current_user"/>
-                        <button type="submit" class="btn btn-default" id="done-button" form="form_upcoming_{{@index}}">Done</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+                        <button type="submit" class="btn btn-default" id="done-button" form="form_upcoming_{{@index}}">Completed</button>
+                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button> -->
                     </form>
                 </div>
             </div>
@@ -216,9 +221,10 @@
                 </div>
                 <div class="modal-body">
                     <p><b>Due Date:</b>{{duedate}}</p>
-                    <p>Complete now to earn 3 points!</p>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="done-button">Done</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button>
+                    <p>{{description}}</p>
+                    <!-- <p>Complete now to earn 3 points!</p> -->
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal" id="done-button">Done</button> -->
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal" disabled>Set Reminder</button> -->
                 </div>
             </div>
 

@@ -1,0 +1,8 @@
+@media screen and (max-width: 480px) {
+    /*.row.content {height:auto;}*/
+    
+    /* To center graph on small screens */
+    .ltr {
+        right:10%;
+    }
+}
