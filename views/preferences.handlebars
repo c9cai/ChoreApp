@@ -49,7 +49,7 @@
     </div>
     <a href="/home"><span class="glyphicon glyphicon-home"></span>&nbsp; My Chores</a>
     <a href="/roommate_chores"><span class="glyphicon glyphicon-user"></span>&nbsp; Roommates' Chores</a>
-    <a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; Scores</a>
+    <a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; House Scores</a>
     <a href="/preferences"><span class="glyphicon glyphicon-heart"></span>&nbsp; Preferences</a>
     <a href="/settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp; Settings</a>
     <div class="divider"></div>
@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1 ">
+        <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1" id="preferences-div">
             <ul id="draggablePanelList" class="list-unstyled preferences_container">
                 {{#each chores}}
                 <li class="panel panel-info" id='{{this}}'>

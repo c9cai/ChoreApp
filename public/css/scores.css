@@ -6,3 +6,9 @@
         right:10%;
     }
 }
+
+#your-rank-container {
+	background-color: #e6e6e6;
+	border-radius: 10px;
+	padding-bottom: 10px;
+}
