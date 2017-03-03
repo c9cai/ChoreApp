@@ -117,15 +117,31 @@
     <script src="js/preferences.js"></script>
     <script>
         
+        /*
         $(document).ready(function () {
-            $('ul').sortable({
+            $('.preferences_container').sortable({
                 axis: 'y',
                 stop: function (event, ui) {
                     var data = $(this).sortable('serialize');
+                    alert(data);
                     $('#savetext').val(data);
                 }
             });
-        });
+        });*/
+
+        function onClick() {
+            var text = "";
+             $("div.chorename").each(function() {
+                text = text + $(this).text() + "&";
+             });
+             
+             text = text.split("-").join("[]=");
+             text = text.slice(0, -1);
+             //alert(text);
+
+             $('#savetext').val(text);
+        }
+        
 
         function onLoad() {
             var text = "";
