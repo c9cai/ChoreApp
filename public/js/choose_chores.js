@@ -45,7 +45,7 @@ function count() {
     selected.push(choreName);
     selected.push(choreDescription);
     selected.push(frequency);
-    alert(selected.join('\n'));
+    //alert(selected.join('\n'));
 
     $("#saveinput").val(selected);
 }

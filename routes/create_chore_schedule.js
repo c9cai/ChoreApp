@@ -37,6 +37,7 @@ exports.createSchedule = function (req, res) {
                 var chore_info = chores[chore];
                 var freq = chore_info['frequency'];
                 var choreName = chore_info['choreName'];
+                var description = chore_info['description'];
 
                 console.log("=========" + chore_info['choreName'] + "===========");
 
@@ -66,6 +67,7 @@ exports.createSchedule = function (req, res) {
                         toAdd['duedate'] = (choreDate.getMonth() + 1)
                             + "/" + choreDate.getDate() + "/"
                             + choreDate.getFullYear();
+                        toAdd['description'] = description;
                         currChores.push(toAdd);
                         categoryRef.set(currChores);
                     });
