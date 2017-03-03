@@ -40,6 +40,9 @@ exports.viewScores = function (req, res) {
         var current_email = current_user['email'].split('.').join('');
         data.push(user_data[current_email]);
 
+        //console.log('current_user');
+        //console.log(user_data[current_email]);
+
         rendData['hero_category'] = calcCategory(user_data[current_email]['rating']);
         rendData['house_ranking'] = calcHouseRanking(user_data, email_data, current_email);
 
