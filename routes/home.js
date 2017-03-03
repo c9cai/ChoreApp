@@ -13,7 +13,7 @@ exports.viewHome = function (req, res) {
             res.redirect(req.session.current_user['setup']);
 
         var email = current_user['email'];
-        email = email.split('.').join();
+        email = email.split('.').join('');
 
         var cuRef = userRef.child(email);
 
@@ -23,7 +23,10 @@ exports.viewHome = function (req, res) {
             //BEGIN update chore schedule
             var todayDate = new Date();
             var today = user_data['today'];
-            var i = today.length - 1;
+            if (today == null)
+                var i = -1;
+            else
+                var i = today.length - 1;
             while (i >= 0) {
                 var duedate_string = today[i]['duedate'];
                 var parts = duedate_string.split('/');
@@ -34,8 +37,6 @@ exports.viewHome = function (req, res) {
 
                 //chore is now overdue
                 if (diffDays > 0) {
-                    console.log("Removing index " + i);
-                    console.log(user_data['today']);
                     if (user_data['overdue'] == null)
                         user_data['overdue'] = [];
 
@@ -52,7 +53,10 @@ exports.viewHome = function (req, res) {
             }
 
             var upcoming = user_data['upcoming'];
-            i = upcoming.length - 1;
+            if (upcoming == null)
+                i = -1;
+            else
+                i = upcoming.length - 1;
             while (i >= 0) {
                 var duedate_string = upcoming[i]['duedate'];
                 var parts = duedate_string.split('/');
@@ -63,7 +67,6 @@ exports.viewHome = function (req, res) {
 
                 //chore is now overdue
                 if (diffDays > 0) {
-                    console.log(diffDays);
                     if (user_data['overdue'] == null)
                         user_data['overdue'] = [];
 
