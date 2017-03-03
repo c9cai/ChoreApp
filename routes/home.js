@@ -21,6 +21,7 @@ exports.viewHome = function (req, res) {
             var user_data = snapshot.val();
 
             //BEGIN update chore schedule
+            /*
             var todayDate = new Date();
             var today = user_data['today'];
             if (today == null)
@@ -93,6 +94,7 @@ exports.viewHome = function (req, res) {
             }
 
             cuRef.set(user_data);
+            */
             //END update chore schedule
 
             //set user's rating
