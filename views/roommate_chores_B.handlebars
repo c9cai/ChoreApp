@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ChoreHero</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/roommate_chores.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='css/fullcalendar.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src='js/moment.min.js'></script>
+    <script src='js/fullcalendar.js'></script>
+    <script>
+        $(document).ready(function() {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+            // put your options and callbacks here
+            displayEventTime: false,
+            events: [
+                {{#each users}}
+                {{#each overdue}}
+                {
+                    title : '{{../firstName}} : {{chorename}}',
+                    start :  '{{duedate}}',
+                    color : 'red'
+                    
+                },
+                {{/each}}
+                {{#each today}}
+                {
+                    title : '{{../firstName}} : {{chorename}}',
+                    start :  '{{duedate}}',
+                    color : 'blue'
+                },
+                {{/each}}
+                {{#each upcoming}}
+                {
+                    title : '{{../firstName}} : {{chorename}}',
+                    start :  '{{duedate}}',
+                    color : 'green'
+                },
+                {{/each}}
+                {{#each completed}}
+                {
+                    title : '{{../firstName}} : {{chorename}}',
+                    start :  '{{duedate}}',
+                    color : 'grey'
+                },
+                {{/each}}
+                {{/each}}
+            ]
+        })
+
+        });
+
+    </script>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="row">
+        <div class="col-xs-2 col-md-1">
+            <div class="navbar-header">
+                <button id="hamburger" style="font-size: 250%;" class="btn-transparent btn-default" type="button" onclick="toggleNav()">
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-xs-3 col-md-6">
+            <h1 class="app-name no-show">ChoreHero</h1>
+        </div>
+        <div class="col-xs-3 col-md-1 pull-right">
+            <div class="well" id="score-label">
+                {{rating}}
+            </div>
+        </div>
+        <div class="col-xs-4 col-md-4 pull-right">
+            <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Look at your rating to see how you are doing compared to your roommates! Looks like you are a {{hero_category}} now!">
+                <div class="progress">
+                    <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{rating}}"
+                  aria-valuemin="0" aria-valuemax="100" style="width:{{rating}}%">
+                    <p id="score-bar-label">{{rating}}/100 ({{hero_category}})</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="side-nav" class="sidenav">
+    <div class="row">
+        <h4>Hi, {{firstName}}</h4>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+    </div>
+    <a href="/home"><span class="glyphicon glyphicon-home"></span>&nbsp; My Chores</a>
+    <a href="/roommate_chores"><span class="glyphicon glyphicon-user"></span>&nbsp; Roommates' Chores</a>
+    <a href="/scores"><span class="glyphicon glyphicon-stats"></span>&nbsp; House Scores</a>
+    <a href="/preferences"><span class="glyphicon glyphicon-heart"></span>&nbsp; Preferences</a>
+    <a href="/settings"><span class="glyphicon glyphicon-wrench"></span>&nbsp; Settings</a>
+    <div class="divider"></div>
+    <form id="logout" method="post" action="/logout">
+        <button type="submit" class="btn btn-default" id="logout-button" form="logout">Log Out</button>
+    </form>
+</div>
+</nav>
+
+
+
+ <script src="js/home.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+<div id='calendar'></div>
+    
+</body>
+</html>
