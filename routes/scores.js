@@ -4,9 +4,10 @@ var firebase = firebaseModule.firebase;
 var userdata = []
 var homes_data = []
 
-firebase.database().ref('users').once('value').then(function(snapshot) {
-  user_data = snapshot.val();
-  //console.log(user_data);
+var user_ref = firebase.database().ref('users');
+user_ref.on('value', function (snapshot) {
+    user_data = snapshot.val();
+    //console.log(user_data);
 });
 
 var home_ref = firebase.database().ref('homes');
