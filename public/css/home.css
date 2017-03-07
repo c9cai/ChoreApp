@@ -11,7 +11,7 @@ hr {
     height: 100%; /* 100% Full-height */
     width: 0px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top, but after the top nav bar */
+    z-index: 5; /* Stay on top, but after the top nav bar */
     top: 0;
     left: 0;
     background-color: #222; /* Black*/
@@ -165,7 +165,7 @@ hr {
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
-    z-index: 2;
+    z-index: 6;
     margin-bottom: 0;
     border-radius: 0;
     height: 75px;
