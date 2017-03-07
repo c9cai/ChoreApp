@@ -67,7 +67,7 @@ exports.viewChores = function (req, res) {
                         var dd = rendData['users'][user]['overdue'][count].duedate;
                         var newDate = dd.split('/');
                         var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['overdue'][0].duedate = toRet;
+                        rendData['users'][user]['overdue'][count].duedate = toRet;
                         count++;
                     }
                     }
@@ -77,7 +77,7 @@ exports.viewChores = function (req, res) {
                         var dd = rendData['users'][user]['today'][count].duedate;
                         var newDate = dd.split('/');
                         var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['today'][0].duedate = toRet;
+                        rendData['users'][user]['today'][count].duedate = toRet;
                         count++;
                     }
                     }
@@ -87,7 +87,7 @@ exports.viewChores = function (req, res) {
                         var dd = rendData['users'][user]['upcoming'][count].duedate;
                         var newDate = dd.split('/');
                         var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['upcoming'][0].duedate = toRet;
+                        rendData['users'][user]['upcoming'][count].duedate = toRet;
                         count++;
                     }
                     }    
@@ -97,7 +97,7 @@ exports.viewChores = function (req, res) {
                         var dd = rendData['users'][user]['completed'][count].duedate;
                         var newDate = dd.split('/');
                         var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['completed'][0].duedate = toRet;
+                        rendData['users'][user]['completed'][count].duedate = toRet;
                         count++;
                     }
                     }    
