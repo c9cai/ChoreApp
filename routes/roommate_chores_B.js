@@ -63,43 +63,43 @@ exports.viewChores = function (req, res) {
                 if (user != current_email) {
                     console.log(user);
                     if (rendData['users'][user]['overdue']!= null) {
-                    for (chore in rendData['users'][user]['overdue']) {
-                        var dd = rendData['users'][user]['overdue'][count].duedate;
-                        var newDate = dd.split('/');
-                        var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['overdue'][count].duedate = toRet;
-                        count++;
-                    }
+                        for (chore in rendData['users'][user]['overdue']) {
+                            var dd = rendData['users'][user]['overdue'][count].duedate;
+                            var newDate = dd.split('/');
+                            var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            rendData['users'][user]['overdue'][count].duedate = toRet;
+                            count++;
+                        }
                     }
                     count = 0;
                     if (rendData['users'][user]['today']!= null) {
-                    for (chore in rendData['users'][user]['today']) {
-                        var dd = rendData['users'][user]['today'][count].duedate;
-                        var newDate = dd.split('/');
-                        var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['today'][count].duedate = toRet;
-                        count++;
-                    }
+                        for (chore in rendData['users'][user]['today']) {
+                            var dd = rendData['users'][user]['today'][count].duedate;
+                            var newDate = dd.split('/');
+                            var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            rendData['users'][user]['today'][count].duedate = toRet;
+                            count++;
+                        }
                     }
                     count = 0;
                     if (rendData['users'][user]['upcoming']!= null) {
-                    for (chore in rendData['users'][user]['upcoming']) {
-                        var dd = rendData['users'][user]['upcoming'][count].duedate;
-                        var newDate = dd.split('/');
-                        var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['upcoming'][count].duedate = toRet;
-                        count++;
-                    }
+                        for (chore in rendData['users'][user]['upcoming']) {
+                            var dd = rendData['users'][user]['upcoming'][count].duedate;
+                            var newDate = dd.split('/');
+                            var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            rendData['users'][user]['upcoming'][count].duedate = toRet;
+                            count++;
+                        }
                     }    
                     count = 0;
                     if (rendData['users'][user]['completed']!= null) {
-                    for (chore in rendData['users'][user]['completed']) {
-                        var dd = rendData['users'][user]['completed'][count].duedate;
-                        var newDate = dd.split('/');
-                        var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
-                        rendData['users'][user]['completed'][count].duedate = toRet;
-                        count++;
-                    }
+                        for (chore in rendData['users'][user]['completed']) {
+                            var dd = rendData['users'][user]['completed'][count].duedate;
+                            var newDate = dd.split('/');
+                            var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            rendData['users'][user]['completed'][count].duedate = toRet;
+                            count++;
+                        }
                     }    
                    
                 }
