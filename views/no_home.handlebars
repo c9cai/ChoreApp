@@ -15,12 +15,11 @@
     <div class="row">
         <div class="col-xs-2 col-md-1">
             <div class="navbar-header">
-                <button id="hamburger" style="font-size: 250%;" class="btn-transparent btn-default" type="button" onclick="toggleNav()">
-                    <span class="glyphicon glyphicon-menu-hamburger"></span>
-                </button>
+                <span class="glyphicon glyphicon-menu-hamburger" onclick="toggleNav()" id="hamburger"></span>
             </div>
         </div>
         <div class="col-xs-3 col-md-6">
+            <img src="images/hero_only.png" class="hero pull-left">
             <h1 class="app-name">ChoreHero</h1>
         </div>
     </div>
@@ -39,7 +38,7 @@
 
 
 <div class="container-fluid text-center">
-    <h1 class="text-center">Hi, {{firstName}}</h1>
+    <h1 class="text-center page-title">Hi, {{firstName}}</h1>
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1"><hr>
         </div>
@@ -70,28 +69,7 @@
             </div>
         </div>
         <br>
-        <!--
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#find-house"><h4>Find my House<span class="glyphicon glyphicon-menu-down" id="find-house-chevron"></span></h4></button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 collapse container-fluid" id="find-house">
-                <br>
-                <p>Note: one of your roommates should have already created a house, and given you the house name for this option to work.</p>
-                <form id="find_house_form" method="post" action="/find_house">
-                    <label>House Name:</label><input type="text" name="house_name"/>
-                    <br>
-                    <br>
-                    <div class="col">
-                        <button id="find_house_button" type="submit" class="btn btn-default" form="find_house_form">Search</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <br>
-        -->
+
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#see-invites"><h4>House Invites<span class="glyphicon glyphicon-menu-down" id="find-house-chevron"></span></h4></button>
@@ -100,15 +78,18 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 collapse container-fluid" id="see-invites">
                 <br>
-                <p>Click below invites to join a house</p>
+                {{#if invites}}
+                <p>Click an invite below to join a house</p>
                 <form class="form-inline" id="accept_invite_form" method="post" action="/accept_invite">
                     {{#each invites}}
                         <button name="b_{{this}}" value="{{this}}" type="submit" class="btn btn-default" form="accept_invite_form">
                             {{this}}
                         </button>
                     {{/each}}
-
                 </form>
+                {{else}}
+                <p>You have no invites!</p>
+                {{/if}}
             </div>
         </div>
     </div>

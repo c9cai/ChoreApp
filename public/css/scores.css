@@ -8,7 +8,9 @@
 }
 
 #your-rank-container {
-	background-color: #e6e6e6;
+	background-color: #a9a8a0;
 	border-radius: 10px;
 	padding-bottom: 10px;
+	font-family: "Montserrat";
+	font-weight: 300;
 }

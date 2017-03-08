@@ -1,7 +1,115 @@
-hr {
-    height: 5px;
-    border-top: 1px solid #000;
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+
+
+/* FONTS IN GENERAL */
+
+h1 {
+    font-family: 'Oswald';
+    font-weight: 600;
 }
+
+h2, h3, h4 {
+    font-family: 'Montserrat';
+    font-weight: 300;
+}
+
+h5, h6, p {
+    font-family: 'ABeeZee';
+}
+
+.btn-default, label {
+    font-family: 'ABeeZee';
+}
+
+
+
+
+/*TOP NAV BAR */
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    z-index: 6;
+    background-color: #03507E;
+    margin-bottom: 0;
+    border-radius: 0;
+    height: 75px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#hamburger {
+    color: #a9a8a0;
+    font-size: 45px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/*score label */
+#score-label {
+    height: 50px;
+    margin-top: 2.5px;
+    margin-bottom: 0px;
+    max-width: 60px;
+    font-size: 35px;
+    padding-left: 10px;
+    padding-top: 0px;
+    font-family: "ABeeZee";
+}
+
+/* progress bar (white part of score bar) */
+.progress {
+    height: 35px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    max-width: 300px;
+    font-family: "ABeeZee";
+    padding: 2px;
+}
+
+/* score bar (colored/filled in part of score bar) */
+#score-bar {
+    background-color: #a9a8a0;
+}
+
+#score-bar-label {
+    color: #000000;
+    font-size: 20px;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 10px;
+
+}
+
+.app-name {
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: 'Oswald';
+    font-weight: 600;
+}
+
+.app-name-login {
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 80px;
+    font-family: 'Oswald';
+    font-weight: 600;
+}
+
+/*our logo, with cape */
+.hero {
+    height: 55px;
+    margin-right: 15px;
+}
+
+
+
+
+
+/* SIDE NAV */
 
 #side-nav {
     width: 0px; 
@@ -14,10 +122,13 @@ hr {
     z-index: 5; /* Stay on top, but after the top nav bar */
     top: 0;
     left: 0;
-    background-color: #222; /* Black*/
+    background-color: #03507E;
     overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: hidden;
     padding-top: 75px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.4s; /* 0.5 second transition effect to slide in the sidenav */
+    font-family: "Montserrat";
+    font-weight: 300;
 }
 
 /* The navigation menu links */
@@ -25,18 +136,18 @@ hr {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 18px;
-    color: #818181;
+    color: #a9a8a0;
     display: block;
     transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
-    color: #00b3b3;
+    color: #ffffff;
 }
 
 .sidenav h4 {
-    color: #00b3b3;
+    color: #ffffff;
     padding: 8px 8px 8px 32px;
     font-size: 25px;
     display: block;
@@ -50,6 +161,28 @@ hr {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+
+#logout-button {
+    float: right;
+    margin-right: 15px;
+}
+
+
+
+
+
+/* BODY */
+
+
+.page-title {
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+
+hr {
+    height: 5px;
+    border-top: 1px solid #000;
 }
 
 .glyphicon-remove {
@@ -68,24 +201,25 @@ hr {
 }
 
 .carousel-container {
-    background-color: #e6e6e6;
+    background-color: #a9a8a0;
     padding: 10px 28px 10px 28px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 50px;
 }
 
 .chore-buttons {
-    background-color: #00b3b3;
+    background-color: #03507e;
     color: white;
     width: 120px;
     height: 100px;
     font-size: 15px;
     padding: 5px 10px 5px 10px;
     text-align: center;
+    font-family: 'ABeeZee';
 }
 
 .chore-buttons:hover {
-    background-color: #008080;
+    background-color: #02304b;
     color: white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
@@ -96,11 +230,15 @@ hr {
 }
 
 .overdue-buttons {
-    background-color: #e60000 !important;
+    background-color: #c30101 !important;
 }
 
 .overdue-buttons:hover {
-    background-color: #800000 !important;
+    background-color: #7f0101 !important;
+}
+
+.btn-default:hover {
+    background-color: #a9a8a0;
 }
 
 .list-inline {
@@ -110,76 +248,34 @@ hr {
 .time-titles {
     font-size: 22px;
     margin-top: 8px;
+    font-family: 'ABeeZee';
 }
 
 .overdue-title {
-    color: #e60000;
-}
-
-/*score label */
-#score-label {
-    height: 50px;
-    margin-top: 2.5px;
-    margin-bottom: 0px;
-    max-width: 60px;
-    font-size: 35px;
-    padding-left: 10px;
-    padding-top: 0px;
-}
-
-/* progress bar (white part of score bar) */
-.progress {
-    height: 35px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    max-width: 300px;
-}
-
-/* score bar (colored/filled in part of score bar) */
-#score-bar {
-    background-color: #00b3b3;
-}
-
-#score-bar-label {
-    color: #000000;
-    font-size: 20px;
-    position: absolute;
-    margin-top: 8px;
-    margin-left: 10px;
-
-}
-
-.app-name {
-    color: #00b3b3;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.app-name-login {
-    color: #00b3b3;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-    z-index: 6;
-    margin-bottom: 0;
-    border-radius: 0;
-    height: 75px;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
-#logout-button {
-    float: right;
-    margin-right: 15px;
+    color: #c30101;
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {height: 450px}
+
+.hide {
+    {display:none;}
+}
+
+.center {
+    text-align: center;
+}
+
+.center-list {
+    display:table;
+    margin: 0 auto;
+}
+
+
+
+
+
+/* ON SMALL SCREENS */
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 480px) {
@@ -200,23 +296,10 @@ hr {
 
     #score-bar-label {
         font-size: 13px;
+        margin-left: 2px;
     }
-}
 
-.pie_child{
-    display: inline-block;
-    vertical-align:top;
-}
-
-.hide {
-    {display:none;}
-}
-
-.center {
-    text-align: center;
-}
-
-.center-list {
-    display:table;
-    margin: 0 auto;
+    #hamburger {
+        margin-left: 0px;
+    }
 }

@@ -25,6 +25,7 @@
 	margin-left: -25px;
 }
 
+
 @media screen and (max-width: 480px) {
     .row.content {height:auto;}
     

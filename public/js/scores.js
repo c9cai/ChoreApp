@@ -1,7 +1,7 @@
 'use strict';
 
 var json_data = {};
-var colors = ['#00b3b3', '#008080', 'grey', 'black'];
+var colors = ['#03507e', '#02304b', '#a9a8a0', 'black'];
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -59,8 +59,9 @@ function drawChart() {
     height: 400,
     bar: {groupWidth: "95%"},
     legend: { position: "none" },
+    fontName: 'ABeeZee',
+    fontSize: 20,
     vAxis: {
-      title: 'Ratings',
       maxValue: 100,
       minValue: 0,
     },
