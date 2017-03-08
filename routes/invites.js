@@ -96,6 +96,7 @@ exports.acceptInvite  = function (req, res) {
 
     var updateHome = {};
     updateHome['homeName'] = homeName;
+    req.session.current_user['homeName'] = homeName;
 
     var authEmail = current_user['email'].split('.').join('');
     var cuUserRef = user_ref.child(authEmail);
