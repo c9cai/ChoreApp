@@ -8,6 +8,11 @@
 
 hr {
 	color: #ffffff;
+	border-top: 1px solid #ffffff;
+}
+
+h3 {
+	color: #ffffff;
 }
 
 body {
