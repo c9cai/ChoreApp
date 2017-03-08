@@ -12,9 +12,6 @@ exports.sendInvites = function(req, res) {
     if (current_user == null)
         res.render('login');
     else {
-        if (req.session.current_user['setup'] != null)
-            res.redirect(req.session.current_user['setup']);
-
         var emails = req.body.emails;
         var homeName = current_user['homeName'];
 

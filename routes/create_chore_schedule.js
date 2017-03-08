@@ -39,10 +39,7 @@ exports.createSchedule = function (req, res) {
                 var choreName = chore_info['choreName'];
                 var description = chore_info['description'];
 
-                console.log("=========" + chore_info['choreName'] + "===========");
-
                 do {
-                    console.log("Chore date is: " + choreDate);
                     var timeDiff = Math.abs(choreDate.getTime() - todayDate.getTime());
                     var diffDays = Math.floor(timeDiff / (1000 * 3600 * 24));
 
@@ -81,7 +78,6 @@ exports.createSchedule = function (req, res) {
 
                     //increment chore date by frequency
                     choreDate.setDate(choreDate.getDate() + parseInt(freq));
-                    console.log("date diff is: " + diffDays);
                 } while (diffDays <= 14)
 
                 choreDate = new Date();

@@ -13,7 +13,7 @@ exports.savePreferences = function(req, res) {
 	saveString = newString.split('-').join(' ');
 	var data = saveString.split('&');
 
-	var ref = firebase.database().ref('users/' + uname + '/preferences').set(data);
+	firebase.database().ref('users/' + uname + '/preferences').set(data);
 
     //update current user's set up
     var authEmail = current_user['email'].split('.').join('');
