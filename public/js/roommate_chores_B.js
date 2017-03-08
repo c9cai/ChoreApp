@@ -17,6 +17,6 @@ function initializePage() {
 }*/
 
 function onClick() {
-	ga("send", "event", "clickCount", "click");
+	ga("send", "event", "clickCountB", "click");
 }
 
