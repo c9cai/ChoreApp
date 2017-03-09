@@ -12,9 +12,6 @@ exports.sendInvites = function(req, res) {
     if (current_user == null)
         res.render('login');
     else {
-        if (req.session.current_user['setup'] != null)
-            res.redirect(req.session.current_user['setup']);
-
         var emails = req.body.emails;
         var homeName = current_user['homeName'];
 
@@ -99,6 +96,7 @@ exports.acceptInvite  = function (req, res) {
 
     var updateHome = {};
     updateHome['homeName'] = homeName;
+    req.session.current_user['homeName'] = homeName;
 
     var authEmail = current_user['email'].split('.').join('');
     var cuUserRef = user_ref.child(authEmail);

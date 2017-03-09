@@ -63,13 +63,11 @@ exports.saveChores = function (req, res) {
     var dataLen = dataArray.length / 3;
     console.log(dataLen);
 
-    var uname = current_user['email'].replace(".", "");
-
+    var uname = current_user['email'].split('.').join('');
     var home = user_data[uname]['homeName'];
 
+    //set chores for home
     for (i = 0; i < dataLen; i++) {
-
-
         dbData = {};
 
         var count = 1;
@@ -81,10 +79,20 @@ exports.saveChores = function (req, res) {
         dbData["choreName"] = dataArray[i];
         dbData["description"] = dataArray[i + dataLen];
         dbData["frequency"] = dataArray[i + dataLen * 2];
-        var storeRef = firebase.database().ref('chores/' + home + "/" + dataArray[i]).set(dbData);
-        var storeRef2 = firebase.database().ref('users/' + uname + "/preferences/" + dataArray[i]).set(dataArray[i]);
-
+        firebase.database().ref('chores/' + home + "/" + dataArray[i]).set(dbData);
     }
+
+    //set default preferences for users
+    var defaultPreferences = dataArray.splice(0,dataLen);
+    homeRef.child(home).once("value", function(snapshot) {
+        var homeData = snapshot.val();
+
+        for (var u in homeData) {
+            var user = homeData[u];
+
+            firebase.database().ref('users/' + user + "/preferences/").set(defaultPreferences);
+        }
+    });
 
     if (current_user != null) {
         //update current user's set up
