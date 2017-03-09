@@ -48,12 +48,15 @@ h5, h6, p {
 
 /*score label */
 #score-label {
-    height: 50px;
-    margin-top: 2.5px;
+    background-color: #a9a8a0;
+    border-color: #a9a8a0;
+    height: 60px;
+    width: 80px;
+    margin-top: -1.5px;
     margin-bottom: 0px;
-    max-width: 60px;
+    max-width: 80px;
     font-size: 35px;
-    padding-left: 10px;
+    padding-left: 2px;
     padding-top: 0px;
     font-family: "ABeeZee";
 }
@@ -105,8 +108,21 @@ h5, h6, p {
     margin-right: 15px;
 }
 
+.nav_category_pics {
+    width: 74px;
+}
 
+#nav_villian_pic {
+    width: 61px;
+    margin-left: 7px;
+    margin-top: 1px;
+}
 
+#nav_hero_pic {
+    width: 71px;
+    margin-left: 2px;
+    margin-top: 1px;
+}
 
 
 /* SIDE NAV */

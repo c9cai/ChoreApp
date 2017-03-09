@@ -22,16 +22,16 @@
                 <span class="glyphicon glyphicon-menu-hamburger" onclick="toggleNav()" id="hamburger"></span>
             </div>
         </div>
-        <div class="col-xs-3 col-md-6">
-            <img src="images/hero_only.png" class="hero pull-left">
+        <div class="col-xs-2 col-md-6">
+            <img src="images/hero_only_logo.png" class="hero pull-left">
             <h1 class="app-name no-show">ChoreHero</h1>
         </div>
-        <div class="col-xs-3 col-md-1 pull-right">
+        <div class="col-xs-4 col-md-2 pull-right">
             <div class="well" id="score-label">
-                {{users.0.rating}}
+                <img src="images/{{hero_category}}.png" class="nav_category_pics" id="nav_{{hero_category}}_pic">
             </div>
         </div>
-        <div class="col-xs-4 col-md-4 pull-right">
+        <div class="col-xs-4 col-md-3 pull-right">
             <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Look at your rating to see how you are doing compared to your roommates! Looks like you are a {{hero_category}} now!">
                 <div class="progress">
                     <div class="progress-bar" id="score-bar" role="progressbar" aria-valuenow="{{users.1.rating}}"

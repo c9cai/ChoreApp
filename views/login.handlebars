@@ -4,12 +4,10 @@
     <title>ChoreHero</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <link href="css/home.css" rel="stylesheet">
-
-    <link href="css/login.css" rel="stylesheet">
-    
+    <link href="css/login.css" rel="stylesheet">   
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
@@ -18,10 +16,50 @@
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col-md-1 col-md-offset-4 col-xs-3">
-            <img src="images/hero.png" class="hero-login">
+            <img src="images/hero_logo.png" class="hero-login">
         </div>
         <div class="col-md-3 col-xs-5">
             <h1 class="app-name-login">ChoreHero</h1>
+        </div>
+    </div>
+    <div class="row">
+        <h3>See who is the hero in your house</h3>
+    </div>
+    <div class="divider"></div>
+    <div class="row text-center">
+        <div class="col-md-10 col-md-offset-1 col-xs-8 col-xs-offset-3 login-carousel-container">
+            <div class="login-carousel">
+                <div>
+                    <div class="category_div" id="villian_div">
+                        <img src="images/villian.png" class="category_pic" id="villian_pic">
+                        <h5>Villian</h5>
+                    </div>
+                </div>
+                <div>
+                    <div class="category_div" id="minion_div">
+                        <img src="images/minion.png" class="category_pic" id="minion_pic">
+                        <h5>Minion</h5>
+                    </div>
+                </div>
+                <div>
+                    <div class="category_div" id="civilian_div">
+                        <img src="images/civilian.png" class="category_pic" id="civilian_pic">
+                        <h5>Civilian</h5>
+                    </div>
+                </div>
+                <div>
+                    <div class="category_div" id="sidekick_div">
+                        <img src="images/sidekick.png" class="category_pic" id="sidekick_pic">
+                        <h5>Sidekick</h5>
+                    </div>
+                </div>
+                <div>
+                    <div class="category_div" id="hero_div">
+                        <img src="images/hero.png" class="category_pic" id="hero_pic">
+                        <h5>Hero</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="divider"></div>
@@ -64,7 +102,6 @@
                     </div>
                 </form>
         </div>
-
     </div>
     {{{error1}}}
     <br>
@@ -72,6 +109,12 @@
     
 
     {{{error2}}}
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 </div>
 
 

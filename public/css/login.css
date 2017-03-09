@@ -56,3 +56,78 @@ input.bottom {
 .hero-login {
     height: 100px;
 }
+
+
+/*the five hero/sidekick/civilian/minion/villian pictures*/
+.category_pic {
+	width: 140px;
+}
+
+/*the boxes around each category picture */
+.category_div {
+	background-color: #a9a8a0;
+	border-radius: 4px;
+	padding: 5px;
+	height: 170px;
+	width: 190px;
+}
+
+
+#villian_div {
+	/*margin-left: 8.33333%;*/
+}
+
+#civilian_div {
+	padding-top: 64px;
+}
+
+#sidekick_div, #minion_div {
+	padding-top: 20px;
+}
+
+#villian_div, #hero_div {
+	padding-top: 10px;
+}
+
+#villian_pic {
+	margin-left: 20px;
+}
+
+#minion_pic {
+	margin-bottom: 23px;
+	margin-left: 20px;
+}
+
+#civilian_pic {
+	margin-bottom: 39px;
+	margin-left: 20px;
+}
+
+#hero_pic {
+	width: 160px;
+	margin-bottom: 14px;
+	margin-left: 10px;
+}
+
+#sidekick_pic {
+	width: 180px;
+	margin-bottom: 22px;
+}
+
+
+
+/* ON SMALL SCREENS */
+
+@media screen and (max-width: 480px) {
+    .row.content {height:auto;}
+    
+    .app-name-login {
+        font-size: 65px;
+    }
+
+    h3 {
+    	font-size: 20px;
+    }
+
+
+}
