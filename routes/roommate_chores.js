@@ -47,12 +47,13 @@ exports.viewChores = function (req, res) {
             }
 
             for (var user in users) {
-                var email = users[user].split(',').join('');
-                console.log(email);
+                var email = users[user].split('.').join('');
+    
                 if (current_email != email) {
                     rendData['users'][email] = user_data[email];
                 }
             }
+       
             res.render('roommate_chores',rendData);
         });
     }
