@@ -88,7 +88,7 @@ exports.saveChores = function (req, res) {
         var homeData = snapshot.val();
 
         for (var u in homeData) {
-            var user = homeData[u];
+            var user = homeData[u].split('.').join('');
 
             firebase.database().ref('users/' + user + "/preferences/").set(defaultPreferences);
         }
