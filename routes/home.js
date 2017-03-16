@@ -189,7 +189,7 @@ exports.createHome = function (req, res) {
             else {//create home
                 var updateHome = {};
                 var email = current_user['email'];
-                var authEmail = email.replace(".", "");
+                var authEmail = email.split('.').join('');
                 updateHome[homeName] = [email];
                 homeRef.update(updateHome);
 

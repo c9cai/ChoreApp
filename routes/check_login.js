@@ -22,8 +22,8 @@ exports.checkLogin = function (req, res) {
                 req.session.current_user = user_data[username];
                 if (req.session.current_user['setup'] != null)
                     res.redirect(req.session.current_user['setup']);
-
-                res.redirect("/home");
+                else
+                    res.redirect("/home");
             } else
                 res.render('login');
         } else {
