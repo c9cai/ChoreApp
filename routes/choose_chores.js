@@ -27,7 +27,7 @@ exports.viewChores = function (req, res) {
     if (current_user != null) {
 
         var email = current_user['email'];
-        email = email.replace(".", "");
+        email = email.split('.').join('');
         var rendData = {};
 
 

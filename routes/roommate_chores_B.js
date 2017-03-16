@@ -48,7 +48,7 @@ exports.viewChores = function (req, res) {
 
             console.log(current_email);
             for (var user in users) {
-                var email = users[user].replace(".", "");
+                var email = users[user].split('.').join('');
                 console.log(email);
                 if (current_email != email) {
                     rendData['users'][email] = user_data[email];

@@ -12,7 +12,7 @@ exports.doneChore = function (req, res) {
     var user = req.body.user;
 
     var email = current_user['email'];
-    email = email.replace(".", "");
+    email = email.split('.').join('');
 
     //move chore to complete section
     var cuRef = userRef.child(email);
