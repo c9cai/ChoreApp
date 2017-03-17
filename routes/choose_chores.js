@@ -27,7 +27,7 @@ exports.viewChores = function (req, res) {
     if (current_user != null) {
 
         var email = current_user['email'];
-        email = email.replace(".", "");
+        email = email.split('.').join('');
         var rendData = {};
 
 
@@ -88,7 +88,7 @@ exports.saveChores = function (req, res) {
         var homeData = snapshot.val();
 
         for (var u in homeData) {
-            var user = homeData[u];
+            var user = homeData[u].split('.').join('');
 
             firebase.database().ref('users/' + user + "/preferences/").set(defaultPreferences);
         }

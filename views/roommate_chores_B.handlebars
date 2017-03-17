@@ -23,8 +23,6 @@
             $('#calendar').fullCalendar({
                 // put your options and callbacks here
                 eventClick: function(calEvent, jsEvent, view) {
-
-                    onClick();
                     var name = calEvent.title.split(':')[0];
                     var chore = calEvent.title.split(':')[1];
                     var status;
@@ -57,7 +55,7 @@
                         title : '{{../firstName}} : {{chorename}}',
                         start :  '{{duedate}}',
                         color : 'red'
-                        
+
                     },
                     {{/each}}
                     {{#each today}}
