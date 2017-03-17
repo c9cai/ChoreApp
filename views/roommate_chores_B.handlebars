@@ -49,12 +49,37 @@
                 },
                 displayEventTime: false,
                 events: [
+                    {{#each users}}
+                    {{#each overdue}}
                     {
-                        title: 'Test Chore',
-                        start: '2017-3-16',
-                        color: 'red'
+                        title : '{{../firstName}} : {{chorename}}',
+                        start :  '{{duedate}}',
+                        color : 'red'
 
-                    }
+                    },
+                    {{/each}}
+                    {{#each today}}
+                    {
+                        title : '{{../firstName}} : {{chorename}}',
+                        start :  '{{duedate}}',
+                        color : 'blue'
+                    },
+                    {{/each}}
+                    {{#each upcoming}}
+                    {
+                        title : '{{../firstName}} : {{chorename}}',
+                        start :  '{{duedate}}',
+                        color : 'green'
+                    },
+                    {{/each}}
+                    {{#each completed}}
+                    {
+                        title : '{{../firstName}} : {{chorename}}',
+                        start :  '{{duedate}}',
+                        color : 'grey'
+                    },
+                    {{/each}}
+                    {{/each}}
                 ]
             })
 
