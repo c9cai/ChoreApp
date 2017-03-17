@@ -28,13 +28,13 @@
                     var name = calEvent.title.split(':')[0];
                     var chore = calEvent.title.split(':')[1];
                     var status;
-                    if (calEvent.color == 'red') {
+                    if (calEvent.color == '#c30101') {
                         status = 'Overdue';
-                    } else if (calEvent.color == 'grey') {
+                    } else if (calEvent.color == '#a9a8a0') {
                         status = 'Completed';
-                    } else if (calEvent.color == 'blue') {
+                    } else if (calEvent.color == '#03507e') {
                         status = 'Today';
-                    } else if (calEvent.color == 'green') {
+                    } else if (calEvent.color == '#03507e') {
                         status = 'Upcoming';
                     }
 
