@@ -66,7 +66,15 @@ exports.viewChores = function (req, res) {
                         for (chore in rendData['users'][user]['overdue']) {
                             var dd = rendData['users'][user]['overdue'][count].duedate;
                             var newDate = dd.split('/');
+
+                            //ISO format
+                            if (newDate[0] < 10)
+                                newDate[0] = '0' + newDate[0];
+                            if (newDate[1] < 10)
+                                newDate[1] = '0' + newDate[1];
+
                             var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            console.log(toRet);
                             rendData['users'][user]['overdue'][count].duedate = toRet;
                             count++;
                         }
@@ -76,7 +84,15 @@ exports.viewChores = function (req, res) {
                         for (chore in rendData['users'][user]['today']) {
                             var dd = rendData['users'][user]['today'][count].duedate;
                             var newDate = dd.split('/');
+
+                            //ISO format
+                            if (newDate[0] < 10)
+                                newDate[0] = '0' + newDate[0];
+                            if (newDate[1] < 10)
+                                newDate[1] = '0' + newDate[1];
+
                             var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            console.log(toRet);
                             rendData['users'][user]['today'][count].duedate = toRet;
                             count++;
                         }
@@ -86,7 +102,15 @@ exports.viewChores = function (req, res) {
                         for (chore in rendData['users'][user]['upcoming']) {
                             var dd = rendData['users'][user]['upcoming'][count].duedate;
                             var newDate = dd.split('/');
+
+                            //ISO format
+                            if (newDate[0] < 10)
+                                newDate[0] = '0' + newDate[0];
+                            if (newDate[1] < 10)
+                                newDate[1] = '0' + newDate[1];
+
                             var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            console.log(toRet);
                             rendData['users'][user]['upcoming'][count].duedate = toRet;
                             count++;
                         }
@@ -96,7 +120,15 @@ exports.viewChores = function (req, res) {
                         for (chore in rendData['users'][user]['completed']) {
                             var dd = rendData['users'][user]['completed'][count].duedate;
                             var newDate = dd.split('/');
+
+                            //ISO format
+                            if (newDate[0] < 10)
+                                newDate[0] = '0' + newDate[0];
+                            if (newDate[1] < 10)
+                                newDate[1] = '0' + newDate[1];
+                            
                             var toRet = newDate[2] + '-' + newDate[0] + '-' + newDate[1];
+                            console.log(toRet);
                             rendData['users'][user]['completed'][count].duedate = toRet;
                             count++;
                         }
